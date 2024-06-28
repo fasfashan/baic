@@ -10,7 +10,10 @@ const BigMenu = () => {
   };
 
   return (
-    <div className="border-b pt-10 border-gray-400 bg-white shadow-lg">
+    <div
+      className="border-b pt-10 absolute z-10
+     border-gray-400 w-full bg-white shadow-lg"
+    >
       <div className="max-w-6xl grid grid-cols-12 justify-between m-auto min-h-96 ">
         <div className="flex flex-col space-y-4 col-span-4 ">
           <button

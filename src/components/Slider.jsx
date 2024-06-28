@@ -3,7 +3,7 @@ import slide1 from "../assets/slide-1.jpg";
 const slides = [
   {
     image: slide1,
-    heading: "Slide 1 Heading",
+    heading: "CONQUER THE ROAD ON & OFF.",
     cta: "Call to Action 1",
     link: "#cta1",
   },
@@ -15,7 +15,7 @@ const slides = [
   },
   {
     image: slide1,
-    heading: "Slide 3 Heading",
+    heading: "Slide 2 Heading",
     cta: "Call to Action 3",
     link: "#cta3",
   },
@@ -38,19 +38,23 @@ export default function Slider() {
       >
         {slides.map((slide, index) => (
           <div key={index} className="w-full flex-shrink-0">
-            <img
-              src={slide.image}
-              alt={`Slide ${index + 1}`}
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute top-0 left-0 w-full h-full flex flex-col items-center justify-center bg-black bg-opacity-50 text-white">
-              <h2 className="text-2xl font-bold mb-4">{slide.heading}</h2>
-              <a
-                href={slide.link}
-                className="px-4 py-2 bg-red-600 text-white rounded"
-              >
-                {slide.cta}
-              </a>
+            <div
+              className="w-full h-full bg-cover bg-center"
+              style={{ backgroundImage: `url(${slide.image})` }}
+            >
+              <div className="flex max-w-6xl m-auto py-40 items-center  h-full   text-white">
+                <div className="max-w-2xl flex flex-col gap-8">
+                  <h2 className="text-7xl font-medium max-w-96 mb-4">
+                    {slide.heading}
+                  </h2>
+                  <a
+                    className="py-3 px-8 text-center hover:bg-red-600 transition-all   border border-white hover:border-none rounded-xl"
+                    href={slide.link}
+                  >
+                    EXPLORE MORE
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         ))}
