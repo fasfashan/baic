@@ -78,13 +78,13 @@ function App() {
                   </div>
                   <div className="flex flex-wrap gap-2">
                     <a
-                      className="py-3 md:w-fit w-full block px-14 text-white w-fit text-center bg-green-600 transition-all hover:text-white rounded-xl"
+                      className="py-3 md:w-fit w-full block px-14 text-white text-center bg-green-600 transition-all hover:text-white rounded-xl"
                       href="#"
                     >
                       WHATSAPPP
                     </a>
                     <a
-                      className="py-3 md:w-fit w-full block px-14 w-fit text-center bg-red-600 transition-all text-white rounded-xl"
+                      className="py-3 md:w-fit w-full block px-14 text-center bg-red-600 transition-all text-white rounded-xl"
                       href="#"
                     >
                       MAP

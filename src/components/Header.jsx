@@ -23,7 +23,7 @@ export default function Header() {
         <div className="hidden sm:flex flex-col space-y-4">
           <div className="flex gap-4 justify-end pb-2 border-b-2 border-red-600">
             <li>
-              <a href="#">BOOK TEST DRIVE</a>
+              <a href="/book-a-test-drive/index.html">BOOK TEST DRIVE</a>
             </li>
             <li>
               <a href="#">REQUEST PRICE LIST</a>

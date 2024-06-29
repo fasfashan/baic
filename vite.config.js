@@ -10,6 +10,7 @@ export default defineConfig({
         index: "index.html",
         news: "news/index.html",
         contact: "contact/index.html",
+        book: "book-a-test-drive/index.html",
       },
     },
   },
