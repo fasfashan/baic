@@ -47,7 +47,7 @@ const BigMenu = () => {
             SUV
           </button>
         </div>
-        <div className="p-4 col-span-8 ">
+        <div className="p-4 col-span-8  ">
           {activeTab === "All" && (
             <div className="flex justify-between gap-4">
               <div className="flex flex-col">
@@ -108,8 +108,72 @@ const BigMenu = () => {
               </div>
             </div>
           )}
-          {activeTab === "Tab2" && <div>Content for Tab 2</div>}
-          {activeTab === "Tab3" && <div>Content for Tab 3</div>}
+          {activeTab === "Tab2" && (
+            <div className="items-end flex">
+              <div className="flex flex-col ">
+                <img width={300} src={BJ40} alt="BJ40 Plus" />
+                <h2 className="text-xl text-red-500 font-medium">
+                  BAIC BJ40 PLUS
+                </h2>
+                <div className="flex  mt-4 gap-2 text-xs">
+                  <a
+                    className="py-3 px-8 text-center hover:bg-gray-100 transition-all   border border-gray-400 rounded-xl"
+                    href="#"
+                  >
+                    EXPLORE MORE
+                  </a>
+                  <a
+                    className="py-3 px-8 text-center hover:bg-gray-100 transition-all   border border-gray-400 rounded-xl"
+                    href="#"
+                  >
+                    BOOK A TEST DRIVE
+                  </a>
+                </div>
+                <div className="flex mt-2  text-xs">
+                  <a
+                    className="py-3 text-center w-full hover:bg-gray-100 transition-all px-8  border border-gray-400 rounded-xl"
+                    href="#"
+                  >
+                    DOWNLOAD BROCHURE
+                  </a>
+                </div>
+              </div>
+            </div>
+          )}
+          {activeTab === "Tab3" && (
+            <div>
+              <div className="items-end flex">
+                <div className="flex flex-col ">
+                  <img width={300} src={X55} alt="BJ40 Plus" />
+                  <h2 className="text-xl text-red-500 font-medium">
+                    BAIC X55 II
+                  </h2>
+                  <div className="flex  mt-4 gap-2 text-xs">
+                    <a
+                      className="py-3 px-8 text-center hover:bg-gray-100 transition-all   border border-gray-400 rounded-xl"
+                      href="#"
+                    >
+                      EXPLORE MORE
+                    </a>
+                    <a
+                      className="py-3 px-8 text-center hover:bg-gray-100 transition-all   border border-gray-400 rounded-xl"
+                      href="#"
+                    >
+                      BOOK A TEST DRIVE
+                    </a>
+                  </div>
+                  <div className="flex mt-2  text-xs">
+                    <a
+                      className="py-3 text-center w-full hover:bg-gray-100 transition-all px-8  border border-gray-400 rounded-xl"
+                      href="#"
+                    >
+                      DOWNLOAD BROCHURE
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </div>
