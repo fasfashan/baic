@@ -1,5 +1,6 @@
 import Header from "./components/Header";
 import SliderImage from "./components/Slider";
+import ExploreCar from "./components/ExploreCar";
 import "./App.css";
 
 function App() {
@@ -7,6 +8,7 @@ function App() {
     <>
       <Header />
       <SliderImage />
+      <ExploreCar />
     </>
   );
 }

@@ -23,7 +23,7 @@ export default function Header() {
               <a href="#">REQUEST PRICE LIST</a>
             </li>
           </div>
-          <div className="flex gap-8 text-lg font-medium tracking-wide">
+          <div className="flex gap-8  font-medium tracking-wide">
             <li>
               <a className="flex gap-2" href="#" onClick={handleVehicleClick}>
                 VEHICLE{" "}
