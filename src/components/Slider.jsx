@@ -44,9 +44,9 @@ export default function Slider() {
             >
               <div className="flex max-w-6xl m-auto py-40 items-center  h-full   text-white">
                 <div className="max-w-2xl flex flex-col gap-8">
-                  <h2 className="text-7xl font-medium max-w-96 mb-4">
+                  <h1 className="text-7xl font-medium max-w-96 mb-4">
                     {slide.heading}
-                  </h2>
+                  </h1>
                   <a
                     className="py-3 px-8 text-center hover:bg-red-600 transition-all   border border-white hover:border-none rounded-xl"
                     href={slide.link}
