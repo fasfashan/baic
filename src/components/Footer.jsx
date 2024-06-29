@@ -5,15 +5,15 @@ import logoblibli from "../assets/Logo-blibli-blue.png";
 export default function Footer() {
   return (
     <footer className="pt-10 bg-neutral-900">
-      <div className="flex justify-between max-w-6xl m-auto">
+      <div className="flex xl:px-0 md:px-5 px-5 justify-between max-w-6xl m-auto">
         <img width={100} src={logo} alt="Logo BAIC" />
         <img width={100} src={logojdi} alt="Logo JDI" />
       </div>
-      <div className="max-w-6xl m-auto">
+      <div className="max-w-6xl  xl:px-0 md:px-5 px-5 m-auto">
         <hr className="border border-red-800" />
       </div>
-      <div className="grid mt-8 grid-cols-12 max-w-6xl m-auto">
-        <div className="col-span-3 flex flex-col space-y-2">
+      <div className="grid  xl:px-0 md:px-5 px-5 mt-8 gap-y-4 grid-cols-12 max-w-6xl m-auto">
+        <div className="md:col-span-3 col-span-6 row flex flex-col space-y-2">
           <h3 className="text-white text-xl font-medium">VECHICLE</h3>
           <a
             href="#"
@@ -28,7 +28,7 @@ export default function Footer() {
             X55II
           </a>
         </div>
-        <div className="col-span-3 flex flex-col space-y-2">
+        <div className="md:col-span-3 col-span-6 row flex flex-col space-y-2">
           <h3 className="text-white text-xl font-medium">COMPANY</h3>
           <a
             href="#"
@@ -37,7 +37,7 @@ export default function Footer() {
             ABOUT US
           </a>
         </div>
-        <div className="col-span-3 flex flex-col space-y-2">
+        <div className="md:col-span-3 col-span-6 row flex flex-col space-y-2">
           <h3 className="text-white text-xl font-medium">NEWS & EVENT</h3>
           <a
             href="#"
@@ -46,7 +46,7 @@ export default function Footer() {
             UPDATE NEWS & EVENT
           </a>
         </div>
-        <div className="col-span-3 flex flex-col space-y-2">
+        <div className="md:col-span-3 col-span-6 row flex flex-col space-y-2">
           <h3 className="text-white text-xl font-medium">CONTACT DEALER</h3>
           <a
             href="#"
@@ -68,7 +68,7 @@ export default function Footer() {
           </a>
         </div>
       </div>
-      <div className="flex mt-10 mb-10 text-white justify-between max-w-6xl m-auto">
+      <div className="flex xl:px-0 md:px-5 px-5 flex-wrap gap-y-4 mt-10 mb-10 text-white justify-between max-w-6xl m-auto">
         <div className="space-y-2">
           <h3 className="">PT. JIO DISTRIBUSI INDONESIA</h3>
           <p>Jl. Jalur Sutera Boulevard Kav. 30 Alam Sutera</p>
@@ -85,7 +85,7 @@ export default function Footer() {
           </div>
         </div>
       </div>
-      <div className="py-4 text-center bg-white">
+      <div className="py-4  text-center bg-white">
         <p className="text-sm">© 2024 BAIC INDONESIA. Privacy Policy</p>
       </div>
     </footer>

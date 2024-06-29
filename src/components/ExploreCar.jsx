@@ -17,7 +17,7 @@ export default function ExploreCar() {
 
   return (
     <div className="App">
-      <div className="mt-10">
+      <div className="mt-10 md:px-8 px-5">
         <h2 className="text-4xl text-center text-gray-600">
           EXPLORE YOUR BAIC
         </h2>

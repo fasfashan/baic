@@ -7,8 +7,8 @@ export default function CTASection() {
       style={{ backgroundImage: `url(${BgImage})` }}
     >
       <div className="flex max-w-6xl m-auto py-40 items-center  h-full   text-white">
-        <div className="max-w-2xl flex flex-col gap-8">
-          <h1 className="text-7xl font-medium max-w-lg mb-4">
+        <div className="max-w-2xl px-10  flex flex-col gap-8">
+          <h1 className="md:text-7xl text-5xl font-medium max-w-lg mb-4">
             GET BEHIND THE WHEEL!
           </h1>
           <a
