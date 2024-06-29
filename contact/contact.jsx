@@ -21,7 +21,7 @@ function App() {
       </div>
       <div className="py-8 bg-neutral-200">
         <h2 className="text-2xl font-medium text-center">FIND OUR DEALER</h2>
-        <div className="flex mt-6 max-w-6xl md:px-8 px-5 m-auto justify-between gap-4 ">
+        <div className="flex md:flex-nowrap flex-wrap mt-6 max-w-6xl md:px-8 px-5 m-auto justify-between gap-4 ">
           <form className="w-full custom-select">
             <select
               id="countries"
