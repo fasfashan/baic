@@ -11,11 +11,11 @@ const BigMenu = () => {
 
   return (
     <div
-      className="border-b pt-10 absolute z-10
+      className="border-b pt-10 absolute z-10 md:px-10
      border-gray-400 w-full bg-white shadow-lg"
     >
       <div className="max-w-6xl grid grid-cols-12 justify-between m-auto min-h-96 ">
-        <div className="flex flex-col space-y-4 col-span-4 ">
+        <div className="flex flex-col space-y-4 xl:col-span-4 col-span-2">
           <button
             className={` text-left ${
               activeTab === "All"
@@ -47,7 +47,7 @@ const BigMenu = () => {
             SUV
           </button>
         </div>
-        <div className="p-4 col-span-8  ">
+        <div className="p-4 xl:col-span-8  col-span-10 ">
           {activeTab === "All" && (
             <div className="flex justify-between gap-4">
               <div className="flex flex-col">

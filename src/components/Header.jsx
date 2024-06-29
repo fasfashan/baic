@@ -1,5 +1,6 @@
 import logo from "../assets/logo.svg";
 import { useState } from "react";
+import MobileMenu from "./MobileMenu";
 import BigMenu from "./BigMenu";
 export default function Header() {
   const [isBigMenuOpen, setIsBigMenuOpen] = useState(false);
@@ -7,10 +8,15 @@ export default function Header() {
   const handleVehicleClick = () => {
     setIsBigMenuOpen(!isBigMenuOpen);
   };
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const handleMobileMenuClick = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
 
   return (
     <>
-      <nav className="md:max-w-6xl items-center bg-white py-4 m-auto flex justify-between">
+      <nav className="md:max-w-6xl md:px-8 px-5 items-center bg-white py-4 m-auto flex justify-between">
         <a href="/">
           <img width={150} height={100} src={logo} alt="Logo" />
         </a>
@@ -57,24 +63,42 @@ export default function Header() {
           </div>
         </div>
         <div className="block sm:hidden">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="25"
-            viewBox="0 0 24 25"
-            fill="none"
-          >
-            <path
-              d="M3 12.5H21M3 6.5H21M3 18.5H21"
-              stroke="#121926"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
+          <button onClick={handleMobileMenuClick} className="transition-all">
+            {isMobileMenuOpen ? (
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-6 w-6"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M14.348 4.849a.5.5 0 01.708.708L10.707 10l4.35 4.35a.5.5 0 01-.708.708L10 10.707l-4.35 4.35a.5.5 0 01-.708-.708L9.293 10 4.943 5.65a.5.5 0 01.708-.708L10 9.293l4.35-4.35z"
+                  clipRule="evenodd"
+                />
+              </svg>
+            ) : (
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="25"
+                viewBox="0 0 24 25"
+                fill="none"
+              >
+                <path
+                  d="M3 12.5H21M3 6.5H21M3 18.5H21"
+                  stroke="#121926"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            )}
+          </button>
         </div>
       </nav>
       {isBigMenuOpen && <BigMenu />}
+      {isMobileMenuOpen && <MobileMenu />}
     </>
   );
 }
