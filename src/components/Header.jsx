@@ -55,10 +55,10 @@ export default function Header() {
               </a>
             </li>
             <li>
-              <a href="http://localhost:5173/news/index.html">NEWS & EVENT</a>
+              <a href="/news/index.html">NEWS & EVENT</a>
             </li>
             <li>
-              <a href="#">CONTACT DEALER</a>
+              <a href="/contact/index.html">CONTACT DEALER</a>
             </li>
           </div>
         </div>

@@ -76,11 +76,11 @@ export default function MobileMenu() {
           )}
         </div>
         <hr />
-        <a href="#" className="text-lg font-medium">
+        <a href="/news/index.html" className="text-lg font-medium">
           NEWS & EVENT
         </a>
         <hr />
-        <a href="#" className="text-lg font-medium">
+        <a href="/contact/index.html" className="text-lg font-medium">
           CONTACT DEALER
         </a>
         <hr />
