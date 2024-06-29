@@ -1,4 +1,4 @@
-import logo from "../assets/logo.png";
+import logo from "../assets/logo.svg";
 import { useState } from "react";
 import BigMenu from "./BigMenu";
 export default function Header() {
