@@ -21,11 +21,11 @@ function App() {
       </div>
       <div className="py-8 bg-neutral-200">
         <h2 className="text-2xl font-medium text-center">FIND OUR DEALER</h2>
-        <div className="flex mt-6 max-w-6xl md:px-8 px-5 m-auto justify-between gap-8 ">
-          <form className="w-full">
+        <div className="flex mt-6 max-w-6xl md:px-8 px-5 m-auto justify-between gap-4 ">
+          <form className="w-full custom-select">
             <select
               id="countries"
-              className="bg-gray-50 shadow-inner border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5"
+              className="bg-gray-50 appearance-none shadow-inner border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5"
             >
               <option selected disabled>
                 PROVINCE
@@ -33,10 +33,10 @@ function App() {
               <option value="banten">BANTEN</option>
             </select>
           </form>
-          <form className="w-full">
+          <form className="w-full custom-select">
             <select
               id="countries"
-              className="bg-gray-50 shadow-inner border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5"
+              className="bg-gray-50 appearance-none shadow-inner border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5"
             >
               <option selected disabled>
                 CITY
@@ -76,15 +76,15 @@ function App() {
                       Kec. Klp. Dua, Kabupaten Tangerang, Banten 15810
                     </p>
                   </div>
-                  <div className="flex gap-2">
+                  <div className="flex flex-wrap gap-2">
                     <a
-                      className="py-3 block px-14 text-white w-fit text-center bg-green-600 transition-all hover:text-white rounded-xl"
+                      className="py-3 md:w-fit w-full block px-14 text-white w-fit text-center bg-green-600 transition-all hover:text-white rounded-xl"
                       href="#"
                     >
                       WHATSAPPP
                     </a>
                     <a
-                      className="py-3 block px-14 w-fit text-center bg-red-600 transition-all text-white rounded-xl"
+                      className="py-3 md:w-fit w-full block px-14 w-fit text-center bg-red-600 transition-all text-white rounded-xl"
                       href="#"
                     >
                       MAP
