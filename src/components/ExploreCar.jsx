@@ -24,7 +24,7 @@ export default function ExploreCar() {
         <div className="mt-6">
           <div className="flex gap-8 justify-center max-w-6xl m-auto space-x-4 ">
             <button
-              className={`py-2 border-b border-gray-400 px-4 text-2xl ${
+              className={`py-2 transition-all border-b border-gray-400 px-4 text-2xl ${
                 activeTab === "BJ40 Plus" ? "border-b-4 border-red-500" : ""
               }`}
               onClick={() => handleTabClick("BJ40 Plus")}
@@ -32,7 +32,7 @@ export default function ExploreCar() {
               BJ40 Plus
             </button>
             <button
-              className={`py-2 border-b border-gray-400 px-4 text-2xl ${
+              className={`py-2 transition-all border-b border-gray-400 px-4 text-2xl ${
                 activeTab === "X55 II" ? "border-b-4 border-red-500" : ""
               }`}
               onClick={() => handleTabClick("X55 II")}

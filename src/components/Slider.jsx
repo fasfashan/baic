@@ -1,5 +1,7 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import slide1 from "../assets/slide-1.jpg";
+import slide2 from "../assets/slide-2.jpg";
+
 const slides = [
   {
     image: slide1,
@@ -8,18 +10,13 @@ const slides = [
     link: "#cta1",
   },
   {
-    image: slide1,
-    heading: "Slide 2 Heading",
+    image: slide2,
+    heading: "CONQUER THE ROAD ON & OFF",
     cta: "Call to Action 2",
     link: "#cta2",
   },
-  {
-    image: slide1,
-    heading: "Slide 2 Heading",
-    cta: "Call to Action 3",
-    link: "#cta3",
-  },
 ];
+
 export default function Slider() {
   const [currentSlide, setCurrentSlide] = useState(0);
 
@@ -30,8 +27,20 @@ export default function Slider() {
   const prevSlide = () => {
     setCurrentSlide((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
   };
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      nextSlide();
+    }, 7000); // 5 detik
+
+    // Membersihkan interval saat komponen di-unmount
+    return () => {
+      clearInterval(interval);
+    };
+  }, []);
+
   return (
-    <div className="relative w-full  m-auto overflow-hidden">
+    <div className="relative w-full m-auto overflow-hidden">
       <div
         className="flex transition-transform duration-500"
         style={{ transform: `translateX(-${currentSlide * 100}%)` }}
@@ -42,13 +51,13 @@ export default function Slider() {
               className="w-full h-full bg-cover bg-center"
               style={{ backgroundImage: `url(${slide.image})` }}
             >
-              <div className="flex max-w-6xl m-auto py-40 items-center  h-full   text-white">
+              <div className="flex max-w-6xl m-auto py-40 items-center h-full text-white">
                 <div className="max-w-2xl px-10 flex flex-col gap-8">
                   <h1 className="md:text-7xl text-6xl font-medium max-w-96 mb-4">
                     {slide.heading}
                   </h1>
                   <a
-                    className="py-3 px-8 text-center hover:bg-red-600 transition-all   border border-white hover:border-none rounded-xl"
+                    className="py-3 px-8 text-center hover:bg-red-600 transition-all border border-white hover:border-none rounded-xl"
                     href={slide.link}
                   >
                     EXPLORE MORE
