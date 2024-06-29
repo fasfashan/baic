@@ -14,7 +14,7 @@ export default function Footer() {
       </div>
       <div className="grid  xl:px-0 md:px-5 px-5 mt-8 gap-y-4 grid-cols-12 max-w-6xl m-auto">
         <div className="md:col-span-3 col-span-6 row flex flex-col space-y-2">
-          <h3 className="text-white text-xl font-medium">VECHICLE</h3>
+          <h3 className="text-white text-lg font-medium">VECHICLE</h3>
           <a
             href="#"
             className="text-gray-400 text-sm hover:text-white transition-all"
@@ -29,7 +29,7 @@ export default function Footer() {
           </a>
         </div>
         <div className="md:col-span-3 col-span-6 row flex flex-col space-y-2">
-          <h3 className="text-white text-xl font-medium">COMPANY</h3>
+          <h3 className="text-white text-lg font-medium">COMPANY</h3>
           <a
             href="#"
             className="text-gray-400 text-sm hover:text-white transition-all"
@@ -38,7 +38,7 @@ export default function Footer() {
           </a>
         </div>
         <div className="md:col-span-3 col-span-6 row flex flex-col space-y-2">
-          <h3 className="text-white text-xl font-medium">NEWS & EVENT</h3>
+          <h3 className="text-white text-lg font-medium">NEWS & EVENT</h3>
           <a
             href="#"
             className="text-gray-400 text-sm hover:text-white transition-all"
@@ -47,7 +47,7 @@ export default function Footer() {
           </a>
         </div>
         <div className="md:col-span-3 col-span-6 row flex flex-col space-y-2">
-          <h3 className="text-white text-xl font-medium">CONTACT DEALER</h3>
+          <h3 className="text-white text-lg font-medium">CONTACT DEALER</h3>
           <a
             href="#"
             className="text-gray-400 text-sm hover:text-white transition-all"

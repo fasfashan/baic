@@ -18,7 +18,7 @@ export default function Header() {
     <>
       <nav className="md:max-w-6xl md:px-8 px-5 items-center bg-white py-4 m-auto flex justify-between">
         <a href="/">
-          <img width={150} height={100} src={logo} alt="Logo" />
+          <img className="md:w-36 w-28" src={logo} alt="Logo" />
         </a>
         <div className="hidden sm:flex flex-col space-y-4">
           <div className="flex gap-4 justify-end pb-2 border-b-2 border-red-600">
