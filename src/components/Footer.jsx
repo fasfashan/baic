@@ -40,7 +40,7 @@ export default function Footer() {
         <div className="md:col-span-3 col-span-6 row flex flex-col space-y-2">
           <h3 className="text-white text-lg font-medium">NEWS & EVENT</h3>
           <a
-            href="#"
+            href="/news/index.html"
             className="text-gray-400 text-sm hover:text-white transition-all"
           >
             UPDATE NEWS & EVENT
@@ -49,7 +49,7 @@ export default function Footer() {
         <div className="md:col-span-3 col-span-6 row flex flex-col space-y-2">
           <h3 className="text-white text-lg font-medium">CONTACT DEALER</h3>
           <a
-            href="#"
+            href="/book-a-test-drive/index.html"
             className="text-gray-400 text-sm hover:text-white transition-all"
           >
             BOOK A TEST DRIVE
@@ -61,7 +61,7 @@ export default function Footer() {
             REQUEST PRICE LIST
           </a>
           <a
-            href="#"
+            href="/contact/index.html"
             className="text-gray-400 text-sm hover:text-white transition-all"
           >
             FIND DEALER
