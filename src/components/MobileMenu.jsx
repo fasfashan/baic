@@ -84,7 +84,7 @@ export default function MobileMenu() {
           CONTACT DEALER
         </a>
         <hr />
-        <a href="#" className="text-lg font-medium">
+        <a href="/book-a-test-drive/index.html" className="text-lg font-medium">
           BOOK A TEST DRIVE
         </a>
         <hr />
