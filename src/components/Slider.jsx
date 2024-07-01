@@ -7,7 +7,7 @@ const slides = [
     image: slide1,
     heading: "CONQUER THE ROAD ON & OFF.",
     cta: "Call to Action 1",
-    link: "#cta1",
+    link: "/BJ40/index.html",
   },
   {
     image: slide2,

@@ -11,6 +11,7 @@ export default defineConfig({
         news: "news/index.html",
         contact: "contact/index.html",
         book: "book-a-test-drive/index.html",
+        BJ40: "BJ40/index.html",
       },
     },
   },

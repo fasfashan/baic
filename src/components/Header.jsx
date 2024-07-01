@@ -16,7 +16,7 @@ export default function Header() {
 
   return (
     <>
-      <nav className="md:max-w-6xl md:px-8 px-5 items-center bg-white py-4 m-auto flex justify-between">
+      <nav className="md:max-w-6xl md:px-8 px-5 items-center  bg-white py-4 m-auto flex justify-between">
         <a href="/">
           <img className="md:w-36 w-28" src={logo} alt="Logo" />
         </a>
