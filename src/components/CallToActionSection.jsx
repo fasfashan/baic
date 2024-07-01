@@ -13,7 +13,7 @@ export default function CTASection() {
           </h1>
           <a
             className="py-3 px-14 w-fit text-center hover:bg-red-600 transition-all   border border-white hover:border-none rounded-xl"
-            href="#"
+            href="/book-a-test-drive/index.html"
           >
             BOOK A TEST DRIVE
           </a>

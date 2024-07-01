@@ -8,6 +8,7 @@ import Foto1 from "../src/assets/BJ40-single-produk-1.jpg";
 import Foto2 from "../src/assets/BJ40-single-produk-2.jpg";
 import Foto3 from "../src/assets/BJ40-single-produk-3.jpg";
 import Foto4 from "../src/assets/BJ40-single-produk-4.jpg";
+import CTA from "../src/components/cta";
 function App() {
   const [activeTab, setActiveTab] = useState("Overview");
 
@@ -23,7 +24,7 @@ function App() {
   return (
     <>
       <Header />
-      <div className="bg-neutral-100   ">
+      <div className="bg-neutral-100    ">
         <div className=" py-2 z-10  bg-neutral-100  sticky  top-0 items-center ">
           <div className="max-w-6xl gap-4 flex justify-between flex-wrap m-auto md:px-8 px-5">
             <img
@@ -66,7 +67,7 @@ function App() {
             </div>
           </div>
         </div>
-        <div className="">
+        <div className="bg-neutral-200">
           {activeTab === "Overview" && (
             <>
               <div
@@ -160,7 +161,7 @@ function App() {
             </>
           )}
           {activeTab === "Pricing" && (
-            <div className="  md:px-8 px-5">
+            <div className="  md:px-8 px-5 bg-neutral-200 pt-4">
               <div className="flex space-x-4 justify-center mt-10">
                 {colors.map((color) => (
                   <div
@@ -207,18 +208,18 @@ function App() {
                 BJ40 Plus Specifications
               </h2>
               <div className="overflow-x-auto">
-                <table className="max-w-5xl md:w-full   overflow-scroll border-collapse mt-10  md:px-8 px-5   m-auto border border-slate-300 divide-y divide-gray-200">
+                <table className="max-w-5xl md:w-full mb-10   overflow-scroll border-collapse mt-10  md:px-8 px-5   m-auto border border-slate-300 divide-y divide-gray-200">
                   <thead>
                     <tr>
                       <td
-                        className="md:px-4 px-2 border border-slate-300 py-3 text-xs font-medium tracking-wider"
+                        className="md:px-4 px-2 border bg-neutral-900 text-white border-slate-300 py-3 text-xs font-medium tracking-wider"
                         rowSpan="2"
                         colSpan="1"
                       >
                         Model/Configuration
                       </td>
                       <td
-                        className="md:px-4 px-2 border border-slate-300 py-3 text-xs font-medium tracking-wider text-center"
+                        className="md:px-4 px-2 bg-neutral-900 text-white border border-slate-300 py-3 text-xs font-medium tracking-wider text-center"
                         rowSpan="1"
                         colSpan="5"
                       >
@@ -227,21 +228,21 @@ function App() {
                     </tr>
                     <tr>
                       <td
-                        className="md:px-4 px-2 border border-slate-300 py-3 text-xs font-medium tracking-wider"
+                        className="md:px-4 bg-neutral-900 text-white px-2 border border-slate-300 py-3 text-xs font-medium tracking-wider"
                         rowSpan="1"
                         colSpan="1"
                       >
                         Permium
                       </td>
                       <td
-                        className="md:px-4 px-2 border py-3 border-slate-300 text-xs font-medium tracking-wider"
+                        className="md:px-4 bg-neutral-900 text-white px-2 border py-3 border-slate-300 text-xs font-medium tracking-wider"
                         rowSpan="1"
                         colSpan="1"
                       >
                         Flagship
                       </td>
                       <td
-                        className="md:px-4 px-2 py-3 text-xs font-medium tracking-wider"
+                        className="md:px-4 bg-neutral-900 text-white px-2 py-3 text-xs font-medium tracking-wider"
                         rowSpan="1"
                         colSpan="2"
                       >
@@ -253,7 +254,7 @@ function App() {
                     <tr>
                       <th
                         colSpan={4}
-                        className="md:px-4 px-2 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase"
+                        className="md:px-4 bg-neutral-700 text-white px-2 py-3 text-xs font-medium tracking-wider text-left  "
                       >
                         Basic Parameter
                       </th>
@@ -276,11 +277,33 @@ function App() {
                         colSpan={1}
                         className="md:px-4 px-2 py-4 border border-slate-300 text-xs text-gray-500 whitespace-nowrap"
                       >
-                        2745
+                        4645*1925*1871
                       </td>
                       <td
                         colSpan={1}
                         className="md:px-4 px-2 py-4 border border-slate-300 text-xs text-gray-500 whitespace-nowrap"
+                      ></td>
+                    </tr>
+                    <tr>
+                      <td
+                        colSpan={1}
+                        className="md:px-4 px-2 py-4 border bg-neutral-100 border-slate-300 text-xs text-gray-500 whitespace-nowrap"
+                      >
+                        Wheelbase (mm)
+                      </td>
+                      <td
+                        colSpan={1}
+                        className="md:px-4 px-2 py-4 border bg-neutral-100  border-slate-300 text-xs text-gray-500 whitespace-nowrap"
+                      ></td>
+                      <td
+                        colSpan={1}
+                        className="md:px-4 px-2 py-4 bg-neutral-100  border border-slate-300 text-xs text-gray-500 whitespace-nowrap"
+                      >
+                        2745
+                      </td>
+                      <td
+                        colSpan={1}
+                        className="md:px-4 px-2 py-4 bg-neutral-100  border border-slate-300 text-xs text-gray-500 whitespace-nowrap"
                       ></td>
                     </tr>
                   </tbody>
@@ -290,7 +313,7 @@ function App() {
           )}
         </div>
       </div>
-
+      <CTA />
       <Footer />
     </>
   );
