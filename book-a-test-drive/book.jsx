@@ -7,13 +7,13 @@ function App() {
     <>
       <Header />
       <div className="bg-neutral-100 py-4">
-        <h3 className="max-w-6xl m-auto md:px-8 px-5 font-medium">
+        <h3 className="max-w-6xl m-auto md:px-8 px-5 font-bold">
           BOOK A TEST DRIVE
         </h3>
       </div>
       <div className="py-8 bg-neutral-200">
         <div className="max-w-xs m-auto ">
-          <h2 className="text-2xl text-center font-medium mb-6">
+          <h2 className="text-2xl text-center font-bold mb-6">
             BOOK A TEST DRIVE
           </h2>
           <form className="flex justify-center flex-col space-y-4 m-auto ">

@@ -9,7 +9,11 @@ export default {
     "./BJ40/**/*.{html,css,js,jsx,ts,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        custom: ["HarmonyOS", "sans-serif"],
+      },
+    },
   },
   plugins: [],
 };

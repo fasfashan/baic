@@ -75,13 +75,13 @@ function App() {
               >
                 <div className="flex max-w-6xl m-auto py-40 items-center  h-full   text-white">
                   <div className="max-w-2xl px-10  flex flex-col gap-4">
-                    <h1 className="md:text-7xl text-5xl font-medium max-w-lg mb-4">
+                    <h1 className="md:text-7xl text-5xl font-bold max-w-lg mb-4">
                       BORN FOR EXCELLENCE
                     </h1>
-                    <h2 className="text-xl font-medium">
+                    <h2 className="text-xl font-bold">
                       4X4 SUVS WITH A DOMINATING PRESENCE
                     </h2>
-                    <p>
+                    <p className="font-light">
                       Penyempurnaan dari tipe sebelumnya BJ272 yang terkenal;
                       BJ40 Plus dibangun untuk menjadi SUV sejati. Perwujudan
                       yang sederhana, namun tetap tangguh dan tampiI
@@ -98,13 +98,13 @@ function App() {
               >
                 <div className="flex justify-end max-w-6xl m-auto py-40 items-center  h-full   text-white">
                   <div className="max-w-2xl px-10  flex flex-col gap-4">
-                    <h1 className="md:text-7xl text-5xl font-medium max-w-lg mb-4">
+                    <h1 className="md:text-7xl text-5xl font-bold max-w-lg mb-4">
                       EXPLORE THE UNKNOWN
                     </h1>
-                    <h2 className="text-xl font-medium">
+                    <h2 className="text-xl font-bold">
                       ULTIMATE PERFORMANCE FOR THE DRIVE OF YOUR LIFE
                     </h2>
-                    <p>
+                    <p className="font-light">
                       Jelajahi dunia yang belum dijamah dengan kehandalan BJ40
                       Plus yang tidak perlu dipertanyakan lagi. SUV luar biasa
                       ini menyediakan tenaga yang melimpah, memungkinkan anda
@@ -119,13 +119,13 @@ function App() {
               >
                 <div className="flex justify-start max-w-6xl m-auto py-40 items-center  h-full   text-white">
                   <div className="max-w-2xl px-10  flex flex-col gap-4">
-                    <h1 className="md:text-7xl text-5xl font-medium max-w-lg mb-4">
+                    <h1 className="md:text-7xl text-5xl font-bold max-w-lg mb-4">
                       ROBUST & FEARLESS
                     </h1>
-                    <h2 className="text-xl font-medium">
+                    <h2 className="text-xl font-bold">
                       CUSTOMIZED FUNCTIONS TO RESONATE WITH YOUR PERSONALITY
                     </h2>
-                    <p>
+                    <p className="font-light">
                       Mulailah petualangan impian anda dengan BJ40 Plus baru.
                       Raih tantangan baru dalam perjalan anda dengan percaya
                       diri
@@ -139,13 +139,13 @@ function App() {
               >
                 <div className="flex justify-end max-w-6xl m-auto py-40 items-center  h-full   text-white">
                   <div className="max-w-2xl px-10  flex flex-col gap-4">
-                    <h1 className="md:text-7xl text-5xl font-medium max-w-lg mb-4">
+                    <h1 className="md:text-7xl text-5xl font-bold max-w-lg mb-4">
                       LUXURIOUS & COMFORTABLE
                     </h1>
-                    <h2 className="text-xl font-medium">
+                    <h2 className="text-xl font-bold">
                       BUILT TOUGH FOR A RELAXED AND THRILLING RIDE
                     </h2>
-                    <p>
+                    <p className="font-light">
                       Dibangun dengan cerdas dengan desain yang kokoh untuk
                       memenuhi gaya hidup petualang anda. Berani melakukan
                       perjalanan memukau dengan BJ40 Plus. BJ40 Plus diproduksi

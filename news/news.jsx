@@ -75,10 +75,12 @@ function App() {
               />
               <div className="space-y-4 md:col-span-6 col-span-12">
                 <p className="font-medium text-red-600">{content.date}</p>
-                <h2 className="capitalize text-3xl font-medium">
+                <h2 className="capitalize text-3xl font-bold">
                   {content.title}
                 </h2>
-                <p>{content.description}</p>
+                <p className="text-neutral-600 font-normal">
+                  {content.description}
+                </p>
                 <a
                   className="py-3 block px-14 w-fit text-center hover:bg-red-600 transition-all hover:text-white border border-neutral-500 hover:border-none rounded-xl"
                   href="#"
