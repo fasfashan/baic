@@ -160,7 +160,7 @@ function App() {
             </>
           )}
           {activeTab === "Pricing" && (
-            <div>
+            <div className="  md:px-8 px-5">
               <div className="flex space-x-4 justify-center mt-10">
                 {colors.map((color) => (
                   <div
@@ -198,90 +198,94 @@ function App() {
               </div>
               <div className="space-y-1 text-center mt-10 ">
                 <h3 className="font-medium">BJ40 Plus</h3>
-                <h2 className="font-semibold text-5xl">Rp. 850.000.000,-</h2>
+                <h2 className="font-semibold md:text-5xl text-4xl">
+                  Rp. 850.000.000,-
+                </h2>
                 <p className="italic text-neutral-500">*Off the road</p>
               </div>
-              <h2 className=" text-center text-3xl mt-10">
+              <h2 className=" text-center md:text-3xl text-2xl mt-10">
                 BJ40 Plus Specifications
               </h2>
-              <table className="max-w-5xl md:w-full  overflow-scroll border-collapse mt-10  md:px-8 px-5   m-auto border border-slate-300 divide-y divide-gray-200">
-                <thead>
-                  <tr>
-                    <td
-                      className="md:px-4 px-2 border border-slate-300 py-3 text-xs font-medium tracking-wider"
-                      rowSpan="2"
-                      colSpan="1"
-                    >
-                      Model/Configuration
-                    </td>
-                    <td
-                      className="md:px-4 px-2 border border-slate-300 py-3 text-xs font-medium tracking-wider text-center"
-                      rowSpan="1"
-                      colSpan="5"
-                    >
-                      2.3T+6AT- 4WD
-                    </td>
-                  </tr>
-                  <tr>
-                    <td
-                      className="md:px-4 px-2 border border-slate-300 py-3 text-xs font-medium tracking-wider"
-                      rowSpan="1"
-                      colSpan="1"
-                    >
-                      Permium
-                    </td>
-                    <td
-                      className="md:px-4 px-2 border py-3 border-slate-300 text-xs font-medium tracking-wider"
-                      rowSpan="1"
-                      colSpan="1"
-                    >
-                      Flagship
-                    </td>
-                    <td
-                      className="md:px-4 px-2 py-3 text-xs font-medium tracking-wider"
-                      rowSpan="1"
-                      colSpan="2"
-                    >
-                      Champion
-                    </td>
-                  </tr>
-                </thead>
-                <thead className="bg-gray-300">
-                  <tr>
-                    <th
-                      colSpan={4}
-                      className="md:px-4 px-2 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase"
-                    >
-                      Basic Parameter
-                    </th>
-                  </tr>
-                </thead>
+              <div className="overflow-x-auto">
+                <table className="max-w-5xl md:w-full   overflow-scroll border-collapse mt-10  md:px-8 px-5   m-auto border border-slate-300 divide-y divide-gray-200">
+                  <thead>
+                    <tr>
+                      <td
+                        className="md:px-4 px-2 border border-slate-300 py-3 text-xs font-medium tracking-wider"
+                        rowSpan="2"
+                        colSpan="1"
+                      >
+                        Model/Configuration
+                      </td>
+                      <td
+                        className="md:px-4 px-2 border border-slate-300 py-3 text-xs font-medium tracking-wider text-center"
+                        rowSpan="1"
+                        colSpan="5"
+                      >
+                        2.3T+6AT- 4WD
+                      </td>
+                    </tr>
+                    <tr>
+                      <td
+                        className="md:px-4 px-2 border border-slate-300 py-3 text-xs font-medium tracking-wider"
+                        rowSpan="1"
+                        colSpan="1"
+                      >
+                        Permium
+                      </td>
+                      <td
+                        className="md:px-4 px-2 border py-3 border-slate-300 text-xs font-medium tracking-wider"
+                        rowSpan="1"
+                        colSpan="1"
+                      >
+                        Flagship
+                      </td>
+                      <td
+                        className="md:px-4 px-2 py-3 text-xs font-medium tracking-wider"
+                        rowSpan="1"
+                        colSpan="2"
+                      >
+                        Champion
+                      </td>
+                    </tr>
+                  </thead>
+                  <thead className="bg-gray-300">
+                    <tr>
+                      <th
+                        colSpan={4}
+                        className="md:px-4 px-2 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase"
+                      >
+                        Basic Parameter
+                      </th>
+                    </tr>
+                  </thead>
 
-                <tbody className="bg-white   ">
-                  <tr>
-                    <td
-                      colSpan={1}
-                      className="md:px-4 px-2 py-4 border border-slate-300 text-xs text-gray-500 whitespace-nowrap"
-                    >
-                      Length×Width×Height (mm)
-                    </td>
-                    <td
-                      colSpan={1}
-                      className="md:px-4 px-2 py-4 border border-slate-300 text-xs text-gray-500 whitespace-nowrap"
-                    ></td>
-                    <td
-                      colSpan={1}
-                      className="md:px-4 px-2 py-4 border border-slate-300 text-xs text-gray-500 whitespace-nowrap"
-                    >
-                      2745
-                    </td>
-                    <td
-                      colSpan={1}
-                      className="md:px-4 px-2 py-4 border border-slate-300 text-xs text-gray-500 whitespace-nowrap"
-                    ></td>
-                  </tr>
-                </tbody>
-              </table>
+                  <tbody className="bg-white   ">
+                    <tr>
+                      <td
+                        colSpan={1}
+                        className="md:px-4 px-2 py-4 border border-slate-300 text-xs text-gray-500 whitespace-nowrap"
+                      >
+                        Length×Width×Height (mm)
+                      </td>
+                      <td
+                        colSpan={1}
+                        className="md:px-4 px-2 py-4 border border-slate-300 text-xs text-gray-500 whitespace-nowrap"
+                      ></td>
+                      <td
+                        colSpan={1}
+                        className="md:px-4 px-2 py-4 border border-slate-300 text-xs text-gray-500 whitespace-nowrap"
+                      >
+                        2745
+                      </td>
+                      <td
+                        colSpan={1}
+                        className="md:px-4 px-2 py-4 border border-slate-300 text-xs text-gray-500 whitespace-nowrap"
+                      ></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
           )}
         </div>
