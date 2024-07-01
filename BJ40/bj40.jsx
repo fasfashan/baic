@@ -204,7 +204,7 @@ function App() {
               <h2 className=" text-center text-3xl mt-10">
                 BJ40 Plus Specifications
               </h2>
-              <table className="max-w-5xl w-full overflow-scroll border-collapse mt-10  md:px-8 px-5   m-auto border divide-y divide-gray-200">
+              <table className="max-w-5xl md:w-full  overflow-scroll border-collapse mt-10  md:px-8 px-5   m-auto border border-slate-300 divide-y divide-gray-200">
                 <thead>
                   <tr>
                     <td
@@ -217,7 +217,7 @@ function App() {
                     <td
                       className="md:px-4 px-2 border border-slate-300 py-3 text-xs font-medium tracking-wider text-center"
                       rowSpan="1"
-                      colSpan="4"
+                      colSpan="5"
                     >
                       2.3T+6AT- 4WD
                     </td>
@@ -261,23 +261,23 @@ function App() {
                   <tr>
                     <td
                       colSpan={1}
-                      className="md:px-4 px-2 py-4 border border-slate-300 text-sm text-gray-500 whitespace-nowrap"
+                      className="md:px-4 px-2 py-4 border border-slate-300 text-xs text-gray-500 whitespace-nowrap"
                     >
                       Length×Width×Height (mm)
                     </td>
                     <td
                       colSpan={1}
-                      className="md:px-4 px-2 py-4 border border-slate-300 text-sm text-gray-500 whitespace-nowrap"
+                      className="md:px-4 px-2 py-4 border border-slate-300 text-xs text-gray-500 whitespace-nowrap"
                     ></td>
                     <td
                       colSpan={1}
-                      className="md:px-4 px-2 py-4 border border-slate-300 text-sm text-gray-500 whitespace-nowrap"
+                      className="md:px-4 px-2 py-4 border border-slate-300 text-xs text-gray-500 whitespace-nowrap"
                     >
                       2745
                     </td>
                     <td
                       colSpan={1}
-                      className="md:px-4 px-2 py-4 border border-slate-300 text-sm text-gray-500 whitespace-nowrap"
+                      className="md:px-4 px-2 py-4 border border-slate-300 text-xs text-gray-500 whitespace-nowrap"
                     ></td>
                   </tr>
                 </tbody>
