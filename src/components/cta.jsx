@@ -4,11 +4,11 @@ import call from "../assets/call.png";
 export default function CTA() {
   return (
     <>
-      <div className=" bg-red-600 gap-10  justify-center">
+      <div className=" bg-red-600 gap-10   justify-center">
         <div className="max-w-6xl justify-evenly flex m-auto">
           <a
             href="/book-a-test-drive/index.html"
-            className="flex justify-center flex-col gap-2 border-l border-r p-8 border-white"
+            className="flex justify-center flex-col gap-2 border-l border-r md:p-8 p-2 border-white"
           >
             <img src={testDrive} width={32} className="m-auto" alt="" />
             <h3 className="text-white text-center font-medium text-sm">
@@ -17,7 +17,7 @@ export default function CTA() {
           </a>
           <a
             href="#"
-            className="flex justify-center flex-col gap-2 border-l border-r p-8 border-white"
+            className="flex justify-center flex-col gap-2 border-l border-r md:p-8 p-2 border-white"
           >
             <img src={Brochure} width={32} className="m-auto" alt="" />
             <h3 className="text-white text-center font-medium text-sm">
@@ -26,7 +26,7 @@ export default function CTA() {
           </a>
           <a
             href="/contact/index.html"
-            className="flex justify-center flex-col gap-2 border-l border-r p-8 border-white"
+            className="flex justify-center flex-col  gap-2 border-l border-r md:p-8 p-2 border-white"
           >
             <img src={call} width={32} className="m-auto" alt="" />
             <h3 className="text-white text-center font-medium text-sm">
