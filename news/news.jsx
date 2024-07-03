@@ -4,11 +4,13 @@ import blog2 from "../src/assets/blog-2.jpg";
 import blog3 from "../src/assets/blog-3.jpg";
 import blog4 from "../src/assets/blog-4.jpg";
 import Footer from "../src/components/Footer";
+import CTA from "../src/components/cta";
 import { useState } from "react";
 import "../src/index.css";
 const contentArray = [
   {
     image: blog1,
+    link: "/news/single-post/index.html",
     date: "7 DESEMBER, 2024",
     title: "Top Gear award - BAIC Beijing X55 win",
     description:
@@ -16,6 +18,7 @@ const contentArray = [
   },
   {
     image: blog2,
+    link: "/news/single-post/index.html",
     date: "8 DESEMBER, 2024",
     title: "Another Award - Example Title 2",
     description:
@@ -23,6 +26,7 @@ const contentArray = [
   },
   {
     image: blog3,
+    link: "/news/single-post/index.html",
     date: "9 DESEMBER, 2024",
     title: "Yet Another Award - Example Title 3",
     description:
@@ -30,6 +34,7 @@ const contentArray = [
   },
   {
     image: blog4,
+    link: "/news/single-post/index.html",
     date: "10 DESEMBER, 2024",
     title: "Yet Another Award - Example Title 4",
     description:
@@ -37,6 +42,7 @@ const contentArray = [
   },
   {
     image: blog4,
+    link: "/news/single-post/index.html",
     date: "11 DESEMBER, 2024",
     title: "Yet Another Award - Example Title 4",
     description:
@@ -44,6 +50,7 @@ const contentArray = [
   },
   {
     image: blog4,
+    link: "/news/single-post/index.html",
     date: "12 DESEMBER, 2024",
     title: "Yet Another Award - Example Title 4",
     description:
@@ -83,7 +90,7 @@ function App() {
                 </p>
                 <a
                   className="py-3 block px-14 w-fit text-center hover:bg-red-600 transition-all hover:text-white border border-neutral-500 hover:border-none rounded-xl"
-                  href="#"
+                  href={content.link}
                 >
                   READ MORE
                 </a>
@@ -100,6 +107,7 @@ function App() {
           </button>
         )}
       </div>
+      <CTA />
       <Footer />
     </>
   );
