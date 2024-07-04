@@ -9,7 +9,7 @@ export default function MobileMenu() {
   };
   return (
     <>
-      <div className="w-full space-y-4  min-h-screen flex flex-col transition-all  z-10 absolute p-5 bg-white">
+      <div className="w-full space-y-4  min-h-screen flex flex-col transition-all  z-50 absolute p-5 bg-white">
         <div className=" w-full rounded-md ">
           <div
             className="flex justify-between items-center  cursor-pointer"
@@ -49,7 +49,7 @@ export default function MobileMenu() {
                   <div className="flex mt-2 text-xs">
                     <a
                       className="py-3 text-center hover:bg-gray-100 transition-all w-full  border border-gray-400 rounded-xl"
-                      href="#"
+                      href="/BJ40/index.html"
                     >
                       EXPLORE MORE
                     </a>
@@ -65,7 +65,7 @@ export default function MobileMenu() {
                   <div className="flex mt-2 text-xs">
                     <a
                       className="py-3 text-center hover:bg-gray-100 transition-all w-full  border border-gray-400 rounded-xl"
-                      href="#"
+                      href="/x55/index.html"
                     >
                       EXPLORE MORE
                     </a>

@@ -5,6 +5,7 @@ import Footer from "../src/components/Footer";
 import "../src/index.css";
 import { useState } from "react";
 import BJ40Logo from "../src/assets/BJ40-plus-logo.png";
+import X55Logo from "../src/assets/X55-logo.png";
 import BJ40View1 from "../src/assets/BJ40-plus-view-1.png";
 import Foto1 from "../src/assets/BJ40-single-produk-1.jpg";
 import Foto2 from "../src/assets/BJ40-single-produk-2.jpg";
@@ -99,9 +100,9 @@ function App() {
         <div className=" py-2 z-10  bg-neutral-100  sticky  top-0 items-center ">
           <div className="max-w-6xl gap-4 flex justify-between flex-wrap m-auto md:px-8 px-5">
             <img
-              width={200}
+              width={180}
               className="object-contain"
-              src={BJ40Logo}
+              src={X55Logo}
               alt="BJ40 PLUS Logo"
             />
             <div className="flex gap-4    ">
@@ -148,19 +149,24 @@ function App() {
                 <div className="flex max-w-6xl m-auto py-40 items-center  h-full   text-white">
                   <div className="max-w-2xl px-10  flex flex-col gap-4">
                     <h1 className="md:text-7xl text-5xl font-bold max-w-lg mb-4">
-                      BORN FOR EXCELLENCE
+                      SMART TECHNOLOGY
                     </h1>
                     <h2 className="text-xl font-bold">
-                      4X4 SUVS WITH A DOMINATING PRESENCE
+                      STANDARD FEATURES INCLUDE:
                     </h2>
-                    <p className="font-light">
-                      Penyempurnaan dari tipe sebelumnya BJ272 yang terkenal;
-                      BJ40 Plus dibangun untuk menjadi SUV sejati. Perwujudan
-                      yang sederhana, namun tetap tangguh dan tampiI
-                      mengesankan. Wujudnya yang gagah merupakan perpaduan
-                      sempurna antara ketangguhan, keanggunan dan juga
-                      kecanggihan.
-                    </p>
+                    <ul className="font-light">
+                      <li>
+                        •Driver’s seat welcome/memory for multiple drivers needs
+                      </li>
+                      <li>
+                        •Heated and ventilated front seats for warmth in winter
+                        and coolness in summer
+                      </li>
+                      <li>
+                        •4-way electrical lumbar support for your lower back
+                      </li>
+                      <li>•2-level incline rear backrest adjustment.</li>
+                    </ul>
                   </div>
                 </div>
               </div>
@@ -171,17 +177,30 @@ function App() {
                 <div className="flex justify-end max-w-6xl m-auto py-40 items-center  h-full   text-white">
                   <div className="max-w-2xl px-10  flex flex-col gap-4">
                     <h1 className="md:text-7xl text-5xl font-bold max-w-lg mb-4">
-                      EXPLORE THE UNKNOWN
+                      EXCEPTIONAL PERFORMANCE
                     </h1>
-                    <h2 className="text-xl font-bold">
-                      ULTIMATE PERFORMANCE FOR THE DRIVE OF YOUR LIFE
-                    </h2>
-                    <p className="font-light">
-                      Jelajahi dunia yang belum dijamah dengan kehandalan BJ40
-                      Plus yang tidak perlu dipertanyakan lagi. SUV luar biasa
-                      ini menyediakan tenaga yang melimpah, memungkinkan anda
-                      unuk membuka jalan menuju cakrawala baru.
-                    </p>
+
+                    <ul className="font-light">
+                      <li>
+                        •0-100km/h in 7.8 seconds, making the X55, the fastest
+                        car in its class.
+                      </li>
+                      <li>
+                        •At 7.18l/100km it offers some of the lowest fuel
+                        consumption in its class.
+                      </li>
+                      <li>
+                        •VGT (Variable Geometry Turbine) booster technology
+                        offers a significant increase of boost pressure and a
+                        broader torque plateau while maintaining exceptional
+                        drivability and control.
+                      </li>
+                      <li>
+                        •The 350-bar high pressure injection, along with the
+                        Miller Cycle, ensures better fuel efficiency and lower
+                        CO2 emissions.
+                      </li>
+                    </ul>
                   </div>
                 </div>
               </div>
@@ -192,16 +211,19 @@ function App() {
                 <div className="flex justify-start max-w-6xl m-auto py-40 items-center  h-full   text-white">
                   <div className="max-w-2xl px-10  flex flex-col gap-4">
                     <h1 className="md:text-7xl text-5xl font-bold max-w-lg mb-4">
-                      ROBUST & FEARLESS
+                      REVOLUTIONARY SPORTS STYLING
                     </h1>
-                    <h2 className="text-xl font-bold">
-                      CUSTOMIZED FUNCTIONS TO RESONATE WITH YOUR PERSONALITY
-                    </h2>
-                    <p className="font-light">
-                      Mulailah petualangan impian anda dengan BJ40 Plus baru.
-                      Raih tantangan baru dalam perjalan anda dengan percaya
-                      diri
-                    </p>
+
+                    <ul className="font-light">
+                      <li>•LED lights</li>
+                      <li>•Concealed, integrated door handles</li>
+                      <li>•Convenient and elegant split rear wing (spoiler)</li>
+                      <li>•Shark fin antenna</li>
+                      <li>•Panoramic sunroof</li>
+                      <li>•Space engine style air vents</li>
+                      <li>•Aircraft-style gearshift lever</li>
+                      <li>•3D ambient light effect on door panels</li>
+                    </ul>
                   </div>
                 </div>
               </div>
@@ -212,20 +234,18 @@ function App() {
                 <div className="flex justify-end max-w-6xl m-auto py-40 items-center  h-full   text-white">
                   <div className="max-w-2xl px-10  flex flex-col gap-4">
                     <h1 className="md:text-7xl text-5xl font-bold max-w-lg mb-4">
-                      LUXURIOUS & COMFORTABLE
+                      HUMAN-CENTERED COMFORT
                     </h1>
                     <h2 className="text-xl font-bold">
                       BUILT TOUGH FOR A RELAXED AND THRILLING RIDE
                     </h2>
-                    <p className="font-light">
-                      Dibangun dengan cerdas dengan desain yang kokoh untuk
-                      memenuhi gaya hidup petualang anda. Berani melakukan
-                      perjalanan memukau dengan BJ40 Plus. BJ40 Plus diproduksi
-                      dan diuji sebagai kendaraan militer, dengan serangkaian
-                      percobaan dan ujian yang ketat. lni adalah kendaraan
-                      pilihan sempurna untuk memberikan pengalaman berkendara
-                      yang aman dan terjamin, namun tetap menyenangkan.
-                    </p>
+                    <ul className="font-light">
+                      <li>•Zero gravity integrated sport seats</li>
+                      <li>•Sensing panoramic sunroof</li>
+                      <li>•Baby-care grade interior materials</li>
+                      <li>•Soft-clad interior finish</li>
+                      <li>•Spacious and environment - friendly</li>
+                    </ul>
                   </div>
                 </div>
               </div>

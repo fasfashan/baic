@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import flameRed from "../assets/flame red.png";
 import snowWhite from "../assets/snow white.png";
 import jadeBlack from "../assets/jade black.png";
@@ -45,6 +45,40 @@ export default function ExploreCar() {
   };
   const [animating, setAnimating] = useState(false);
   const [selectedColor, setSelectedColor] = useState(colors[0]);
+  const selectedColorRef = useRef(null);
+  const containerRef = useRef(null);
+  useEffect(() => {
+    if (selectedColorRef.current && containerRef.current) {
+      const selectedElement = selectedColorRef.current;
+      const container = containerRef.current;
+
+      // Hitung posisi scroll agar elemen yang dipilih berada di tengah
+      const scrollLeft =
+        selectedElement.offsetLeft -
+        container.offsetWidth / 2 +
+        selectedElement.offsetWidth / 2;
+      container.scrollTo({
+        left: scrollLeft,
+        behavior: "smooth",
+      });
+    }
+  }, [selectedColor]);
+  useEffect(() => {
+    if (selectedColorRef.current && containerRef.current) {
+      const selectedElement = selectedColorRef.current;
+      const container = containerRef.current;
+
+      // Hitung posisi scroll agar elemen yang dipilih berada di tengah
+      const scrollLeft =
+        selectedElement.offsetLeft -
+        container.offsetWidth / 2 +
+        selectedElement.offsetWidth / 2;
+      container.scrollTo({
+        left: scrollLeft,
+        behavior: "smooth",
+      });
+    }
+  }, [selectedColor]);
   const onColorSelect = (color) => {
     if (color !== selectedColor) {
       setAnimating(true);
@@ -54,6 +88,7 @@ export default function ExploreCar() {
       }, 100); // Duration of the transition
     }
   };
+
   const [selectedColorX55, setSelectedColorX55] = useState(colorsX55[0]);
   const onColorSelectX55 = (color) => {
     if (color !== selectedColor) {
@@ -107,7 +142,7 @@ export default function ExploreCar() {
                     ></div>
                   ))}
                 </div>
-                <div className="flex flex-col max-w-2xl overflow-hidden justify-center">
+                <div className="flex flex-col max-w-2xl overflow-hidden justify-center mx-auto">
                   <img
                     src={colorToImageMapBJ40[selectedColor]}
                     alt="BJ40 Plus"
@@ -116,39 +151,58 @@ export default function ExploreCar() {
                         ? "translate-x-full opacity-0"
                         : "translate-x-0 opacity-100"
                     }`}
-                    onAnimationEnd={() => setAnimating(false)}
                   />
-                  <div className="grid md:grid-cols-7 grid-cols-4 gap-4 mt-6 ">
-                    {Object.keys(colorToImageMapBJ40).map((color, index) => (
-                      <div key={index} className="relative">
-                        <img
-                          src={colorToImageMapBJ40[color]}
-                          alt={`BJ40 Plus ${index + 1}`}
-                          className="block py-4 px-2 border md:col-span-1 col-span-2"
-                        />
-                        {selectedColor !== color && (
-                          <div className="absolute inset-0 bg-black bg-opacity-50"></div>
-                        )}
-                      </div>
-                    ))}
+                  <div className="relative w-full overflow-hidden">
+                    <div
+                      ref={containerRef}
+                      className="flex md:grid md:grid-cols-7 w-full overflow-x-auto"
+                    >
+                      {colors.map((color, index) => (
+                        <button
+                          key={index}
+                          ref={
+                            selectedColor === color ? selectedColorRef : null
+                          }
+                          className={`inline-block w-full md:w-auto md:flex-shrink-0 transform transition-transform duration-300 ${
+                            selectedColor === color ? "scale-100" : "scale-75"
+                          }`}
+                          style={{ minWidth: "70%" }} // Menyesuaikan lebar item
+                          onClick={() => onColorSelect(color)}
+                        >
+                          <div className="relative">
+                            <img
+                              src={colorToImageMapBJ40[color]}
+                              alt={`BJ40 Plus ${index + 1}`}
+                              className="block w-full h-auto"
+                            />
+                            {selectedColor !== color && (
+                              <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+                            )}
+                          </div>
+                        </button>
+                      ))}
+                    </div>
                   </div>
                 </div>
                 <div className="flex md:flex-nowrap flex-wrap gap-4 mt-10 justify-center">
                   <a
-                    className="py-3 w-full text-center hover:bg-gray-100 transition-all   border border-gray-400 rounded-xl"
-                    href="#"
+                    className="py-3 w-full text-center hover:bg-gray-100 transition-all border border-gray-400 rounded-xl"
+                    href="/BJ40/index.html"
                   >
                     EXPLORE MORE
                   </a>
                   <a
-                    className="py-3 w-full text-center hover:bg-gray-100 transition-all   border border-gray-400 rounded-xl"
-                    href="#"
+                    className="py-3 w-full text-center hover:bg-gray-100 transition-all border border-gray-400 rounded-xl"
+                    href="/brochure-bj40.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     DOWNLOAD BROCHURE
                   </a>
+
                   <a
-                    className="py-3 w-full text-center hover:bg-gray-100 transition-all   border border-gray-400 rounded-xl"
-                    href="#"
+                    className="py-3 w-full text-center hover:bg-gray-100 transition-all border border-gray-400 rounded-xl"
+                    href="/book-a-test-drive/index.html"
                   >
                     BOOK A TEST DRIVE
                   </a>
@@ -171,7 +225,7 @@ export default function ExploreCar() {
                     ></div>
                   ))}
                 </div>
-                <div className="flex flex-col max-w-2xl overflow-hidden justify-center">
+                <div className="flex flex-col max-w-2xl overflow-hidden justify-center mx-auto">
                   <img
                     src={colorToImageMapX55[selectedColorX55]}
                     alt="BJ40 Plus"
@@ -180,39 +234,60 @@ export default function ExploreCar() {
                         ? "translate-x-full opacity-0"
                         : "translate-x-0 opacity-100"
                     }`}
-                    onAnimationEnd={() => setAnimating(false)}
                   />
-                  <div className="grid md:grid-cols-5 grid-cols-4 gap-4 mt-6">
-                    {Object.keys(colorToImageMapX55).map((color, index) => (
-                      <div key={index} className="relative">
-                        <img
-                          src={colorToImageMapX55[color]}
-                          alt={`BJ40 Plus ${index + 1}`}
-                          className="block py-4 px-2 border"
-                        />
-                        {selectedColorX55 !== color && (
-                          <div className="absolute inset-0 bg-black bg-opacity-50"></div>
-                        )}
-                      </div>
-                    ))}
+                  <div className="relative w-full overflow-hidden">
+                    <div
+                      ref={containerRef}
+                      className="flex md:grid md:grid-cols-5 w-full overflow-x-auto"
+                    >
+                      {colorsX55.map((color, index) => (
+                        <button
+                          key={index}
+                          ref={
+                            selectedColorX55 === color ? selectedColorRef : null
+                          }
+                          className={`inline-block w-full md:w-auto md:flex-shrink-0 transform transition-transform duration-300 ${
+                            selectedColorX55 === color
+                              ? "scale-100"
+                              : "scale-75"
+                          }`}
+                          style={{ minWidth: "70%" }} // Menyesuaikan lebar item
+                          onClick={() => onColorSelectX55(color)}
+                        >
+                          <div className="relative">
+                            <img
+                              src={colorToImageMapX55[color]}
+                              alt={`BJ40 Plus ${index + 1}`}
+                              className="block w-full h-auto"
+                            />
+                            {selectedColorX55 !== color && (
+                              <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+                            )}
+                          </div>
+                        </button>
+                      ))}
+                    </div>
                   </div>
                 </div>
                 <div className="flex md:flex-nowrap flex-wrap gap-4 mt-10 justify-center">
                   <a
-                    className="py-3 w-full text-center hover:bg-gray-100 transition-all   border border-gray-400 rounded-xl"
-                    href="#"
+                    className="py-3 w-full text-center hover:bg-gray-100 transition-all border border-gray-400 rounded-xl"
+                    href="/x55/index.html"
                   >
                     EXPLORE MORE
                   </a>
                   <a
-                    className="py-3 w-full text-center hover:bg-gray-100 transition-all   border border-gray-400 rounded-xl"
-                    href="#"
+                    className="py-3 w-full text-center hover:bg-gray-100 transition-all border border-gray-400 rounded-xl"
+                    href="/brochure-x55.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     DOWNLOAD BROCHURE
                   </a>
+
                   <a
-                    className="py-3 w-full text-center hover:bg-gray-100 transition-all   border border-gray-400 rounded-xl"
-                    href="#"
+                    className="py-3 w-full text-center hover:bg-gray-100 transition-all border border-gray-400 rounded-xl"
+                    href="/book-a-test-drive/index.html"
                   >
                     BOOK A TEST DRIVE
                   </a>
