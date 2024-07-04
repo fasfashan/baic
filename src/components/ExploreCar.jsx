@@ -1,18 +1,68 @@
 import { useState } from "react";
-
-import BJ40View1 from "../assets/BJ40-plus-view-1.png";
-import X55View1 from "../assets/BAIC-X55-view-1.png";
-
+import flameRed from "../assets/flame red.png";
+import snowWhite from "../assets/snow white.png";
+import jadeBlack from "../assets/jade black.png";
+import porcelainBlue from "../assets/porcelain blue.png";
+import forestGrean from "../assets/forest green.png";
+import armyGreen from "../assets/army green.png";
+import midnightBlue from "../assets/midnight blue.png";
+import platinumBlack from "../assets/platinum + black.png";
+import yellowBlack from "../assets/yellow + black.png";
+import redBlack from "../assets/red + black.png";
+import crystalBlack from "../assets/crystal + black.png";
+import whiteBlack from "../assets/white + black.png";
 export default function ExploreCar() {
   const [activeTab, setActiveTab] = useState("BJ40 Plus");
 
   const handleTabClick = (tab) => {
     setActiveTab(tab);
   };
-  const colors = ["#cc3300", "#cccccc", "#000", "#666633", "#FFF333"];
+  const colors = [
+    "#94111B",
+    "#ffffff",
+    "#000000",
+    "#86A9C6",
+    "#2E3F2B",
+    "#5A603F",
+    "#00243A",
+  ];
+  const colorsX55 = ["#464C47", "#96901D", "#EA3435", "#CBD1D4", "#D1D1D1"];
+  const colorToImageMapBJ40 = {
+    "#94111B": flameRed,
+    "#ffffff": snowWhite,
+    "#000000": jadeBlack,
+    "#86A9C6": porcelainBlue,
+    "#2E3F2B": forestGrean,
+    "#5A603F": armyGreen,
+    "#00243A": midnightBlue,
+  };
+  const colorToImageMapX55 = {
+    "#464C47": platinumBlack,
+    "#96901D": yellowBlack,
+    "#EA3435": redBlack,
+    "#CBD1D4": crystalBlack,
+    "#D1D1D1": whiteBlack,
+  };
+  const [animating, setAnimating] = useState(false);
   const [selectedColor, setSelectedColor] = useState(colors[0]);
   const onColorSelect = (color) => {
-    setSelectedColor(color);
+    if (color !== selectedColor) {
+      setAnimating(true);
+      setTimeout(() => {
+        setSelectedColor(color);
+        setAnimating(false);
+      }, 100); // Duration of the transition
+    }
+  };
+  const [selectedColorX55, setSelectedColorX55] = useState(colorsX55[0]);
+  const onColorSelectX55 = (color) => {
+    if (color !== selectedColor) {
+      setAnimating(true);
+      setTimeout(() => {
+        setSelectedColorX55(color);
+        setAnimating(false);
+      }, 100); // Duration of the transition
+    }
   };
 
   return (
@@ -43,11 +93,11 @@ export default function ExploreCar() {
           <div className="p-4 flex justify-center">
             {activeTab === "BJ40 Plus" && (
               <div className="mt-10">
-                <div className="flex space-x-4 justify-center">
+                <div className="flex space-x-3 justify-center">
                   {colors.map((color) => (
                     <div
                       key={color}
-                      className={`w-8 h-8 rounded-full cursor-pointer transition-transform duration-200 ${
+                      className={`w-8 h-8 rounded-full border border-neutral-100 cursor-pointer transition-transform duration-200 ${
                         selectedColor === color
                           ? "border-4 outline outline-red-500 border-white transform scale-110"
                           : "border-2 border-transparent"
@@ -57,26 +107,31 @@ export default function ExploreCar() {
                     ></div>
                   ))}
                 </div>
-                <img
-                  width={700}
-                  src={BJ40View1}
-                  alt="BJ40 Plus"
-                  className="mt-10"
-                />
-                <div className="flex gap-4 justify-center">
-                  {[...Array(5)].map((_, index) => (
-                    <div key={index} className="relative">
-                      <img
-                        width={100}
-                        src={BJ40View1}
-                        alt={`BJ40 Plus ${index + 1}`}
-                        className="block py-4 px-2 border"
-                      />
-                      {index > 0 && (
-                        <div className="absolute inset-0 bg-black bg-opacity-50"></div>
-                      )}
-                    </div>
-                  ))}
+                <div className="flex flex-col max-w-2xl overflow-hidden justify-center">
+                  <img
+                    src={colorToImageMapBJ40[selectedColor]}
+                    alt="BJ40 Plus"
+                    className={`transition-transform duration-300 ${
+                      animating
+                        ? "translate-x-full opacity-0"
+                        : "translate-x-0 opacity-100"
+                    }`}
+                    onAnimationEnd={() => setAnimating(false)}
+                  />
+                  <div className="flex gap-4 justify-center">
+                    {Object.keys(colorToImageMapBJ40).map((color, index) => (
+                      <div key={index} className="relative">
+                        <img
+                          src={colorToImageMapBJ40[color]}
+                          alt={`BJ40 Plus ${index + 1}`}
+                          className="block py-4 px-2 border"
+                        />
+                        {selectedColor !== color && (
+                          <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+                        )}
+                      </div>
+                    ))}
+                  </div>
                 </div>
                 <div className="flex md:flex-nowrap flex-wrap gap-4 mt-10 justify-center">
                   <a
@@ -101,63 +156,66 @@ export default function ExploreCar() {
               </div>
             )}
             {activeTab === "X55 II" && (
-              <div>
-                <div className="mt-10">
-                  <div className="flex space-x-4 justify-center">
-                    {colors.map((color) => (
-                      <div
-                        key={color}
-                        className={`w-8 h-8 rounded-full cursor-pointer transition-transform duration-200 ${
-                          selectedColor === color
-                            ? "border-4 outline outline-red-500 border-white transform scale-110"
-                            : "border-2 border-transparent"
-                        }`}
-                        style={{ backgroundColor: color }}
-                        onClick={() => onColorSelect(color)}
-                      ></div>
-                    ))}
-                  </div>
+              <div className="mt-10">
+                <div className="flex space-x-3 justify-center">
+                  {colorsX55.map((color) => (
+                    <div
+                      key={color}
+                      className={`w-8 h-8 rounded-full border border-neutral-100 cursor-pointer transition-transform duration-200 ${
+                        selectedColorX55 === color
+                          ? "border-4 outline outline-red-500 border-white transform scale-110"
+                          : "border-2 border-transparent"
+                      }`}
+                      style={{ backgroundColor: color }}
+                      onClick={() => onColorSelectX55(color)}
+                    ></div>
+                  ))}
+                </div>
+                <div className="flex flex-col max-w-2xl overflow-hidden justify-center">
                   <img
-                    width={700}
-                    src={X55View1}
+                    src={colorToImageMapX55[selectedColorX55]}
                     alt="BJ40 Plus"
-                    className="mt-10"
+                    className={`transition-transform duration-300 ${
+                      animating
+                        ? "translate-x-full opacity-0"
+                        : "translate-x-0 opacity-100"
+                    }`}
+                    onAnimationEnd={() => setAnimating(false)}
                   />
                   <div className="flex gap-4 justify-center">
-                    {[...Array(5)].map((_, index) => (
+                    {Object.keys(colorToImageMapX55).map((color, index) => (
                       <div key={index} className="relative">
                         <img
-                          width={100}
-                          src={X55View1}
+                          src={colorToImageMapX55[color]}
                           alt={`BJ40 Plus ${index + 1}`}
                           className="block py-4 px-2 border"
                         />
-                        {index > 0 && (
+                        {selectedColorX55 !== color && (
                           <div className="absolute inset-0 bg-black bg-opacity-50"></div>
                         )}
                       </div>
                     ))}
                   </div>
-                  <div className="flex md:flex-nowrap flex-wrap gap-4 mt-10 justify-center">
-                    <a
-                      className="py-3 w-full text-center hover:bg-gray-100 transition-all   border border-gray-400 rounded-xl"
-                      href="#"
-                    >
-                      EXPLORE MORE
-                    </a>
-                    <a
-                      className="py-3 w-full text-center hover:bg-gray-100 transition-all   border border-gray-400 rounded-xl"
-                      href="#"
-                    >
-                      DOWNLOAD BROCHURE
-                    </a>
-                    <a
-                      className="py-3 w-full text-center hover:bg-gray-100 transition-all   border border-gray-400 rounded-xl"
-                      href="#"
-                    >
-                      BOOK A TEST DRIVE
-                    </a>
-                  </div>
+                </div>
+                <div className="flex md:flex-nowrap flex-wrap gap-4 mt-10 justify-center">
+                  <a
+                    className="py-3 w-full text-center hover:bg-gray-100 transition-all   border border-gray-400 rounded-xl"
+                    href="#"
+                  >
+                    EXPLORE MORE
+                  </a>
+                  <a
+                    className="py-3 w-full text-center hover:bg-gray-100 transition-all   border border-gray-400 rounded-xl"
+                    href="#"
+                  >
+                    DOWNLOAD BROCHURE
+                  </a>
+                  <a
+                    className="py-3 w-full text-center hover:bg-gray-100 transition-all   border border-gray-400 rounded-xl"
+                    href="#"
+                  >
+                    BOOK A TEST DRIVE
+                  </a>
                 </div>
               </div>
             )}
