@@ -12,7 +12,7 @@ export default defineConfig({
         contact: "contact/index.html",
         book: "book-a-test-drive/index.html",
         BJ40: "BJ40/index.html",
-        x55: "x55/index.html",
+        X55: "x55/index.html",
         singlePost: "news/single-post/index.html",
       },
     },
