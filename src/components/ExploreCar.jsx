@@ -166,7 +166,7 @@ export default function ExploreCar() {
                           className={`inline-block w-full md:w-auto md:flex-shrink-0 transform transition-transform duration-300 ${
                             selectedColor === color ? "scale-100" : "scale-75"
                           }`}
-                          style={{ minWidth: "70%" }} // Menyesuaikan lebar item
+                          style={{ minWidth: "50%" }} // Menyesuaikan lebar item
                           onClick={() => onColorSelect(color)}
                         >
                           <div className="relative">
@@ -251,7 +251,7 @@ export default function ExploreCar() {
                               ? "scale-100"
                               : "scale-75"
                           }`}
-                          style={{ minWidth: "70%" }} // Menyesuaikan lebar item
+                          style={{ minWidth: "50%" }} // Menyesuaikan lebar item
                           onClick={() => onColorSelectX55(color)}
                         >
                           <div className="relative">
