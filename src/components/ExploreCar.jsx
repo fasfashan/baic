@@ -92,7 +92,7 @@ export default function ExploreCar() {
           </div>
           <div className="p-4 flex justify-center">
             {activeTab === "BJ40 Plus" && (
-              <div className="mt-10">
+              <div className="mt-10 md:px-8 px-5">
                 <div className="flex space-x-3 justify-center">
                   {colors.map((color) => (
                     <div
@@ -118,13 +118,13 @@ export default function ExploreCar() {
                     }`}
                     onAnimationEnd={() => setAnimating(false)}
                   />
-                  <div className="flex gap-4 justify-center">
+                  <div className="grid md:grid-cols-7 grid-cols-4 gap-4 ">
                     {Object.keys(colorToImageMapBJ40).map((color, index) => (
                       <div key={index} className="relative">
                         <img
                           src={colorToImageMapBJ40[color]}
                           alt={`BJ40 Plus ${index + 1}`}
-                          className="block py-4 px-2 border"
+                          className="block py-4 px-2 border md:col-span-1 col-span-2"
                         />
                         {selectedColor !== color && (
                           <div className="absolute inset-0 bg-black bg-opacity-50"></div>
@@ -156,7 +156,7 @@ export default function ExploreCar() {
               </div>
             )}
             {activeTab === "X55 II" && (
-              <div className="mt-10">
+              <div className="mt-10 md:px-8 px-5">
                 <div className="flex space-x-3 justify-center">
                   {colorsX55.map((color) => (
                     <div
@@ -182,7 +182,7 @@ export default function ExploreCar() {
                     }`}
                     onAnimationEnd={() => setAnimating(false)}
                   />
-                  <div className="flex gap-4 justify-center">
+                  <div className="grid md:grid-cols-5 grid-cols-4 gap-4 md:px-8 px-5">
                     {Object.keys(colorToImageMapX55).map((color, index) => (
                       <div key={index} className="relative">
                         <img
