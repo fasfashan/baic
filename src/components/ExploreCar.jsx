@@ -118,7 +118,7 @@ export default function ExploreCar() {
                     }`}
                     onAnimationEnd={() => setAnimating(false)}
                   />
-                  <div className="grid md:grid-cols-7 grid-cols-4 gap-4 ">
+                  <div className="grid md:grid-cols-7 grid-cols-4 gap-4 mt-6 ">
                     {Object.keys(colorToImageMapBJ40).map((color, index) => (
                       <div key={index} className="relative">
                         <img
@@ -182,7 +182,7 @@ export default function ExploreCar() {
                     }`}
                     onAnimationEnd={() => setAnimating(false)}
                   />
-                  <div className="grid md:grid-cols-5 grid-cols-4 gap-4 md:px-8 px-5">
+                  <div className="grid md:grid-cols-5 grid-cols-4 gap-4 mt-6">
                     {Object.keys(colorToImageMapX55).map((color, index) => (
                       <div key={index} className="relative">
                         <img
