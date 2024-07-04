@@ -58,21 +58,23 @@ const BigMenu = () => {
                 <div className="flex  mt-4 gap-2 text-xs">
                   <a
                     className="py-3 w-full text-center hover:bg-gray-100 transition-all   border border-gray-400 rounded-xl"
-                    href="#"
+                    href="BJ40/index.html"
                   >
                     EXPLORE MORE
                   </a>
                   <a
                     className="py-3 w-full text-center hover:bg-gray-100 transition-all   border border-gray-400 rounded-xl"
-                    href="#"
+                    href="book-a-test-drive/index.html"
                   >
                     BOOK A TEST DRIVE
                   </a>
                 </div>
                 <div className="flex mt-2 text-xs">
                   <a
-                    className="py-3 text-center hover:bg-gray-100 transition-all w-full  border border-gray-400 rounded-xl"
-                    href="#"
+                    className="py-3 w-full text-center hover:bg-gray-100 transition-all border border-gray-400 rounded-xl"
+                    href="/brochure-bj40.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     DOWNLOAD BROCHURE
                   </a>
@@ -86,21 +88,23 @@ const BigMenu = () => {
                 <div className="flex  mt-4 gap-2 text-xs">
                   <a
                     className="py-3 w-full text-center hover:bg-gray-100 transition-all   border border-gray-400 rounded-xl"
-                    href="#"
+                    href="/x55/index.html"
                   >
                     EXPLORE MORE
                   </a>
                   <a
                     className="py-3 w-full text-center hover:bg-gray-100 transition-all   border border-gray-400 rounded-xl"
-                    href="#"
+                    href="/book-a-test-drive/"
                   >
                     BOOK A TEST DRIVE
                   </a>
                 </div>
                 <div className="flex mt-2 text-xs">
                   <a
-                    className="py-3 text-center hover:bg-gray-100 transition-all w-full  border border-gray-400 rounded-xl"
-                    href="#"
+                    className="py-3 w-full text-center hover:bg-gray-100 transition-all border border-gray-400 rounded-xl"
+                    href="/brochure-x55.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     DOWNLOAD BROCHURE
                   </a>
@@ -111,31 +115,35 @@ const BigMenu = () => {
           {activeTab === "Tab2" && (
             <div className="items-end flex">
               <div className="flex flex-col ">
-                <img width={300} src={BJ40} alt="BJ40 Plus" />
-                <h2 className="text-xl text-red-500 font-medium">
-                  BAIC BJ40 PLUS
-                </h2>
-                <div className="flex  mt-4 gap-2 text-xs">
-                  <a
-                    className="py-3 px-8 text-center hover:bg-gray-100 transition-all   border border-gray-400 rounded-xl"
-                    href="#"
-                  >
-                    EXPLORE MORE
-                  </a>
-                  <a
-                    className="py-3 px-8 text-center hover:bg-gray-100 transition-all   border border-gray-400 rounded-xl"
-                    href="#"
-                  >
-                    BOOK A TEST DRIVE
-                  </a>
-                </div>
-                <div className="flex mt-2  text-xs">
-                  <a
-                    className="py-3 text-center w-full hover:bg-gray-100 transition-all px-8  border border-gray-400 rounded-xl"
-                    href="#"
-                  >
-                    DOWNLOAD BROCHURE
-                  </a>
+                <div className="flex flex-col">
+                  <img width={300} src={BJ40} alt="BJ40 Plus" />
+                  <h2 className="text-xl text-red-500 font-medium">
+                    BAIC BJ40 PLUS
+                  </h2>
+                  <div className="flex  mt-4 gap-2 text-xs">
+                    <a
+                      className="py-3 w-full text-center hover:bg-gray-100 transition-all   border border-gray-400 rounded-xl"
+                      href="BJ40/index.html"
+                    >
+                      EXPLORE MORE
+                    </a>
+                    <a
+                      className="py-3 w-full text-center hover:bg-gray-100 transition-all   border border-gray-400 rounded-xl"
+                      href="book-a-test-drive/index.html"
+                    >
+                      BOOK A TEST DRIVE
+                    </a>
+                  </div>
+                  <div className="flex mt-2 text-xs">
+                    <a
+                      className="py-3 w-full text-center hover:bg-gray-100 transition-all border border-gray-400 rounded-xl"
+                      href="/brochure-bj40.pdf"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      DOWNLOAD BROCHURE
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -143,29 +151,31 @@ const BigMenu = () => {
           {activeTab === "Tab3" && (
             <div>
               <div className="items-end flex">
-                <div className="flex flex-col ">
+                <div className="flex flex-col">
                   <img width={300} src={X55} alt="BJ40 Plus" />
                   <h2 className="text-xl text-red-500 font-medium">
                     BAIC X55 II
                   </h2>
                   <div className="flex  mt-4 gap-2 text-xs">
                     <a
-                      className="py-3 px-8 text-center hover:bg-gray-100 transition-all   border border-gray-400 rounded-xl"
-                      href="#"
+                      className="py-3 w-full text-center hover:bg-gray-100 transition-all   border border-gray-400 rounded-xl"
+                      href="/x55/index.html"
                     >
                       EXPLORE MORE
                     </a>
                     <a
-                      className="py-3 px-8 text-center hover:bg-gray-100 transition-all   border border-gray-400 rounded-xl"
-                      href="#"
+                      className="py-3 w-full text-center hover:bg-gray-100 transition-all   border border-gray-400 rounded-xl"
+                      href="/book-a-test-drive/"
                     >
                       BOOK A TEST DRIVE
                     </a>
                   </div>
-                  <div className="flex mt-2  text-xs">
+                  <div className="flex mt-2 text-xs">
                     <a
-                      className="py-3 text-center w-full hover:bg-gray-100 transition-all px-8  border border-gray-400 rounded-xl"
-                      href="#"
+                      className="py-3 w-full text-center hover:bg-gray-100 transition-all border border-gray-400 rounded-xl"
+                      href="/brochure-x55.pdf"
+                      target="_blank"
+                      rel="noopener noreferrer"
                     >
                       DOWNLOAD BROCHURE
                     </a>
