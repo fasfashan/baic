@@ -5,13 +5,46 @@ import Footer from "../src/components/Footer";
 import "../src/index.css";
 import { useState } from "react";
 import BJ40Logo from "../src/assets/BJ40-plus-logo.png";
-import BJ40View1 from "../src/assets/BJ40-plus-view-1.png";
+import BJ40Video from "../src/assets/BJ40-Video.mp4";
 import Foto1 from "../src/assets/BJ40-single-produk-1.jpg";
 import Foto2 from "../src/assets/BJ40-single-produk-2.jpg";
 import Foto3 from "../src/assets/BJ40-single-produk-3.jpg";
 import Foto4 from "../src/assets/BJ40-single-produk-4.jpg";
+import interior1 from "../src/assets/interior-1.jpg";
+import interior2 from "../src/assets/interior-2.jpg";
+import interior3 from "../src/assets/interior-3.jpg";
+import interior4 from "../src/assets/interior-4.jpg";
+import exterior1 from "../src/assets/exterior-1.jpg";
+import exterior2 from "../src/assets/exterior-2.jpg";
+import exterior3 from "../src/assets/exterior-3.jpg";
+import exterior4 from "../src/assets/exterior-4.jpg";
+import flameRed from "../src/assets/flame red.png";
+import snowWhite from "../src/assets/snow white.png";
+import jadeBlack from "../src/assets/jade black.png";
+import porcelainBlue from "../src/assets/porcelain blue.png";
+import forestGrean from "../src/assets/forest green.png";
+import armyGreen from "../src/assets/army green.png";
+import midnightBlue from "../src/assets/midnight blue.png";
 import CTA from "../src/components/cta";
 function App() {
+  const colors = [
+    "#94111B",
+    "#ffffff",
+    "#000000",
+    "#86A9C6",
+    "#2E3F2B",
+    "#5A603F",
+    "#00243A",
+  ];
+  const colorToImageMapBJ40 = {
+    "#94111B": flameRed,
+    "#ffffff": snowWhite,
+    "#000000": jadeBlack,
+    "#86A9C6": porcelainBlue,
+    "#2E3F2B": forestGrean,
+    "#5A603F": armyGreen,
+    "#00243A": midnightBlue,
+  };
   const [openAccordions, setOpenAccordions] = useState({});
 
   const toggleAccordion = (id) => {
@@ -86,10 +119,22 @@ function App() {
     setActiveTab(tab);
     window.scrollTo(0, 0);
   };
-  const colors = ["#cc3300", "#cccccc", "#000", "#666633", "#FFF333"];
+  const handleTabClickGallery = (tab) => {
+    setActiveTabGallery(tab);
+    window.scrollTo(0, 0);
+  };
+
+  const [activeTabGallery, setActiveTabGallery] = useState("Interior");
+  const [animating, setAnimating] = useState(false);
   const [selectedColor, setSelectedColor] = useState(colors[0]);
   const onColorSelect = (color) => {
-    setSelectedColor(color);
+    if (color !== selectedColor) {
+      setAnimating(true);
+      setTimeout(() => {
+        setSelectedColor(color);
+        setAnimating(false);
+      }, 100); // Duration of the transition
+    }
   };
 
   return (
@@ -123,9 +168,9 @@ function App() {
               </button>
               <button
                 className={`py-2 transition-all    ${
-                  activeTab === "X55 II" ? "text-red-600 font-medium" : ""
+                  activeTab === "Gallery" ? "text-red-600 font-medium" : ""
                 }`}
-                onClick={() => handleTabClick("X55 II")}
+                onClick={() => handleTabClick("Gallery")}
               >
                 GALLERY
               </button>
@@ -232,12 +277,12 @@ function App() {
             </>
           )}
           {activeTab === "Pricing" && (
-            <div className="  md:px-8 px-5 bg-neutral-200 pt-4">
+            <div className="  md:px-8 px-5 max-w-4xl m-auto overflow-hidden bg-neutral-200 pt-4">
               <div className="flex space-x-4 justify-center mt-10">
                 {colors.map((color) => (
                   <div
                     key={color}
-                    className={`w-8 h-8 rounded-full cursor-pointer transition-transform duration-200 ${
+                    className={`w-8 h-8 rounded-full border border-neutral-100 cursor-pointer transition-transform duration-200 ${
                       selectedColor === color
                         ? "border-4 outline outline-red-500 border-white transform scale-110"
                         : "border-2 border-transparent"
@@ -248,21 +293,24 @@ function App() {
                 ))}
               </div>
               <img
-                width={700}
-                src={BJ40View1}
+                src={colorToImageMapBJ40[selectedColor]}
                 alt="BJ40 Plus"
-                className="mt-10 m-auto"
+                className={`transition-transform duration-300 ${
+                  animating
+                    ? "translate-x-full opacity-0"
+                    : "translate-x-0 opacity-100"
+                }`}
+                onAnimationEnd={() => setAnimating(false)}
               />
-              <div className="flex gap-4 justify-center">
-                {[...Array(5)].map((_, index) => (
+              <div className="grid md:grid-cols-7 grid-cols-4 gap-4 mt-6 ">
+                {Object.keys(colorToImageMapBJ40).map((color, index) => (
                   <div key={index} className="relative">
                     <img
-                      width={100}
-                      src={BJ40View1}
+                      src={colorToImageMapBJ40[color]}
                       alt={`BJ40 Plus ${index + 1}`}
-                      className="block py-4 px-2 border"
+                      className="block py-4 px-2 border md:col-span-1 col-span-2"
                     />
-                    {index > 0 && (
+                    {selectedColor !== color && (
                       <div className="absolute inset-0 bg-black bg-opacity-50"></div>
                     )}
                   </div>
@@ -402,6 +450,109 @@ function App() {
                   </p>
                 </div>
               </div>
+            </div>
+          )}
+          {activeTab === "Gallery" && (
+            <div className="  md:px-8 px-5 max-w-6xl m-auto overflow-hidden bg-neutral-200 pt-4">
+              <div className="flex gap-8  justify-center   ">
+                <button
+                  className={`py-2 transition-all    ${
+                    activeTabGallery === "Interior"
+                      ? "text-red-600 font-medium border-b border-red-600"
+                      : ""
+                  }`}
+                  onClick={() => handleTabClickGallery("Interior")}
+                >
+                  INTERIOR
+                </button>
+                <button
+                  className={`py-2 transition-all    ${
+                    activeTabGallery === "Exterior"
+                      ? "text-red-600 font-medium border-b border-red-600"
+                      : ""
+                  }`}
+                  onClick={() => handleTabClickGallery("Exterior")}
+                >
+                  EXTERIOR
+                </button>
+                <button
+                  className={`py-2 transition-all    ${
+                    activeTabGallery === "Video"
+                      ? "text-red-600 font-medium border-b border-red-600"
+                      : ""
+                  }`}
+                  onClick={() => handleTabClickGallery("Video")}
+                >
+                  VIDEO
+                </button>
+              </div>
+              {activeTabGallery === "Interior" && (
+                <>
+                  <div className="mb-10 m-auto  mt-10">
+                    <div className=" grid grid-cols-6">
+                      <img
+                        src={interior1}
+                        alt="interior 1"
+                        className="w-full col-span-4"
+                      />
+                      <img
+                        src={interior2}
+                        alt="interior 1"
+                        className="w-full h-full col-span-2 object-cover  "
+                      />
+                    </div>
+                    <div className=" grid grid-cols-6">
+                      <img
+                        src={interior3}
+                        alt="interior 1"
+                        className="w-full h-full object-cover col-span-2"
+                      />
+                      <img
+                        src={interior4}
+                        alt="interior 1"
+                        className="w-full  col-span-4   "
+                      />
+                    </div>
+                  </div>
+                </>
+              )}
+              {activeTabGallery === "Exterior" && (
+                <>
+                  <div className="mb-10 m-auto  mt-10">
+                    <div className=" grid grid-cols-6">
+                      <img
+                        src={exterior1}
+                        alt="exterior 1"
+                        className="w-full col-span-4"
+                      />
+                      <img
+                        src={exterior2}
+                        alt="exterior 2"
+                        className="w-full h-full col-span-2 object-cover  "
+                      />
+                    </div>
+                    <div className=" grid grid-cols-6">
+                      <img
+                        src={exterior3}
+                        alt="exterior 3"
+                        className="w-full h-full object-cover col-span-2"
+                      />
+                      <img
+                        src={exterior4}
+                        alt="exterior 4"
+                        className="w-full  col-span-4   "
+                      />
+                    </div>
+                  </div>
+                </>
+              )}
+              {activeTabGallery === "Video" && (
+                <>
+                  <div className="mb-10 m-auto  mt-10">
+                    <video controls autoPlay src={BJ40Video}></video>
+                  </div>
+                </>
+              )}
             </div>
           )}
         </div>
