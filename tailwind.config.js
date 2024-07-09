@@ -7,7 +7,7 @@ export default {
     "./contact/**/*.{html,css,js,jsx,ts,tsx}",
     "./book-a-test-drive/**/*.{html,css,js,jsx,ts,tsx}",
     "./BJ40/**/*.{html,css,js,jsx,ts,tsx}",
-    "./x55/**/*.{html,css,js,jsx,ts,tsx}",
+    "./X55/**/*.{html,css,js,jsx,ts,tsx}",
   ],
   theme: {
     extend: {
