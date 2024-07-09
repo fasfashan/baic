@@ -1,18 +1,75 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable react/no-unescaped-entities */
+import { useState } from "react";
 import Header from "../src/components/Header";
 import Footer from "../src/components/Footer";
 import "../src/index.css";
-import { useState } from "react";
-import BJ40Logo from "../src/assets/BJ40-plus-logo.png";
+import platinumBlackView1 from "../src/assets/platinum-black-view-1.png";
+import platinumBlackView2 from "../src/assets/platinum-black-view-2.png";
+import platinumBlackView3 from "../src/assets/platinum-black-view-3.png";
+import platinumBlackView4 from "../src/assets/platinum-black-view-4.png";
+import yellowBlackView1 from "../src/assets/yellow-black-view-1.png";
+import yellowBlackView2 from "../src/assets/yellow-black-view-2.png";
+import yellowBlackView3 from "../src/assets/yellow-black-view-3.png";
+import yellowBlackView4 from "../src/assets/yellow-black-view-4.png";
+import redBlackView1 from "../src/assets/red-black-view-1.png";
+import redBlackView2 from "../src/assets/red-black-view-2.png";
+import redBlackView3 from "../src/assets/red-black-view-3.png";
+import redBlackView4 from "../src/assets/red-black-view-4.png";
+import crystalBlackView1 from "../src/assets/crystal-black-view-1.png";
+import crystalBlackView2 from "../src/assets/crystal-black-view-2.png";
+import crystalBlackView3 from "../src/assets/crystal-black-view-3.png";
+import crystalBlackView4 from "../src/assets/crystal-black-view-4.png";
+import whiteBlackView1 from "../src/assets/white-black-view-1.png";
+import whiteBlackView2 from "../src/assets/white-black-view-2.png";
+import whiteBlackView3 from "../src/assets/white-black-view-3.png";
+import whiteBlackView4 from "../src/assets/white-black-view-4.png";
+
 import X55Logo from "../src/assets/X55-logo.png";
-import BJ40View1 from "../src/assets/BJ40-plus-view-1.png";
-import Foto1 from "../src/assets/BJ40-single-produk-1.jpg";
-import Foto2 from "../src/assets/BJ40-single-produk-2.jpg";
-import Foto3 from "../src/assets/BJ40-single-produk-3.jpg";
-import Foto4 from "../src/assets/BJ40-single-produk-4.jpg";
+import BJ40Video from "../src/assets/BJ40-Video.mp4";
+import Foto1 from "../src/assets/X55-single-produk-1.jpg";
+import Foto2 from "../src/assets/X55-single-produk-2.jpg";
+import Foto3 from "../src/assets/X55-single-produk-3.jpg";
+import Foto4 from "../src/assets/X55-single-produk-4.jpg";
+import interior1 from "../src/assets/interior-1.jpg";
+import interior2 from "../src/assets/interior-2.jpg";
+import interior3 from "../src/assets/interior-3.jpg";
+import interior4 from "../src/assets/interior-4.jpg";
+import exterior1 from "../src/assets/exterior-1.jpg";
+import exterior2 from "../src/assets/exterior-2.jpg";
+import exterior3 from "../src/assets/exterior-3.jpg";
+import exterior4 from "../src/assets/exterior-4.jpg";
+
 import CTA from "../src/components/cta";
 function App() {
+  const colors = ["#464C47", "#96901D", "#EA3435", "#CBD1D4", "#D1D1D1"];
+  const colorToImageMapBJ40 = {
+    "#464C47": [
+      platinumBlackView1,
+      platinumBlackView2,
+      platinumBlackView3,
+      platinumBlackView4,
+    ],
+    "#96901D": [
+      yellowBlackView1,
+      yellowBlackView2,
+      yellowBlackView3,
+      yellowBlackView4,
+    ],
+    "#EA3435": [redBlackView1, redBlackView2, redBlackView3, redBlackView4],
+    "#CBD1D4": [
+      crystalBlackView1,
+      crystalBlackView2,
+      crystalBlackView3,
+      crystalBlackView4,
+    ],
+    "#D1D1D1": [
+      whiteBlackView1,
+      whiteBlackView2,
+      whiteBlackView3,
+      whiteBlackView4,
+    ],
+  };
   const [openAccordions, setOpenAccordions] = useState({});
 
   const toggleAccordion = (id) => {
@@ -87,20 +144,41 @@ function App() {
     setActiveTab(tab);
     window.scrollTo(0, 0);
   };
-  const colors = ["#cc3300", "#cccccc", "#000", "#666633", "#FFF333"];
+  const handleTabClickGallery = (tab) => {
+    setActiveTabGallery(tab);
+    window.scrollTo(0, 0);
+  };
+
+  const [activeTabGallery, setActiveTabGallery] = useState("Interior");
+  const [animating, setAnimating] = useState(false);
   const [selectedColor, setSelectedColor] = useState(colors[0]);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const onColorSelect = (color) => {
-    setSelectedColor(color);
+    if (color !== selectedColor) {
+      setAnimating(true);
+      setTimeout(() => {
+        setSelectedColor(color);
+        setCurrentImageIndex(0);
+        setAnimating(false);
+      }, 100); // Duration of the transition
+    }
+  };
+  const handleImageSelect = (index) => {
+    setAnimating(true);
+    setTimeout(() => {
+      setCurrentImageIndex(index);
+      setAnimating(false);
+    }, 100);
   };
 
   return (
     <>
       <Header />
       <div className="bg-neutral-400    ">
-        <div className=" py-2 z-10  bg-neutral-100  sticky  top-0 items-center ">
+        <div className=" py-6 z-10  bg-neutral-100  sticky  top-0 items-center ">
           <div className="max-w-6xl gap-4 flex justify-between flex-wrap m-auto md:px-8 px-5">
             <img
-              width={180}
+              width={100}
               className="object-contain"
               src={X55Logo}
               alt="BJ40 PLUS Logo"
@@ -124,9 +202,9 @@ function App() {
               </button>
               <button
                 className={`py-2 transition-all    ${
-                  activeTab === "X55 II" ? "text-red-600 font-medium" : ""
+                  activeTab === "Gallery" ? "text-red-600 font-medium" : ""
                 }`}
-                onClick={() => handleTabClick("X55 II")}
+                onClick={() => handleTabClick("Gallery")}
               >
                 GALLERY
               </button>
@@ -156,14 +234,15 @@ function App() {
                     </h2>
                     <ul className="font-light">
                       <li>
-                        •Driver’s seat welcome/memory for multiple drivers needs
+                        •Driver’s seat welcome/memory for multiple drivers
+                        needs.
                       </li>
                       <li>
                         •Heated and ventilated front seats for warmth in winter
-                        and coolness in summer
+                        and coolness in summer.
                       </li>
                       <li>
-                        •4-way electrical lumbar support for your lower back
+                        •4-way electrical lumbar support for your lower back.
                       </li>
                       <li>•2-level incline rear backrest adjustment.</li>
                     </ul>
@@ -179,7 +258,9 @@ function App() {
                     <h1 className="md:text-7xl text-5xl font-bold max-w-lg mb-4">
                       EXCEPTIONAL PERFORMANCE
                     </h1>
-
+                    <h2 className="text-xl font-bold">
+                      ULTIMATE PERFORMANCE FOR THE DRIVE OF YOUR LIFE
+                    </h2>
                     <ul className="font-light">
                       <li>
                         •0-100km/h in 7.8 seconds, making the X55, the fastest
@@ -213,9 +294,8 @@ function App() {
                     <h1 className="md:text-7xl text-5xl font-bold max-w-lg mb-4">
                       REVOLUTIONARY SPORTS STYLING
                     </h1>
-
                     <ul className="font-light">
-                      <li>•LED lights</li>
+                      <li>•LED Lights</li>
                       <li>•Concealed, integrated door handles</li>
                       <li>•Convenient and elegant split rear wing (spoiler)</li>
                       <li>•Shark fin antenna</li>
@@ -252,51 +332,66 @@ function App() {
             </>
           )}
           {activeTab === "Pricing" && (
-            <div className="  md:px-8 px-5 bg-neutral-200 pt-4">
-              <div className="flex space-x-4 justify-center mt-10">
-                {colors.map((color) => (
-                  <div
-                    key={color}
-                    className={`w-8 h-8 rounded-full cursor-pointer transition-transform duration-200 ${
-                      selectedColor === color
-                        ? "border-4 outline outline-red-500 border-white transform scale-110"
-                        : "border-2 border-transparent"
-                    }`}
-                    style={{ backgroundColor: color }}
-                    onClick={() => onColorSelect(color)}
-                  ></div>
-                ))}
-              </div>
-              <img
-                width={700}
-                src={BJ40View1}
-                alt="BJ40 Plus"
-                className="mt-10 m-auto"
-              />
-              <div className="flex gap-4 justify-center">
-                {[...Array(5)].map((_, index) => (
-                  <div key={index} className="relative">
-                    <img
-                      width={100}
-                      src={BJ40View1}
-                      alt={`BJ40 Plus ${index + 1}`}
-                      className="block py-4 px-2 border"
-                    />
-                    {index > 0 && (
-                      <div className="absolute inset-0 bg-black bg-opacity-50"></div>
-                    )}
-                  </div>
-                ))}
-              </div>
+            <div className="  md:px-8 px-5 max-w-4xl m-auto overflow-hidden bg-neutral-200 pt-4">
               <div className="space-y-1 text-center mt-10 ">
-                <h3 className="font-medium">BJ40 Plus</h3>
+                <div className="flex space-x-3 justify-center">
+                  {colors.map((color) => (
+                    <div
+                      key={color}
+                      className={`w-12 h-12 rounded-full border border-neutral-200 cursor-pointer transition-transform duration-200 ${
+                        selectedColor === color
+                          ? "border-4 outline outline-red-500 border-white transform scale-110"
+                          : "border-2 border-transparent"
+                      }`}
+                      style={{ backgroundColor: color }}
+                      onClick={() => onColorSelect(color)}
+                    ></div>
+                  ))}
+                </div>
+                <div className="flex flex-col max-w-2xl overflow-hidden justify-center mx-auto">
+                  <div className=" flex flex-col space-x-2 justify-center mt-4">
+                    <img
+                      src={
+                        colorToImageMapBJ40[selectedColor][currentImageIndex]
+                      }
+                      alt={`BJ40 Plus View ${currentImageIndex + 1}`}
+                      className={`transition-transform h-fit duration-100 ${
+                        animating
+                          ? "translate-x-full opacity-0"
+                          : "translate-x-0 opacity-100"
+                      }`}
+                    />
+                    <div className="flex justify-center gap-8  ">
+                      {colorToImageMapBJ40[selectedColor]?.map(
+                        (imageSrc, index) => (
+                          <button
+                            key={index}
+                            onClick={() => handleImageSelect(index)}
+                            className={` block   bg-cover bg-center  border ${
+                              currentImageIndex === index
+                                ? "border-red-500"
+                                : "opacity-50"
+                            }`}
+                          >
+                            <img
+                              className="block w-full h-auto"
+                              src={imageSrc}
+                              alt=""
+                            />
+                          </button>
+                        )
+                      )}
+                    </div>
+                  </div>
+                </div>
+                <h3 className="font-medium">X55 II</h3>
                 <h2 className="font-semibold md:text-5xl text-4xl">
-                  Rp. 850.000.000,-
+                  Rp. 490.000.000,-
                 </h2>
                 <p className="italic text-neutral-500">*Off the road</p>
               </div>
               <h2 className=" text-center md:text-3xl text-2xl mt-10">
-                BJ40 Plus Specifications
+                X55 II Specifications
               </h2>
               <div className="overflow-x-auto">
                 <table className="max-w-5xl md:w-full mb-4   overflow-scroll border-collapse mt-10  md:px-8 px-5   m-auto border border-slate-300 divide-y divide-gray-200">
@@ -422,6 +517,109 @@ function App() {
                   </p>
                 </div>
               </div>
+            </div>
+          )}
+          {activeTab === "Gallery" && (
+            <div className="  md:px-8 px-5 max-w-6xl m-auto overflow-hidden bg-neutral-200 pt-4">
+              <div className="flex gap-8  justify-center   ">
+                <button
+                  className={`py-2 transition-all    ${
+                    activeTabGallery === "Interior"
+                      ? "text-red-600 font-medium border-b border-red-600"
+                      : ""
+                  }`}
+                  onClick={() => handleTabClickGallery("Interior")}
+                >
+                  INTERIOR
+                </button>
+                <button
+                  className={`py-2 transition-all    ${
+                    activeTabGallery === "Exterior"
+                      ? "text-red-600 font-medium border-b border-red-600"
+                      : ""
+                  }`}
+                  onClick={() => handleTabClickGallery("Exterior")}
+                >
+                  EXTERIOR
+                </button>
+                <button
+                  className={`py-2 transition-all    ${
+                    activeTabGallery === "Video"
+                      ? "text-red-600 font-medium border-b border-red-600"
+                      : ""
+                  }`}
+                  onClick={() => handleTabClickGallery("Video")}
+                >
+                  VIDEO
+                </button>
+              </div>
+              {activeTabGallery === "Interior" && (
+                <>
+                  <div className="mb-10 m-auto  mt-10">
+                    <div className=" grid grid-cols-6">
+                      <img
+                        src={interior1}
+                        alt="interior 1"
+                        className="w-full col-span-4"
+                      />
+                      <img
+                        src={interior2}
+                        alt="interior 1"
+                        className="w-full h-full col-span-2 object-cover  "
+                      />
+                    </div>
+                    <div className=" grid grid-cols-6">
+                      <img
+                        src={interior3}
+                        alt="interior 1"
+                        className="w-full h-full object-cover col-span-2"
+                      />
+                      <img
+                        src={interior4}
+                        alt="interior 1"
+                        className="w-full  col-span-4   "
+                      />
+                    </div>
+                  </div>
+                </>
+              )}
+              {activeTabGallery === "Exterior" && (
+                <>
+                  <div className="mb-10 m-auto  mt-10">
+                    <div className=" grid grid-cols-6">
+                      <img
+                        src={exterior1}
+                        alt="exterior 1"
+                        className="w-full col-span-4"
+                      />
+                      <img
+                        src={exterior2}
+                        alt="exterior 2"
+                        className="w-full h-full col-span-2 object-cover  "
+                      />
+                    </div>
+                    <div className=" grid grid-cols-6">
+                      <img
+                        src={exterior3}
+                        alt="exterior 3"
+                        className="w-full h-full object-cover col-span-2"
+                      />
+                      <img
+                        src={exterior4}
+                        alt="exterior 4"
+                        className="w-full  col-span-4   "
+                      />
+                    </div>
+                  </div>
+                </>
+              )}
+              {activeTabGallery === "Video" && (
+                <>
+                  <div className="mb-10 m-auto  mt-10">
+                    <video controls autoPlay src={BJ40Video}></video>
+                  </div>
+                </>
+              )}
             </div>
           )}
         </div>

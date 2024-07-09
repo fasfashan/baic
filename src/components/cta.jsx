@@ -5,7 +5,7 @@ export default function CTA() {
   return (
     <>
       <div className=" bg-red-600 gap-10   justify-center">
-        <div className="max-w-6xl justify-evenly flex m-auto">
+        <div className="max-w-6xl md:justify-evenly justify-between flex m-auto">
           <a
             href="/book-a-test-drive/index.html"
             className="flex justify-center flex-col gap-2 border-l border-r md:p-8 p-2 border-white"

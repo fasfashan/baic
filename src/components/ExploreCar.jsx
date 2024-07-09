@@ -1,103 +1,159 @@
-import { useState, useEffect, useRef } from "react";
-import flameRed from "../assets/flame red.png";
+import { useState } from "react";
+import flameRedView1 from "../assets/flame-red-view-1.png";
+import flameRedView2 from "../assets/flame-red-view-2.png";
+import flameRedView3 from "../assets/flame-red-view-3.png";
+import flameRedView4 from "../assets/flame-red-view-4.png";
+import jadeBlackView1 from "../assets/jade-black-view-1.png";
+import jadeBlackView2 from "../assets/jade-black-view-2.png";
+import jadeBlackView3 from "../assets/jade-black-view-3.png";
+import jadeBlackView4 from "../assets/jade-black-view-4.png";
+import porcelainBlueView1 from "../assets/porcelain-blue-view-1.png";
+import porcelainBlueView2 from "../assets/porcelain-blue-view-2.png";
+import porcelainBlueView3 from "../assets/porcelain-blue-view-3.png";
+import porcelainBlueView4 from "../assets/porcelain-blue-view-4.png";
+import forestGreanView1 from "../assets/forest-green-view-1.png";
+import forestGreanView2 from "../assets/forest-green-view-2.png";
+import forestGreanView3 from "../assets/forest-green-view-3.png";
+import forestGreanView4 from "../assets/forest-green-view-4.png";
+import midnightBlueView1 from "../assets/midnight-blue-view-1.png";
+import midnightBlueView2 from "../assets/midnight-blue-view-2.png";
+import midnightBlueView3 from "../assets/midnight-blue-view-3.png";
+import midnightBlueView4 from "../assets/midnight-blue-view-4.png";
+import platinumBlackView1 from "../assets/platinum-black-view-1.png";
+import platinumBlackView2 from "../assets/platinum-black-view-2.png";
+import platinumBlackView3 from "../assets/platinum-black-view-3.png";
+import platinumBlackView4 from "../assets/platinum-black-view-4.png";
+import yellowBlackView1 from "../assets/yellow-black-view-1.png";
+import yellowBlackView2 from "../assets/yellow-black-view-2.png";
+import yellowBlackView3 from "../assets/yellow-black-view-3.png";
+import yellowBlackView4 from "../assets/yellow-black-view-4.png";
+import redBlackView1 from "../assets/red-black-view-1.png";
+import redBlackView2 from "../assets/red-black-view-2.png";
+import redBlackView3 from "../assets/red-black-view-3.png";
+import redBlackView4 from "../assets/red-black-view-4.png";
+import crystalBlackView1 from "../assets/crystal-black-view-1.png";
+import crystalBlackView2 from "../assets/crystal-black-view-2.png";
+import crystalBlackView3 from "../assets/crystal-black-view-3.png";
+import crystalBlackView4 from "../assets/crystal-black-view-4.png";
+import whiteBlackView1 from "../assets/white-black-view-1.png";
+import whiteBlackView2 from "../assets/white-black-view-2.png";
+import whiteBlackView3 from "../assets/white-black-view-3.png";
+import whiteBlackView4 from "../assets/white-black-view-4.png";
 import snowWhite from "../assets/snow white.png";
-import jadeBlack from "../assets/jade black.png";
-import porcelainBlue from "../assets/porcelain blue.png";
-import forestGrean from "../assets/forest green.png";
+
 import armyGreen from "../assets/army green.png";
-import midnightBlue from "../assets/midnight blue.png";
-import platinumBlack from "../assets/platinum + black.png";
-import yellowBlack from "../assets/yellow + black.png";
-import redBlack from "../assets/red + black.png";
-import crystalBlack from "../assets/crystal + black.png";
-import whiteBlack from "../assets/white + black.png";
+
+const colors = [
+  "#94111B",
+  "#ffffff",
+  "#000000",
+  "#86A9C6",
+  "#2E3F2B",
+  "#5A603F",
+  "#00243A",
+];
+const colorsX55 = ["#464C47", "#96901D", "#EA3435", "#CBD1D4", "#D1D1D1"];
 export default function ExploreCar() {
   const [activeTab, setActiveTab] = useState("BJ40 Plus");
+  const [animating, setAnimating] = useState(false);
+  const [selectedColor, setSelectedColor] = useState(colors[0]);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [selectedColorX55, setSelectedColorX55] = useState(colorsX55[0]);
+  const [currentImageIndexX55, setCurrentImageIndexX55] = useState(0);
 
   const handleTabClick = (tab) => {
     setActiveTab(tab);
   };
-  const colors = [
-    "#94111B",
-    "#ffffff",
-    "#000000",
-    "#86A9C6",
-    "#2E3F2B",
-    "#5A603F",
-    "#00243A",
-  ];
-  const colorsX55 = ["#464C47", "#96901D", "#EA3435", "#CBD1D4", "#D1D1D1"];
+
   const colorToImageMapBJ40 = {
-    "#94111B": flameRed,
-    "#ffffff": snowWhite,
-    "#000000": jadeBlack,
-    "#86A9C6": porcelainBlue,
-    "#2E3F2B": forestGrean,
-    "#5A603F": armyGreen,
-    "#00243A": midnightBlue,
+    "#94111B": [flameRedView1, flameRedView2, flameRedView3, flameRedView4],
+    "#ffffff": [snowWhite, snowWhite, snowWhite, snowWhite],
+    "#000000": [jadeBlackView1, jadeBlackView2, jadeBlackView3, jadeBlackView4],
+    "#86A9C6": [
+      porcelainBlueView1,
+      porcelainBlueView2,
+      porcelainBlueView3,
+      porcelainBlueView4,
+    ],
+    "#2E3F2B": [
+      forestGreanView1,
+      forestGreanView2,
+      forestGreanView3,
+      forestGreanView4,
+    ],
+    "#5A603F": [armyGreen, armyGreen, armyGreen, armyGreen],
+    "#00243A": [
+      midnightBlueView1,
+      midnightBlueView2,
+      midnightBlueView3,
+      midnightBlueView4,
+    ],
   };
+
   const colorToImageMapX55 = {
-    "#464C47": platinumBlack,
-    "#96901D": yellowBlack,
-    "#EA3435": redBlack,
-    "#CBD1D4": crystalBlack,
-    "#D1D1D1": whiteBlack,
+    "#464C47": [
+      platinumBlackView1,
+      platinumBlackView2,
+      platinumBlackView3,
+      platinumBlackView4,
+    ],
+    "#96901D": [
+      yellowBlackView1,
+      yellowBlackView2,
+      yellowBlackView3,
+      yellowBlackView4,
+    ],
+    "#EA3435": [redBlackView1, redBlackView2, redBlackView3, redBlackView4],
+    "#CBD1D4": [
+      crystalBlackView1,
+      crystalBlackView2,
+      crystalBlackView3,
+      crystalBlackView4,
+    ],
+    "#D1D1D1": [
+      whiteBlackView1,
+      whiteBlackView2,
+      whiteBlackView3,
+      whiteBlackView4,
+    ],
   };
-  const [animating, setAnimating] = useState(false);
-  const [selectedColor, setSelectedColor] = useState(colors[0]);
-  const selectedColorRef = useRef(null);
-  const containerRef = useRef(null);
-  useEffect(() => {
-    if (selectedColorRef.current && containerRef.current) {
-      const selectedElement = selectedColorRef.current;
-      const container = containerRef.current;
 
-      // Hitung posisi scroll agar elemen yang dipilih berada di tengah
-      const scrollLeft =
-        selectedElement.offsetLeft -
-        container.offsetWidth / 2 +
-        selectedElement.offsetWidth / 2;
-      container.scrollTo({
-        left: scrollLeft,
-        behavior: "smooth",
-      });
-    }
-  }, [selectedColor]);
-  useEffect(() => {
-    if (selectedColorRef.current && containerRef.current) {
-      const selectedElement = selectedColorRef.current;
-      const container = containerRef.current;
-
-      // Hitung posisi scroll agar elemen yang dipilih berada di tengah
-      const scrollLeft =
-        selectedElement.offsetLeft -
-        container.offsetWidth / 2 +
-        selectedElement.offsetWidth / 2;
-      container.scrollTo({
-        left: scrollLeft,
-        behavior: "smooth",
-      });
-    }
-  }, [selectedColor]);
   const onColorSelect = (color) => {
     if (color !== selectedColor) {
       setAnimating(true);
       setTimeout(() => {
         setSelectedColor(color);
+        setCurrentImageIndex(0);
         setAnimating(false);
       }, 100); // Duration of the transition
     }
   };
 
-  const [selectedColorX55, setSelectedColorX55] = useState(colorsX55[0]);
   const onColorSelectX55 = (color) => {
-    if (color !== selectedColor) {
+    if (color !== selectedColorX55) {
       setAnimating(true);
       setTimeout(() => {
         setSelectedColorX55(color);
+        setCurrentImageIndexX55(0);
         setAnimating(false);
       }, 100); // Duration of the transition
     }
+  };
+
+  const handleImageSelect = (index) => {
+    setAnimating(true);
+    setTimeout(() => {
+      setCurrentImageIndex(index);
+      setAnimating(false);
+    }, 100);
+  };
+
+  const handleImageSelectX55 = (index) => {
+    setAnimating(true);
+    setTimeout(() => {
+      setCurrentImageIndexX55(index);
+      setAnimating(false);
+    }, 100);
   };
 
   return (
@@ -132,7 +188,7 @@ export default function ExploreCar() {
                   {colors.map((color) => (
                     <div
                       key={color}
-                      className={`w-8 h-8 rounded-full border border-neutral-100 cursor-pointer transition-transform duration-200 ${
+                      className={`w-12 h-12 rounded-full border border-neutral-200 cursor-pointer transition-transform duration-200 ${
                         selectedColor === color
                           ? "border-4 outline outline-red-500 border-white transform scale-110"
                           : "border-2 border-transparent"
@@ -143,44 +199,38 @@ export default function ExploreCar() {
                   ))}
                 </div>
                 <div className="flex flex-col max-w-2xl overflow-hidden justify-center mx-auto">
-                  <img
-                    src={colorToImageMapBJ40[selectedColor]}
-                    alt="BJ40 Plus"
-                    className={`transition-transform duration-300 ${
-                      animating
-                        ? "translate-x-full opacity-0"
-                        : "translate-x-0 opacity-100"
-                    }`}
-                  />
-                  <div className="relative w-full overflow-hidden">
-                    <div
-                      ref={containerRef}
-                      className="flex md:grid md:grid-cols-7 w-full overflow-x-auto"
-                    >
-                      {colors.map((color, index) => (
-                        <button
-                          key={index}
-                          ref={
-                            selectedColor === color ? selectedColorRef : null
-                          }
-                          className={`inline-block w-full md:w-auto md:flex-shrink-0 transform transition-transform duration-300 ${
-                            selectedColor === color ? "scale-100" : "scale-75"
-                          }`}
-                          style={{ minWidth: "50%" }} // Menyesuaikan lebar item
-                          onClick={() => onColorSelect(color)}
-                        >
-                          <div className="relative">
+                  <div className=" flex flex-col space-x-2 justify-center mt-4">
+                    <img
+                      src={
+                        colorToImageMapBJ40[selectedColor][currentImageIndex]
+                      }
+                      alt={`BJ40 Plus View ${currentImageIndex + 1}`}
+                      className={`transition-transform h-fit duration-100 ${
+                        animating
+                          ? "translate-x-full opacity-0"
+                          : "translate-x-0 opacity-100"
+                      }`}
+                    />
+                    <div className="flex justify-center gap-8  ">
+                      {colorToImageMapBJ40[selectedColor]?.map(
+                        (imageSrc, index) => (
+                          <button
+                            key={index}
+                            onClick={() => handleImageSelect(index)}
+                            className={` block   bg-cover bg-center  border ${
+                              currentImageIndex === index
+                                ? "border-red-500"
+                                : "opacity-50"
+                            }`}
+                          >
                             <img
-                              src={colorToImageMapBJ40[color]}
-                              alt={`BJ40 Plus ${index + 1}`}
                               className="block w-full h-auto"
+                              src={imageSrc}
+                              alt=""
                             />
-                            {selectedColor !== color && (
-                              <div className="absolute inset-0 bg-black bg-opacity-50"></div>
-                            )}
-                          </div>
-                        </button>
-                      ))}
+                          </button>
+                        )
+                      )}
                     </div>
                   </div>
                 </div>
@@ -215,7 +265,7 @@ export default function ExploreCar() {
                   {colorsX55.map((color) => (
                     <div
                       key={color}
-                      className={`w-8 h-8 rounded-full border border-neutral-100 cursor-pointer transition-transform duration-200 ${
+                      className={`w-12 h-12 rounded-full border border-neutral-200 cursor-pointer transition-transform duration-200 ${
                         selectedColorX55 === color
                           ? "border-4 outline outline-red-500 border-white transform scale-110"
                           : "border-2 border-transparent"
@@ -226,59 +276,53 @@ export default function ExploreCar() {
                   ))}
                 </div>
                 <div className="flex flex-col max-w-2xl overflow-hidden justify-center mx-auto">
-                  <img
-                    src={colorToImageMapX55[selectedColorX55]}
-                    alt="BJ40 Plus"
-                    className={`transition-transform duration-300 ${
-                      animating
-                        ? "translate-x-full opacity-0"
-                        : "translate-x-0 opacity-100"
-                    }`}
-                  />
-                  <div className="relative w-full overflow-hidden">
-                    <div
-                      ref={containerRef}
-                      className="flex md:grid md:grid-cols-5 w-full overflow-x-auto"
-                    >
-                      {colorsX55.map((color, index) => (
-                        <button
-                          key={index}
-                          ref={
-                            selectedColorX55 === color ? selectedColorRef : null
-                          }
-                          className={`inline-block w-full md:w-auto md:flex-shrink-0 transform transition-transform duration-300 ${
-                            selectedColorX55 === color
-                              ? "scale-100"
-                              : "scale-75"
-                          }`}
-                          style={{ minWidth: "50%" }} // Menyesuaikan lebar item
-                          onClick={() => onColorSelectX55(color)}
-                        >
-                          <div className="relative">
+                  <div className=" flex flex-col space-x-2 justify-center mt-4">
+                    <img
+                      src={
+                        colorToImageMapX55[selectedColorX55][
+                          currentImageIndexX55
+                        ]
+                      }
+                      alt={`BJ40 Plus View ${currentImageIndexX55 + 1}`}
+                      className={`transition-transform h-fit duration-100 ${
+                        animating
+                          ? "translate-x-full opacity-0"
+                          : "translate-x-0 opacity-100"
+                      }`}
+                    />
+                    <div className="flex justify-center gap-8  ">
+                      {colorToImageMapX55[selectedColorX55]?.map(
+                        (imageSrc, index) => (
+                          <button
+                            key={index}
+                            onClick={() => handleImageSelectX55(index)}
+                            className={` block   bg-cover bg-center  border ${
+                              currentImageIndexX55 === index
+                                ? "border-red-500"
+                                : "opacity-50"
+                            }`}
+                          >
                             <img
-                              src={colorToImageMapX55[color]}
-                              alt={`BJ40 Plus ${index + 1}`}
                               className="block w-full h-auto"
+                              src={imageSrc}
+                              alt=""
                             />
-                            {selectedColorX55 !== color && (
-                              <div className="absolute inset-0 bg-black bg-opacity-50"></div>
-                            )}
-                          </div>
-                        </button>
-                      ))}
+                          </button>
+                        )
+                      )}
                     </div>
                   </div>
                 </div>
                 <div className="flex md:flex-nowrap flex-wrap gap-4 mt-10 justify-center">
                   <a
                     className="py-3 w-full text-center hover:bg-gray-100 transition-all border border-gray-400 rounded-xl"
-                    href="/x55/index.html"
+                    href="/BJ40/index.html"
                   >
                     EXPLORE MORE
                   </a>
                   <a
                     className="py-3 w-full text-center hover:bg-gray-100 transition-all border border-gray-400 rounded-xl"
-                    href="/brochure-x55.pdf"
+                    href="/brochure-bj40.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
                   >

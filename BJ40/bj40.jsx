@@ -3,6 +3,31 @@
 import Header from "../src/components/Header";
 import Footer from "../src/components/Footer";
 import "../src/index.css";
+import flameRedView1 from "../src/assets/flame-red-view-1.png";
+import flameRedView2 from "../src/assets/flame-red-view-2.png";
+import flameRedView3 from "../src/assets/flame-red-view-3.png";
+import flameRedView4 from "../src/assets/flame-red-view-4.png";
+import jadeBlackView1 from "../src/assets/jade-black-view-1.png";
+import jadeBlackView2 from "../src/assets/jade-black-view-2.png";
+import jadeBlackView3 from "../src/assets/jade-black-view-3.png";
+import jadeBlackView4 from "../src/assets/jade-black-view-4.png";
+import porcelainBlueView1 from "../src/assets/porcelain-blue-view-1.png";
+import porcelainBlueView2 from "../src/assets/porcelain-blue-view-2.png";
+import porcelainBlueView3 from "../src/assets/porcelain-blue-view-3.png";
+import porcelainBlueView4 from "../src/assets/porcelain-blue-view-4.png";
+import forestGreanView1 from "../src/assets/forest-green-view-1.png";
+import forestGreanView2 from "../src/assets/forest-green-view-2.png";
+import forestGreanView3 from "../src/assets/forest-green-view-3.png";
+import forestGreanView4 from "../src/assets/forest-green-view-4.png";
+import midnightBlueView1 from "../src/assets/midnight-blue-view-1.png";
+import midnightBlueView2 from "../src/assets/midnight-blue-view-2.png";
+import midnightBlueView3 from "../src/assets/midnight-blue-view-3.png";
+import midnightBlueView4 from "../src/assets/midnight-blue-view-4.png";
+import platinumBlackView1 from "../src/assets/platinum-black-view-1.png";
+import platinumBlackView2 from "../src/assets/platinum-black-view-2.png";
+import platinumBlackView3 from "../src/assets/platinum-black-view-3.png";
+import platinumBlackView4 from "../src/assets/platinum-black-view-4.png";
+
 import { useState } from "react";
 import BJ40Logo from "../src/assets/BJ40-plus-logo.png";
 import BJ40Video from "../src/assets/BJ40-Video.mp4";
@@ -18,13 +43,9 @@ import exterior1 from "../src/assets/exterior-1.jpg";
 import exterior2 from "../src/assets/exterior-2.jpg";
 import exterior3 from "../src/assets/exterior-3.jpg";
 import exterior4 from "../src/assets/exterior-4.jpg";
-import flameRed from "../src/assets/flame red.png";
+
 import snowWhite from "../src/assets/snow white.png";
-import jadeBlack from "../src/assets/jade black.png";
-import porcelainBlue from "../src/assets/porcelain blue.png";
-import forestGrean from "../src/assets/forest green.png";
 import armyGreen from "../src/assets/army green.png";
-import midnightBlue from "../src/assets/midnight blue.png";
 import CTA from "../src/components/cta";
 function App() {
   const colors = [
@@ -37,13 +58,28 @@ function App() {
     "#00243A",
   ];
   const colorToImageMapBJ40 = {
-    "#94111B": flameRed,
-    "#ffffff": snowWhite,
-    "#000000": jadeBlack,
-    "#86A9C6": porcelainBlue,
-    "#2E3F2B": forestGrean,
-    "#5A603F": armyGreen,
-    "#00243A": midnightBlue,
+    "#94111B": [flameRedView1, flameRedView2, flameRedView3, flameRedView4],
+    "#ffffff": [snowWhite, snowWhite, snowWhite, snowWhite],
+    "#000000": [jadeBlackView1, jadeBlackView2, jadeBlackView3, jadeBlackView4],
+    "#86A9C6": [
+      porcelainBlueView1,
+      porcelainBlueView2,
+      porcelainBlueView3,
+      porcelainBlueView4,
+    ],
+    "#2E3F2B": [
+      forestGreanView1,
+      forestGreanView2,
+      forestGreanView3,
+      forestGreanView4,
+    ],
+    "#5A603F": [armyGreen, armyGreen, armyGreen, armyGreen],
+    "#00243A": [
+      midnightBlueView1,
+      midnightBlueView2,
+      midnightBlueView3,
+      midnightBlueView4,
+    ],
   };
   const [openAccordions, setOpenAccordions] = useState({});
 
@@ -127,21 +163,30 @@ function App() {
   const [activeTabGallery, setActiveTabGallery] = useState("Interior");
   const [animating, setAnimating] = useState(false);
   const [selectedColor, setSelectedColor] = useState(colors[0]);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const onColorSelect = (color) => {
     if (color !== selectedColor) {
       setAnimating(true);
       setTimeout(() => {
         setSelectedColor(color);
+        setCurrentImageIndex(0);
         setAnimating(false);
       }, 100); // Duration of the transition
     }
+  };
+  const handleImageSelect = (index) => {
+    setAnimating(true);
+    setTimeout(() => {
+      setCurrentImageIndex(index);
+      setAnimating(false);
+    }, 100);
   };
 
   return (
     <>
       <Header />
       <div className="bg-neutral-400    ">
-        <div className=" py-2 z-10  bg-neutral-100  sticky  top-0 items-center ">
+        <div className=" py-6 z-10  bg-neutral-100  sticky  top-0 items-center ">
           <div className="max-w-6xl gap-4 flex justify-between flex-wrap m-auto md:px-8 px-5">
             <img
               width={200}
@@ -278,45 +323,57 @@ function App() {
           )}
           {activeTab === "Pricing" && (
             <div className="  md:px-8 px-5 max-w-4xl m-auto overflow-hidden bg-neutral-200 pt-4">
-              <div className="flex space-x-4 justify-center mt-10">
-                {colors.map((color) => (
-                  <div
-                    key={color}
-                    className={`w-8 h-8 rounded-full border border-neutral-100 cursor-pointer transition-transform duration-200 ${
-                      selectedColor === color
-                        ? "border-4 outline outline-red-500 border-white transform scale-110"
-                        : "border-2 border-transparent"
-                    }`}
-                    style={{ backgroundColor: color }}
-                    onClick={() => onColorSelect(color)}
-                  ></div>
-                ))}
-              </div>
-              <img
-                src={colorToImageMapBJ40[selectedColor]}
-                alt="BJ40 Plus"
-                className={`transition-transform duration-300 ${
-                  animating
-                    ? "translate-x-full opacity-0"
-                    : "translate-x-0 opacity-100"
-                }`}
-                onAnimationEnd={() => setAnimating(false)}
-              />
-              <div className="grid md:grid-cols-7 grid-cols-4 gap-4 mt-6 ">
-                {Object.keys(colorToImageMapBJ40).map((color, index) => (
-                  <div key={index} className="relative">
-                    <img
-                      src={colorToImageMapBJ40[color]}
-                      alt={`BJ40 Plus ${index + 1}`}
-                      className="block py-4 px-2 border md:col-span-1 col-span-2"
-                    />
-                    {selectedColor !== color && (
-                      <div className="absolute inset-0 bg-black bg-opacity-50"></div>
-                    )}
-                  </div>
-                ))}
-              </div>
               <div className="space-y-1 text-center mt-10 ">
+                <div className="flex space-x-3 justify-center">
+                  {colors.map((color) => (
+                    <div
+                      key={color}
+                      className={`w-12 h-12 rounded-full border border-neutral-200 cursor-pointer transition-transform duration-200 ${
+                        selectedColor === color
+                          ? "border-4 outline outline-red-500 border-white transform scale-110"
+                          : "border-2 border-transparent"
+                      }`}
+                      style={{ backgroundColor: color }}
+                      onClick={() => onColorSelect(color)}
+                    ></div>
+                  ))}
+                </div>
+                <div className="flex flex-col max-w-2xl overflow-hidden justify-center mx-auto">
+                  <div className=" flex flex-col space-x-2 justify-center mt-4">
+                    <img
+                      src={
+                        colorToImageMapBJ40[selectedColor][currentImageIndex]
+                      }
+                      alt={`BJ40 Plus View ${currentImageIndex + 1}`}
+                      className={`transition-transform h-fit duration-100 ${
+                        animating
+                          ? "translate-x-full opacity-0"
+                          : "translate-x-0 opacity-100"
+                      }`}
+                    />
+                    <div className="flex justify-center gap-8  ">
+                      {colorToImageMapBJ40[selectedColor]?.map(
+                        (imageSrc, index) => (
+                          <button
+                            key={index}
+                            onClick={() => handleImageSelect(index)}
+                            className={` block   bg-cover bg-center  border ${
+                              currentImageIndex === index
+                                ? "border-red-500"
+                                : "opacity-50"
+                            }`}
+                          >
+                            <img
+                              className="block w-full h-auto"
+                              src={imageSrc}
+                              alt=""
+                            />
+                          </button>
+                        )
+                      )}
+                    </div>
+                  </div>
+                </div>
                 <h3 className="font-medium">BJ40 Plus</h3>
                 <h2 className="font-semibold md:text-5xl text-4xl">
                   Rp. 850.000.000,-

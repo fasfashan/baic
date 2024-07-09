@@ -13,6 +13,7 @@ export default defineConfig({
         book: "book-a-test-drive/index.html",
         BJ40: "BJ40/index.html",
         singlePost: "news/single-post/index.html",
+        x55: "x55/index.html",
       },
     },
   },
