@@ -65,7 +65,7 @@ export default function MobileMenu() {
                   <div className="flex mt-2 text-xs">
                     <a
                       className="py-3 text-center hover:bg-gray-100 transition-all w-full  border border-gray-400 rounded-xl"
-                      href="/x55/index.html"
+                      href="/X55-Models/index.html"
                     >
                       EXPLORE MORE
                     </a>

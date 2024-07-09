@@ -13,7 +13,7 @@ const slides = [
     image: slide2,
     heading: "CONQUER THE ROAD ON & OFF",
     cta: "Call to Action 2",
-    link: "#cta2",
+    link: "/X55-Models/index.html",
   },
 ];
 
