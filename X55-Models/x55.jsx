@@ -43,6 +43,13 @@ import exterior4 from "../src/assets/exterior-4.jpg";
 import CTA from "../src/components/cta";
 function App() {
   const colors = ["#464C47", "#96901D", "#EA3435", "#CBD1D4", "#D1D1D1"];
+  const colorNamesX55 = {
+    "#464C47": "Platinum Black",
+    "#96901D": "Yellow Black",
+    "#EA3435": "Red Black",
+    "#CBD1D4": "Crystal Black",
+    "#D1D1D1": "White Black",
+  };
   const colorToImageMapBJ40 = {
     "#464C47": [
       platinumBlackView1,
@@ -338,7 +345,7 @@ function App() {
                   {colors.map((color) => (
                     <div
                       key={color}
-                      className={`w-12 h-12 rounded-full border border-neutral-200 cursor-pointer transition-transform duration-200 ${
+                      className={`w-8    h-8    rounded-full border border-neutral-200 cursor-pointer transition-transform duration-200 ${
                         selectedColor === color
                           ? "border-4 outline outline-red-500 border-white transform scale-110"
                           : "border-2 border-transparent"
@@ -350,6 +357,11 @@ function App() {
                 </div>
                 <div className="flex flex-col max-w-2xl overflow-hidden justify-center mx-auto">
                   <div className=" flex flex-col space-x-2 justify-center mt-4">
+                    <div className="border select-none border-neutral-500 w-fit justify-center m-auto mt-4 flex items-center">
+                      <h2 className="text-center transition-all  px-4 py-2">
+                        {colorNamesX55[selectedColor]}
+                      </h2>
+                    </div>
                     <img
                       src={
                         colorToImageMapBJ40[selectedColor][currentImageIndex]

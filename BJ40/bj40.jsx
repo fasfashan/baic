@@ -52,6 +52,15 @@ function App() {
     "#5A603F",
     "#00243A",
   ];
+  const colorNamesBJ40 = {
+    "#94111B": "Flame Red",
+    "#ffffff": "Snow White",
+    "#000000": "Jade Black",
+    "#86A9C6": "Porcelain Blue",
+    "#2E3F2B": "Forest Green",
+    "#5A603F": "Army Green",
+    "#00243A": "Midnight Blue",
+  };
   const colorToImageMapBJ40 = {
     "#94111B": [flameRedView1, flameRedView2, flameRedView3, flameRedView4],
     "#ffffff": [snowWhite, snowWhite, snowWhite, snowWhite],
@@ -323,7 +332,7 @@ function App() {
                   {colors.map((color) => (
                     <div
                       key={color}
-                      className={`w-12 h-12 rounded-full border border-neutral-200 cursor-pointer transition-transform duration-200 ${
+                      className={`w-8 h-8 rounded-full border border-neutral-200 cursor-pointer transition-transform duration-200 ${
                         selectedColor === color
                           ? "border-4 outline outline-red-500 border-white transform scale-110"
                           : "border-2 border-transparent"
@@ -335,6 +344,11 @@ function App() {
                 </div>
                 <div className="flex flex-col max-w-2xl overflow-hidden justify-center mx-auto">
                   <div className=" flex flex-col space-x-2 justify-center mt-4">
+                    <div className="border select-none border-neutral-500 w-fit justify-center m-auto mt-4 flex items-center">
+                      <h2 className="text-center transition-all  px-4 py-2">
+                        {colorNamesBJ40[selectedColor]}
+                      </h2>
+                    </div>
                     <img
                       src={
                         colorToImageMapBJ40[selectedColor][currentImageIndex]

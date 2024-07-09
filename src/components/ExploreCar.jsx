@@ -51,6 +51,22 @@ const colors = [
   "#5A603F",
   "#00243A",
 ];
+const colorNamesBJ40 = {
+  "#94111B": "Flame Red",
+  "#ffffff": "Snow White",
+  "#000000": "Jade Black",
+  "#86A9C6": "Porcelain Blue",
+  "#2E3F2B": "Forest Green",
+  "#5A603F": "Army Green",
+  "#00243A": "Midnight Blue",
+};
+const colorNamesX55 = {
+  "#464C47": "Platinum Black",
+  "#96901D": "Yellow Black",
+  "#EA3435": "Red Black",
+  "#CBD1D4": "Crystal Black",
+  "#D1D1D1": "White Black",
+};
 const colorsX55 = ["#464C47", "#96901D", "#EA3435", "#CBD1D4", "#D1D1D1"];
 export default function ExploreCar() {
   const [activeTab, setActiveTab] = useState("BJ40 Plus");
@@ -185,20 +201,28 @@ export default function ExploreCar() {
               <div className="mt-10 md:px-8 px-5">
                 <div className="flex space-x-3 justify-center">
                   {colors.map((color) => (
-                    <div
-                      key={color}
-                      className={`w-8 h-8 rounded-full border border-neutral-200 cursor-pointer transition-transform duration-200 ${
-                        selectedColor === color
-                          ? "border-4 outline outline-red-500 border-white transform scale-110"
-                          : "border-2 "
-                      }`}
-                      style={{ backgroundColor: color }}
-                      onClick={() => onColorSelect(color)}
-                    ></div>
+                    <>
+                      <div
+                        key={color}
+                        className={` w-8 h-8 rounded-full border border-neutral-200 cursor-pointer transition-transform duration-200 ${
+                          selectedColor === color
+                            ? "border-4 outline outline-red-500 border-white transform scale-110"
+                            : "border-2"
+                        }`}
+                        style={{ backgroundColor: color }}
+                        onClick={() => onColorSelect(color)}
+                      ></div>
+                    </>
                   ))}
                 </div>
                 <div className="flex flex-col max-w-2xl overflow-hidden justify-center mx-auto">
                   <div className=" flex flex-col space-x-2 justify-center mt-4">
+                    <div className="border select-none border-neutral-500 w-fit justify-center m-auto mt-4 flex items-center">
+                      <h2 className="text-center transition-all  px-4 py-2">
+                        {colorNamesBJ40[selectedColor]}
+                      </h2>
+                    </div>
+
                     <img
                       src={
                         colorToImageMapBJ40[selectedColor][currentImageIndex]
@@ -276,6 +300,11 @@ export default function ExploreCar() {
                 </div>
                 <div className="flex flex-col max-w-2xl overflow-hidden justify-center mx-auto">
                   <div className=" flex flex-col space-x-2 justify-center mt-4">
+                    <div className="border select-none border-neutral-500 w-fit justify-center m-auto mt-4 flex items-center">
+                      <h2 className="text-center transition-all px-4 py-2">
+                        {colorNamesX55[selectedColorX55]}
+                      </h2>
+                    </div>
                     <img
                       src={
                         colorToImageMapX55[selectedColorX55][
