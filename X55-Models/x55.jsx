@@ -221,12 +221,12 @@ function App() {
           {activeTab === "Overview" && (
             <>
               <div
-                className="w-full h-full  bg-cover bg-center"
+                className=" h-full  bg-cover bg-center"
                 style={{ backgroundImage: `url(${Foto1})` }}
               >
                 <div className="flex max-w-6xl m-auto py-40 items-center  h-full   text-white">
                   <div className="max-w-2xl px-10  flex flex-col gap-4">
-                    <h1 className="md:text-7xl text-5xl font-bold max-w-lg mb-4">
+                    <h1 className="md:text-7xl text-4xl font-bold max-w-lg mb-4">
                       SMART TECHNOLOGY
                     </h1>
                     <h2 className="text-xl font-bold">
@@ -250,12 +250,12 @@ function App() {
                 </div>
               </div>
               <div
-                className="w-full h-full  bg-cover bg-center"
+                className=" h-full  bg-cover bg-center"
                 style={{ backgroundImage: `url(${Foto2})` }}
               >
-                <div className="flex justify-end max-w-6xl m-auto py-40 items-center  h-full   text-white">
+                <div className="flex md:justify-end max-w-6xl m-auto py-40 items-center  h-full   text-white">
                   <div className="max-w-2xl px-10  flex flex-col gap-4">
-                    <h1 className="md:text-7xl text-5xl font-bold max-w-lg mb-4">
+                    <h1 className="md:text-7xl text-4xl font-bold max-w-lg mb-4">
                       EXCEPTIONAL PERFORMANCE
                     </h1>
                     <h2 className="text-xl font-bold">
@@ -286,12 +286,12 @@ function App() {
                 </div>
               </div>
               <div
-                className="w-full h-full  bg-cover bg-center"
+                className=" h-full  bg-cover bg-center"
                 style={{ backgroundImage: `url(${Foto3})` }}
               >
                 <div className="flex justify-start max-w-6xl m-auto py-40 items-center  h-full   text-white">
                   <div className="max-w-2xl px-10  flex flex-col gap-4">
-                    <h1 className="md:text-7xl text-5xl font-bold max-w-lg mb-4">
+                    <h1 className="md:text-7xl text-4xl font-bold max-w-lg mb-4">
                       REVOLUTIONARY SPORTS STYLING
                     </h1>
                     <ul className="font-light">
@@ -308,12 +308,12 @@ function App() {
                 </div>
               </div>
               <div
-                className="w-full h-full  bg-cover bg-center"
+                className=" h-full  bg-cover bg-center"
                 style={{ backgroundImage: `url(${Foto4})` }}
               >
-                <div className="flex justify-end max-w-6xl m-auto py-40 items-center  h-full   text-white">
+                <div className="flex md:justify-end max-w-6xl m-auto py-40 items-center  h-full   text-white">
                   <div className="max-w-2xl px-10  flex flex-col gap-4">
-                    <h1 className="md:text-7xl text-5xl font-bold max-w-lg mb-4">
+                    <h1 className="md:text-7xl text-4xl font-bold max-w-lg mb-4">
                       HUMAN-CENTERED COMFORT
                     </h1>
                     <h2 className="text-xl font-bold">

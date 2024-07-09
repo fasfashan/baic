@@ -264,10 +264,10 @@ export default function ExploreCar() {
                   {colorsX55.map((color) => (
                     <div
                       key={color}
-                      className={`w-12 h-12 rounded-full border border-neutral-200 cursor-pointer transition-transform duration-200 ${
+                      className={`w-8 h-8 rounded-full border border-neutral-200 cursor-pointer transition-transform duration-200 ${
                         selectedColorX55 === color
                           ? "border-4 outline outline-red-500 border-white transform scale-110"
-                          : "border-2 border-transparent"
+                          : "border-2 "
                       }`}
                       style={{ backgroundColor: color }}
                       onClick={() => onColorSelectX55(color)}
