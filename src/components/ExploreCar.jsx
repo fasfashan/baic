@@ -40,7 +40,6 @@ import whiteBlackView2 from "../assets/white-black-view-2.png";
 import whiteBlackView3 from "../assets/white-black-view-3.png";
 import whiteBlackView4 from "../assets/white-black-view-4.png";
 import snowWhite from "../assets/snow white.png";
-
 import armyGreen from "../assets/army green.png";
 
 const colors = [
@@ -188,10 +187,10 @@ export default function ExploreCar() {
                   {colors.map((color) => (
                     <div
                       key={color}
-                      className={`w-12 h-12 rounded-full border border-neutral-200 cursor-pointer transition-transform duration-200 ${
+                      className={`w-8 h-8 rounded-full border border-neutral-200 cursor-pointer transition-transform duration-200 ${
                         selectedColor === color
                           ? "border-4 outline outline-red-500 border-white transform scale-110"
-                          : "border-2 border-transparent"
+                          : "border-2 "
                       }`}
                       style={{ backgroundColor: color }}
                       onClick={() => onColorSelect(color)}
