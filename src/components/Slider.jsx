@@ -11,7 +11,7 @@ const slides = [
   },
   {
     image: slide2,
-    heading: "CONQUER THE ROAD ON & OFF",
+    heading: "EXPOSE. SURE.",
     cta: "Call to Action 2",
     link: "/X55-Models/index.html",
   },
