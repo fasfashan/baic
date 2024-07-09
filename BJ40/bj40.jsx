@@ -23,11 +23,6 @@ import midnightBlueView1 from "../src/assets/midnight-blue-view-1.png";
 import midnightBlueView2 from "../src/assets/midnight-blue-view-2.png";
 import midnightBlueView3 from "../src/assets/midnight-blue-view-3.png";
 import midnightBlueView4 from "../src/assets/midnight-blue-view-4.png";
-import platinumBlackView1 from "../src/assets/platinum-black-view-1.png";
-import platinumBlackView2 from "../src/assets/platinum-black-view-2.png";
-import platinumBlackView3 from "../src/assets/platinum-black-view-3.png";
-import platinumBlackView4 from "../src/assets/platinum-black-view-4.png";
-
 import { useState } from "react";
 import BJ40Logo from "../src/assets/BJ40-plus-logo.png";
 import BJ40Video from "../src/assets/BJ40-Video.mp4";
@@ -232,12 +227,12 @@ function App() {
           {activeTab === "Overview" && (
             <>
               <div
-                className="w-full h-full  bg-cover bg-center"
+                className="h-full  bg-cover bg-center"
                 style={{ backgroundImage: `url(${Foto1})` }}
               >
                 <div className="flex max-w-6xl m-auto py-40 items-center  h-full   text-white">
                   <div className="max-w-2xl px-10  flex flex-col gap-4">
-                    <h1 className="md:text-7xl text-5xl font-bold max-w-lg mb-4">
+                    <h1 className="md:text-7xl text-4xl font-bold max-w-lg mb-4">
                       BORN FOR EXCELLENCE
                     </h1>
                     <h2 className="text-xl font-bold">
@@ -255,12 +250,12 @@ function App() {
                 </div>
               </div>
               <div
-                className="w-full h-full  bg-cover bg-center"
+                className=" h-full  bg-cover bg-center"
                 style={{ backgroundImage: `url(${Foto2})` }}
               >
-                <div className="flex justify-end max-w-6xl m-auto py-40 items-center  h-full   text-white">
+                <div className="flex md:justify-end max-w-6xl m-auto py-40 items-center  h-full   text-white">
                   <div className="max-w-2xl px-10  flex flex-col gap-4">
-                    <h1 className="md:text-7xl text-5xl font-bold max-w-lg mb-4">
+                    <h1 className="md:text-7xl text-4xl font-bold max-w-lg mb-4">
                       EXPLORE THE UNKNOWN
                     </h1>
                     <h2 className="text-xl font-bold">
@@ -276,12 +271,12 @@ function App() {
                 </div>
               </div>
               <div
-                className="w-full h-full  bg-cover bg-center"
+                className=" h-full  bg-cover bg-center"
                 style={{ backgroundImage: `url(${Foto3})` }}
               >
                 <div className="flex justify-start max-w-6xl m-auto py-40 items-center  h-full   text-white">
                   <div className="max-w-2xl px-10  flex flex-col gap-4">
-                    <h1 className="md:text-7xl text-5xl font-bold max-w-lg mb-4">
+                    <h1 className="md:text-7xl text-4xl font-bold max-w-lg mb-4">
                       ROBUST & FEARLESS
                     </h1>
                     <h2 className="text-xl font-bold">
@@ -296,12 +291,12 @@ function App() {
                 </div>
               </div>
               <div
-                className="w-full h-full  bg-cover bg-center"
+                className=" h-full  bg-cover bg-center"
                 style={{ backgroundImage: `url(${Foto4})` }}
               >
-                <div className="flex justify-end max-w-6xl m-auto py-40 items-center  h-full   text-white">
+                <div className="flex md:justify-end max-w-6xl m-auto py-40 items-center  h-full   text-white">
                   <div className="max-w-2xl px-10  flex flex-col gap-4">
-                    <h1 className="md:text-7xl text-5xl font-bold max-w-lg mb-4">
+                    <h1 className="md:text-7xl text-4xl font-bold max-w-lg mb-4">
                       LUXURIOUS & COMFORTABLE
                     </h1>
                     <h2 className="text-xl font-bold">
