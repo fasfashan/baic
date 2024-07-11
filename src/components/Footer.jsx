@@ -31,7 +31,7 @@ export default function Footer() {
         <div className="md:col-span-3 col-span-6 row flex flex-col space-y-2">
           <h3 className="text-white text-lg font-medium">COMPANY</h3>
           <a
-            href="#"
+            href="/about-us/index.html"
             className="text-gray-400 text-sm hover:text-white transition-all"
           >
             ABOUT US

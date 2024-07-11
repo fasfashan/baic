@@ -14,6 +14,7 @@ export default defineConfig({
         BJ40: "BJ40/index.html",
         singlePost: "news/single-post/index.html",
         X55Models: "X55-Models/index.html",
+        aboutUs: "about-us/index.html",
       },
     },
   },

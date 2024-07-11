@@ -42,6 +42,25 @@ import exterior4 from "../src/assets/exterior-4.jpg";
 import snowWhite from "../src/assets/snow white.png";
 import armyGreen from "../src/assets/army green.png";
 import CTA from "../src/components/cta";
+import Accordion from "../src/components/Accordion";
+const carSpecifications = {
+  engine: [
+    { title: "LengthxWidthxHeight (mm)", content: "4465 / 1925 / 1871" },
+    { title: "Wheelbase (mm )", content: "2745" },
+    { title: "Fuel tank capacity (l)", content: "75" },
+    { title: "Approach angle (degrees)", content: "2745" },
+    { title: "Wheelbase (mm )", content: "2745" },
+    { title: "Wheelbase (mm )", content: "2745" },
+    { title: "Wheelbase (mm )", content: "2745" },
+
+    // Add more specifications as needed
+  ],
+  features: [
+    { title: "Airbags", content: "6" },
+    { title: "ABS", content: "Yes" },
+    // Add more features as needed
+  ],
+};
 function App() {
   const colors = [
     "#94111B",
@@ -85,74 +104,7 @@ function App() {
       midnightBlueView4,
     ],
   };
-  const [openAccordions, setOpenAccordions] = useState({});
 
-  const toggleAccordion = (id) => {
-    setOpenAccordions((prevOpenAccordions) => ({
-      ...prevOpenAccordions,
-      [id]: !prevOpenAccordions[id],
-    }));
-  };
-
-  const accordions = [
-    {
-      id: "accordion1",
-      title: "CONTROL & SAFETY",
-      flagship: "2745",
-      premium: "asdfsdf",
-      champion: "sdfsdf",
-    },
-    {
-      id: "accordion2",
-      title: "EXTERIOR",
-      flagship: "2850",
-      premium: "-",
-      champion: "sdfsdf",
-    },
-    {
-      id: "accordion3",
-      title: "INTERIOR",
-      flagship: "2850",
-      premium: "-",
-      champion: "sdfsdf",
-    },
-    {
-      id: "accordion4",
-      title: "SEAT",
-      flagship: "2850",
-      premium: "-",
-      champion: "sdfsdf",
-    },
-    {
-      id: "accordion5",
-      title: "ENTERTAINMENT",
-      flagship: "2850",
-      premium: "-",
-      champion: "sdfsdf",
-    },
-    {
-      id: "accordion6",
-      title: "LIGHT",
-      flagship: "2850",
-      premium: "-",
-      champion: "sdfsdf",
-    },
-    {
-      id: "accordion7",
-      title: "AIR CONDITIONING",
-      flagship: "2850",
-      premium: "-",
-      champion: "sdfsdf",
-    },
-    {
-      id: "accordion8",
-      title: "SPESIAL EXCLUSIVE",
-      flagship: "2850",
-      premium: "-",
-      champion: "sdfsdf",
-    },
-    // Add more accordions here
-  ];
   const [activeTab, setActiveTab] = useState("Overview");
 
   const handleTabClick = (tab) => {
@@ -392,119 +344,15 @@ function App() {
               <h2 className=" text-center md:text-3xl text-2xl mt-10">
                 BJ40 Plus Specifications
               </h2>
-              <div className="overflow-x-auto">
-                <table className="max-w-5xl md:w-full mb-4   overflow-scroll border-collapse mt-10  md:px-8 px-5   m-auto border border-slate-300 divide-y divide-gray-200">
-                  <thead>
-                    <tr>
-                      <td
-                        className="md:px-4 px-2 border bg-neutral-900 text-white border-slate-300 py-3 text-xs font-medium tracking-wider"
-                        rowSpan="2"
-                        colSpan="1"
-                      >
-                        Model/Configuration
-                      </td>
-                      <td
-                        className="md:px-4 px-2 bg-neutral-900 text-white border border-slate-300 py-3 text-xs font-medium tracking-wider text-center"
-                        rowSpan="1"
-                        colSpan="5"
-                      >
-                        2.3T+6AT- 4WD
-                      </td>
-                    </tr>
-                    <tr>
-                      <td
-                        className="md:px-4 bg-neutral-900 text-white px-2 border border-slate-300 py-3 text-xs font-medium tracking-wider"
-                        rowSpan="1"
-                        colSpan="1"
-                      >
-                        Premium
-                      </td>
-                      <td
-                        className="md:px-4 bg-neutral-900 text-white px-2 border py-3 border-slate-300 text-xs font-medium tracking-wider"
-                        rowSpan="1"
-                        colSpan="1"
-                      >
-                        Flagship
-                      </td>
-                      <td
-                        className="md:px-4 bg-neutral-900 text-white px-2 py-3 text-xs font-medium tracking-wider"
-                        rowSpan="1"
-                        colSpan="2"
-                      >
-                        Champion
-                      </td>
-                    </tr>
-                  </thead>
-                  <thead className="bg-gray-300">
-                    <tr>
-                      <th
-                        colSpan={4}
-                        className="md:px-4 bg-neutral-700 text-white px-2 py-3 text-xs font-medium tracking-wider text-left  "
-                      >
-                        Basic Parameter
-                      </th>
-                    </tr>
-                  </thead>
-
-                  <tbody className="bg-white   ">
-                    <tr>
-                      <td
-                        colSpan={1}
-                        className="md:px-4 px-2 py-4 border border-slate-300 text-xs text-gray-500 whitespace-nowrap"
-                      >
-                        Length×Width×Height (mm)
-                      </td>
-                      <td
-                        colSpan={1}
-                        className="md:px-4 px-2 py-4 border border-slate-300 text-xs text-gray-500 whitespace-nowrap"
-                      ></td>
-                      <td
-                        colSpan={1}
-                        className="md:px-4 px-2 py-4 border border-slate-300 text-xs text-gray-500 whitespace-nowrap"
-                      >
-                        4645*1925*1871
-                      </td>
-                      <td
-                        colSpan={1}
-                        className="md:px-4 px-2 py-4 border border-slate-300 text-xs text-gray-500 whitespace-nowrap"
-                      ></td>
-                    </tr>
-                    <tr>
-                      <td
-                        colSpan={1}
-                        className="md:px-4 px-2 py-4 border bg-neutral-100 border-slate-300 text-xs text-gray-500 whitespace-nowrap"
-                      >
-                        Wheelbase (mm)
-                      </td>
-                      <td
-                        colSpan={1}
-                        className="md:px-4 px-2 py-4 border bg-neutral-100  border-slate-300 text-xs text-gray-500 whitespace-nowrap"
-                      ></td>
-                      <td
-                        colSpan={1}
-                        className="md:px-4 px-2 py-4 bg-neutral-100  border border-slate-300 text-xs text-gray-500 whitespace-nowrap"
-                      >
-                        2745
-                      </td>
-                      <td
-                        colSpan={1}
-                        className="md:px-4 px-2 py-4 bg-neutral-100  border border-slate-300 text-xs text-gray-500 whitespace-nowrap"
-                      ></td>
-                    </tr>
-                    {accordions.map((accordion) => (
-                      <Accordion
-                        key={accordion.id}
-                        id={accordion.id}
-                        isOpen={openAccordions[accordion.id]}
-                        toggleAccordion={toggleAccordion}
-                        title={accordion.title}
-                        flagship={accordion.flagship}
-                        premium={accordion.premium}
-                        champion={accordion.champion}
-                      />
-                    ))}
-                  </tbody>
-                </table>
+              <div className="overflow-x-auto mt-10">
+                <Accordion
+                  title="Engine & Drivetrain"
+                  content={carSpecifications.engine}
+                />
+                <Accordion
+                  title="Features"
+                  content={carSpecifications.features}
+                />
                 <div className="max-w-5xl font-light text-xs m-auto mb-10 leading-relaxed  ">
                   <p className="md:max-w-2xl ">
                     Mark: "●" standard, "—" not available, "○" optional All
@@ -630,67 +478,3 @@ function App() {
 }
 
 export default App;
-const Accordion = ({
-  id,
-  isOpen,
-  toggleAccordion,
-  title,
-  flagship,
-  premium,
-  champion,
-}) => (
-  <>
-    <tr>
-      <td colSpan={4}>
-        <div
-          onClick={() => toggleAccordion(id)}
-          className="flex px-3 items-center bg-neutral-700 py-2"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className={`h-4 w-4 ${isOpen ? "transform rotate-180" : ""}`}
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="white"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="M19 9l-7 7-7-7"
-            />
-          </svg>
-          <span className="text-xs ml-2 font-medium text-white">{title}</span>
-        </div>
-      </td>
-    </tr>
-    {isOpen && (
-      <tr>
-        <td
-          colSpan={1}
-          className="md:px-4 px-2 py-4 border bg-neutral-100  text-xs text-gray-500 whitespace-nowrap"
-        >
-          {title}
-        </td>
-        <td
-          colSpan={1}
-          className="md:px-4 px-2 py-4 border bg-neutral-100  text-xs text-gray-500 whitespace-nowrap"
-        >
-          {premium}
-        </td>
-        <td
-          colSpan={1}
-          className="md:px-4 px-2 py-4 bg-neutral-100 border  text-xs text-gray-500 whitespace-nowrap"
-        >
-          {flagship}
-        </td>
-        <td
-          colSpan={1}
-          className="md:px-4 px-2 py-4 bg-neutral-100 border  text-xs text-gray-500 whitespace-nowrap"
-        >
-          {champion}
-        </td>
-      </tr>
-    )}
-  </>
-);

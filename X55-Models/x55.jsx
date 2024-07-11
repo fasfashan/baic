@@ -345,7 +345,7 @@ function App() {
                   {colors.map((color) => (
                     <div
                       key={color}
-                      className={`w-8    h-8    rounded-full border border-neutral-200 cursor-pointer transition-transform duration-200 ${
+                      className={`w-8 h-8 rounded-full border border-neutral-200 cursor-pointer transition-transform duration-200 ${
                         selectedColor === color
                           ? "border-4 outline outline-red-500 border-white transform scale-110"
                           : "border-2 border-transparent"
