@@ -25,7 +25,7 @@ import whiteBlackView2 from "../src/assets/white-black-view-2.png";
 import whiteBlackView3 from "../src/assets/white-black-view-3.png";
 import whiteBlackView4 from "../src/assets/white-black-view-4.png";
 import X55Logo from "../src/assets/X55-logo.png";
-import BJ40Video from "../src/assets/BJ40-Video.mp4";
+import X55Video from "../src/assets/X55-Video.mp4";
 import Foto1 from "../src/assets/X55-single-produk-1.jpg";
 import Foto2 from "../src/assets/X55-single-produk-2.jpg";
 import Foto3 from "../src/assets/X55-single-produk-3.jpg";
@@ -556,7 +556,7 @@ function App() {
               {activeTabGallery === "Video" && (
                 <>
                   <div className="mb-10 m-auto  mt-10">
-                    <video controls autoPlay src={BJ40Video}></video>
+                    <video controls autoPlay src={X55Video}></video>
                   </div>
                 </>
               )}
