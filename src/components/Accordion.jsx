@@ -30,7 +30,7 @@ const Accordion = ({ title, content }) => {
       </button>
       {isOpen && (
         <div className=" bg-white">
-          <table className="min-w-full">
+          <table className="min-w-full border border-neutral-300">
             <tbody>
               {content.map((item, index) => (
                 <tr key={index} className="odd:bg-white even:bg-gray-200">

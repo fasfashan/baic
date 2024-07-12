@@ -48,16 +48,76 @@ const carSpecifications = {
     { title: "LengthxWidthxHeight (mm)", content: "4465 / 1925 / 1871" },
     { title: "Wheelbase (mm )", content: "2745" },
     { title: "Fuel tank capacity (l)", content: "75" },
-    { title: "Approach angle (degrees)", content: "2745" },
-    { title: "Wheelbase (mm )", content: "2745" },
-    { title: "Wheelbase (mm )", content: "2745" },
-    { title: "Wheelbase (mm )", content: "2745" },
+    { title: "Approach angle (degrees)", content: "37°" },
+    { title: "Departure angle (degrees)", content: "31°" },
+    { title: "Rampower angle (degrees)", content: "23°" },
+    { title: "Ground clearence (mm )", content: "210" },
+    { title: "Luggage capacity (litres) *seats down", content: "532/965*" },
+    { title: "Displacement (cm3)", content: "2.000 cc Turbo" },
+    { title: "Clynder configuration", content: "in-line 4 cylinder 16 value" },
+    { title: "Maximum power (Hp@r/min)", content: "221 Hp@ 5500 r/min" },
+    { title: "Minimum power (Hp@r/min)", content: "380 Nm@ 1750-4500 r/min" },
+    { title: "Emission controls", content: "Euro IV" },
+    { title: "Transmission", content: "ZF 8 Speed At" },
+    {
+      title: "Front suspension",
+      content: "Double wishbone/coil spring font independent suspension",
+    },
+    {
+      title: "Rear suspension",
+      content: "Five-link/coil spring non-independent suspnesion",
+    },
+    { title: "Drivetrain", content: "4WD with Electronic Shifter" },
 
     // Add more specifications as needed
   ],
   features: [
-    { title: "Airbags", content: "6" },
-    { title: "ABS", content: "Yes" },
+    { title: "Wheels and Tyres", content: "265/65 R17" },
+    { title: "Spare type", content: "Full size" },
+    { title: "Slide foot step", content: "√" },
+    { title: "Remove hard stop", content: "√" },
+    { title: "Red tow hooks - front & back", content: "√" },
+    { title: "Height adjustable headlights - electric", content: "√" },
+    { title: "Front & Rear fog lights", content: "√" },
+    { title: "LED Daytime Running Lights", content: "√" },
+    { title: "Follow me home lights", content: "√" },
+    { title: "LED high mount brake lights", content: "√" },
+    { title: "Cruise Control", content: "√" },
+    { title: "Dual zone auto air conditioner", content: "√" },
+    { title: "Multi-function steering wheel", content: "√" },
+    { title: "Anti-glare inside rear view mirror", content: "√" },
+    { title: "Driver's seat - 4-way electric adjustable", content: "√" },
+    { title: "Front passengers eat - 6-way manual adjustable", content: "√" },
+    {
+      title: "Rear seat configuration",
+      content: "4WD with Electronic Shifter",
+    },
+    { title: "Rear seat recline function", content: "√" },
+    { title: "6 speakers", content: "√" },
+    { title: "Anti-lock Braking System (ABS)", content: "√" },
+    { title: "Electronic Brake force Distribution (ABS)", content: "√" },
+    {
+      title:
+        "Electronic stability Programme (ESP), Emergency Brake Assist(EBA)",
+      content: "√",
+    },
+    {
+      title: "Hill Ascent Control(HOC)",
+      content: "√",
+    },
+    {
+      title: "Electronic Parking Brake (EPB)",
+      content: "√",
+    },
+    {
+      title: "ISO-FIX child seat restraint system",
+      content: "√",
+    },
+    {
+      title: "Driver and front passenger airbag",
+      content: "√",
+    },
+
     // Add more features as needed
   ],
 };
@@ -335,11 +395,6 @@ function App() {
                     </div>
                   </div>
                 </div>
-                <h3 className="font-medium">BJ40 Plus</h3>
-                <h2 className="font-semibold md:text-5xl text-4xl">
-                  Rp. 850.000.000,-
-                </h2>
-                <p className="italic text-neutral-500">*Off the road</p>
               </div>
               <h2 className=" text-center md:text-3xl text-2xl mt-10">
                 BJ40 Plus Specifications
@@ -353,14 +408,12 @@ function App() {
                   title="Features"
                   content={carSpecifications.features}
                 />
-                <div className="max-w-5xl font-light text-xs m-auto mb-10 leading-relaxed  ">
+                <div className="max-w-5xl mt-10 font-light text-xs m-auto mb-10 leading-relaxed  ">
                   <p className="md:max-w-2xl ">
-                    Mark: "●" standard, "—" not available, "○" optional All
-                    configurations shall be subject to the actual vehicle sold
-                    by the dealer, and BAIC reserves the right to change the
-                    described vehicle model，and does not have the obligation to
-                    notify in advance for the purpose of marketing or product
-                    promotion at any time.
+                    DISCLAIMER* <br></br>
+                    Specifications, equipment, colors & materials shown here may
+                    differ from every country. Please check with your local
+                    dealer for the latest information
                   </p>
                 </div>
               </div>
