@@ -3,9 +3,26 @@ import Header from "../src/components/Header";
 import Footer from "../src/components/Footer";
 import dealerplaceholder from "../src/assets/dealer-placeholder.png";
 import "../src/index.css";
-
+import dealerBandung from "../src/assets/dealer-baic-bandung.jpg";
 function App() {
   const [dealerFound, setDealerFound] = useState(false);
+
+  // Contoh array dealer
+  const dealers = [
+    {
+      id: 1,
+      province: "BANTEN",
+      city: "TANGERANG",
+      name: "Dealer Tangerang Alam Sutera",
+      services: "Sales, Services, Spareparts & Body & Paint",
+      address:
+        "Jl. Gading Serpong Boulevard Blok A No.7 Curug Sangereng, Kec. Klp. Dua, Kabupaten Tangerang, Banten 15810",
+      whatsappLink: "#",
+      mapLink: "#",
+      image: dealerBandung,
+    },
+    // Tambahkan dealer lain jika perlu
+  ];
 
   const handleFindDealer = () => {
     setDealerFound(true);
@@ -53,46 +70,43 @@ function App() {
         </div>
         {dealerFound && (
           <>
-            <h2 className="font-medium text-xl text-center mt-10 text-red-600">
-              BANTEN - KOTA TANGERANG
-            </h2>
-            <div className="md:px-8 px-5 max-w-6xl m-auto">
-              <div className="grid mt-10 m-auto rounded-lg shadow-lg bg-white p-8 grid-cols-12 gap-6 mb-8">
-                <img
-                  src={dealerplaceholder}
-                  alt={`blog`}
-                  className="md:col-span-4 col-span-12"
-                />
-                <div className="space-y-2 flex flex-col justify-between md:col-span-8 col-span-12">
-                  <div className="space-y-1">
-                    <h2 className="font-medium text-2xl">
-                      Dealer Tangerang Alam Sutera
-                    </h2>
-                    <h2 className="capitalize italic text-red-600 font-medium">
-                      Sales, Services, Spareparts & Body & Paint
-                    </h2>
-                    <p className="text-sm">
-                      Jl. Gading Serpong Boulevard Blok A No.7 Curug Sangereng,
-                      Kec. Klp. Dua, Kabupaten Tangerang, Banten 15810
-                    </p>
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    <a
-                      className="py-3 md:w-fit w-full block px-14 text-white text-center bg-green-600 transition-all hover:text-white rounded-xl"
-                      href="#"
-                    >
-                      WHATSAPPP
-                    </a>
-                    <a
-                      className="py-3 md:w-fit w-full block px-14 text-center bg-red-600 transition-all text-white rounded-xl"
-                      href="#"
-                    >
-                      MAP
-                    </a>
+            {dealers.map((dealer) => (
+              <div
+                key={dealer.id}
+                className="mt-10 md:px-8 px-5 max-w-6xl m-auto"
+              >
+                <div className="grid rounded-lg shadow-lg bg-white p-8 grid-cols-12 gap-6 mb-8">
+                  <img
+                    src={dealer.image}
+                    alt={`blog`}
+                    className="md:col-span-4 col-span-12"
+                  />
+                  <div className="space-y-2 flex flex-col justify-between md:col-span-8 col-span-12">
+                    <div className="space-y-1">
+                      <h2 className="font-medium text-2xl">{dealer.name}</h2>
+                      <h2 className="capitalize italic text-red-600 font-medium">
+                        {dealer.services}
+                      </h2>
+                      <p className="text-sm">{dealer.address}</p>
+                    </div>
+                    <div className="flex flex-wrap gap-2">
+                      <a
+                        className="py-3 md:w-fit w-full block px-14 text-white text-center bg-green-600 transition-all hover:text-white rounded-xl"
+                        href={dealer.whatsappLink}
+                      >
+                        WHATSAPP
+                      </a>
+                      <a
+                        className="py-3 md:w-fit w-full block px-14 text-center bg-red-600 transition-all text-white rounded-xl"
+                        href={dealer.mapLink}
+                      >
+                        MAP
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
+            ))}
           </>
         )}
       </div>
