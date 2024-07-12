@@ -15,6 +15,7 @@ export default defineConfig({
         singlePost: "news/single-post/index.html",
         X55Models: "X55-Models/index.html",
         aboutUs: "about-us/index.html",
+        reqPriceList: "request-price-list/index.html",
       },
     },
   },

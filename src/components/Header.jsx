@@ -26,7 +26,7 @@ export default function Header() {
               <a href="/book-a-test-drive/index.html">BOOK TEST DRIVE</a>
             </li>
             <li>
-              <a href="#">REQUEST PRICE LIST</a>
+              <a href="/request-price-list/index.html">REQUEST PRICE LIST</a>
             </li>
           </div>
           <div className="flex gap-8  font-medium tracking-wide">

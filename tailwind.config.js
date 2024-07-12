@@ -9,6 +9,7 @@ export default {
     "./BJ40/**/*.{html,css,js,jsx,ts,tsx}",
     "./X55/**/*.{html,css,js,jsx,ts,tsx}",
     "./about-us/**/*.{html,css,js,jsx,ts,tsx}",
+    "./request-price-list/**/*.{html,css,js,jsx,ts,tsx}",
   ],
   theme: {
     extend: {

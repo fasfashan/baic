@@ -88,7 +88,10 @@ export default function MobileMenu() {
           BOOK A TEST DRIVE
         </a>
         <hr />
-        <a href="#" className="text-lg font-medium">
+        <a
+          href="/request-price-list/index.html"
+          className="text-lg font-medium"
+        >
           REQUEST PRICE LIST
         </a>
       </div>
