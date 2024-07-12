@@ -24,7 +24,6 @@ import whiteBlackView1 from "../src/assets/white-black-view-1.png";
 import whiteBlackView2 from "../src/assets/white-black-view-2.png";
 import whiteBlackView3 from "../src/assets/white-black-view-3.png";
 import whiteBlackView4 from "../src/assets/white-black-view-4.png";
-
 import X55Logo from "../src/assets/X55-logo.png";
 import BJ40Video from "../src/assets/BJ40-Video.mp4";
 import Foto1 from "../src/assets/X55-single-produk-1.jpg";
@@ -39,8 +38,101 @@ import exterior1 from "../src/assets/exterior-1.jpg";
 import exterior2 from "../src/assets/exterior-2.jpg";
 import exterior3 from "../src/assets/exterior-3.jpg";
 import exterior4 from "../src/assets/exterior-4.jpg";
-
+import Accordion from "../src/components/Accordion";
 import CTA from "../src/components/cta";
+const carSpecifications = {
+  model: [
+    { title: "Length/width/heeight (mm)", content: "4620 / 1886 / 1680" },
+    { title: "Wheelbase (mm )", content: "2735" },
+    { title: "Seats", content: "5" },
+    { title: "Trunk capacity (L)", content: "350" },
+    { title: "Fuel tank (L)", content: "53" },
+    { title: "Rampower angle (degrees)", content: "23°" },
+    { title: "Engine", content: "1.500 cc TURBO" },
+    { title: "Max. power (HP)", content: "185 Hp/5.550 rpm" },
+    { title: "Max. torque (Nm/pm)", content: "305 Nm / 1.500 - 6.000 rpm" },
+    { title: "Transmission", content: "7 Speed DCT" },
+    { title: "Fuel type", content: "Gasoline - Euro VI" },
+    {
+      title: "Front/rear supension",
+      content:
+        "MacPherson Independent suspension/multi-link independent suspension",
+    },
+    { title: "Front/rear brake", content: "Ventilation Disc / Disc" },
+    { title: "Tyres", content: "225/55 R19" },
+
+    // Add more specifications as needed
+  ],
+  features: [
+    { title: "Electronic shifter", content: "√" },
+    { title: "Electric Power Steering - EPS (2 mode)", content: "√" },
+    { title: "Manual mode shift prompt", content: "√" },
+    { title: "Drive mode(ECO/Sport/Comfort/Smart)", content: "√" },
+    {
+      title:
+        "ABS (Antilock Brake System)+ EBD (Electronic Brakeforce Distribution)",
+      content: "√",
+    },
+    { title: "Emergency Braking Assist, EBA", content: "√" },
+    { title: "Electronic Parking Brake, EPB", content: "√" },
+    { title: "Auto Hold", content: "√" },
+    { title: "Button start/stop", content: "√" },
+    { title: "Keyless entry", content: "√" },
+    { title: "Electronic Stability Program, ESP", content: "√" },
+    { title: "Hill Assist Control, HAC", content: "√" },
+    { title: "Hill Descent Control, HDC", content: "√" },
+    { title: "Driver and passenger air bags", content: "√" },
+    { title: "Front side air bags", content: "√" },
+    { title: "Warning of tired driving (symbol + sound)", content: "√" },
+    {
+      title: "Engine immobilizer",
+      content: "√",
+    },
+    { title: "Door mirror with electric adjustment", content: "√" },
+    {
+      title: "Door mirror with electric fold and auto fold when lock",
+      content: "√",
+    },
+    { title: "Panoramic sunroof", content: "√" },
+    { title: "Hidden door handle", content: "√" },
+    { title: "Rain sensor wiper", content: "√" },
+    { title: "Power tailgate with smart anti-pinch", content: "√" },
+    { title: "12V charging port & Trunk", content: "√" },
+    { title: "Steering wheel off-hand sensing", content: "√" },
+    {
+      title: "Multi-function steering wheel with 4-way adjustment",
+      content: "√",
+    },
+    { title: "Driver seat memory", content: "√" },
+    {
+      title: "Driving seat & Passenger seat 6-way electric adjustment",
+      content: "√",
+    },
+    { title: "Front seat ventilation", content: "√" },
+    { title: "Rear seat angle adjustable", content: "√" },
+    { title: "Rear seat 6/4 fold", content: "√" },
+    { title: "Back 360° panoramic image", content: "√" },
+    { title: "Lane Departure Warning, LDW", content: "√" },
+    { title: "Blind Spot Detection, BSD", content: "√" },
+    { title: "Adaptive Cruise Control, ACC", content: "√" },
+    { title: "Front Collision Warning, FCW", content: "√" },
+    { title: "Voice Control (English)", content: "√" },
+    { title: "Wireless charging", content: "√" },
+    { title: "Bluetooth", content: "√" },
+    { title: "8 Speakers", content: "√" },
+    { title: "Automatic headlight", content: "√" },
+    { title: "Emergence Stop Signal, ESS", content: "√" },
+    { title: "Multi-color interior atmosphere light", content: "√" },
+    { title: "Double zone automatic air conditioning", content: "√" },
+    { title: "Rear air outlet (blowing surface)", content: "√" },
+    {
+      title: "Pollen filter/PM2.5 air purification, CN95 filter element",
+      content: "√",
+    },
+
+    // Add more features as needed
+  ],
+};
 function App() {
   const colors = ["#464C47", "#96901D", "#EA3435", "#CBD1D4", "#D1D1D1"];
   const colorNamesX55 = {
@@ -77,74 +169,7 @@ function App() {
       whiteBlackView4,
     ],
   };
-  const [openAccordions, setOpenAccordions] = useState({});
 
-  const toggleAccordion = (id) => {
-    setOpenAccordions((prevOpenAccordions) => ({
-      ...prevOpenAccordions,
-      [id]: !prevOpenAccordions[id],
-    }));
-  };
-
-  const accordions = [
-    {
-      id: "accordion1",
-      title: "CONTROL & SAFETY",
-      flagship: "2745",
-      premium: "asdfsdf",
-      champion: "sdfsdf",
-    },
-    {
-      id: "accordion2",
-      title: "EXTERIOR",
-      flagship: "2850",
-      premium: "-",
-      champion: "sdfsdf",
-    },
-    {
-      id: "accordion3",
-      title: "INTERIOR",
-      flagship: "2850",
-      premium: "-",
-      champion: "sdfsdf",
-    },
-    {
-      id: "accordion4",
-      title: "SEAT",
-      flagship: "2850",
-      premium: "-",
-      champion: "sdfsdf",
-    },
-    {
-      id: "accordion5",
-      title: "ENTERTAINMENT",
-      flagship: "2850",
-      premium: "-",
-      champion: "sdfsdf",
-    },
-    {
-      id: "accordion6",
-      title: "LIGHT",
-      flagship: "2850",
-      premium: "-",
-      champion: "sdfsdf",
-    },
-    {
-      id: "accordion7",
-      title: "AIR CONDITIONING",
-      flagship: "2850",
-      premium: "-",
-      champion: "sdfsdf",
-    },
-    {
-      id: "accordion8",
-      title: "SPESIAL EXCLUSIVE",
-      flagship: "2850",
-      premium: "-",
-      champion: "sdfsdf",
-    },
-    // Add more accordions here
-  ];
   const [activeTab, setActiveTab] = useState("Overview");
 
   const handleTabClick = (tab) => {
@@ -396,136 +421,25 @@ function App() {
                     </div>
                   </div>
                 </div>
-                <h3 className="font-medium">X55 II</h3>
-                <h2 className="font-semibold md:text-5xl text-4xl">
-                  Rp. 490.000.000,-
-                </h2>
-                <p className="italic text-neutral-500">*Off the road</p>
               </div>
               <h2 className=" text-center md:text-3xl text-2xl mt-10">
                 X55 II Specifications
               </h2>
-              <div className="overflow-x-auto">
-                <table className="max-w-5xl md:w-full mb-4   overflow-scroll border-collapse mt-10  md:px-8 px-5   m-auto border border-slate-300 divide-y divide-gray-200">
-                  <thead>
-                    <tr>
-                      <td
-                        className="md:px-4 px-2 border bg-neutral-900 text-white border-slate-300 py-3 text-xs font-medium tracking-wider"
-                        rowSpan="2"
-                        colSpan="1"
-                      >
-                        Model/Configuration
-                      </td>
-                      <td
-                        className="md:px-4 px-2 bg-neutral-900 text-white border border-slate-300 py-3 text-xs font-medium tracking-wider text-center"
-                        rowSpan="1"
-                        colSpan="5"
-                      >
-                        2.3T+6AT- 4WD
-                      </td>
-                    </tr>
-                    <tr>
-                      <td
-                        className="md:px-4 bg-neutral-900 text-white px-2 border border-slate-300 py-3 text-xs font-medium tracking-wider"
-                        rowSpan="1"
-                        colSpan="1"
-                      >
-                        Premium
-                      </td>
-                      <td
-                        className="md:px-4 bg-neutral-900 text-white px-2 border py-3 border-slate-300 text-xs font-medium tracking-wider"
-                        rowSpan="1"
-                        colSpan="1"
-                      >
-                        Flagship
-                      </td>
-                      <td
-                        className="md:px-4 bg-neutral-900 text-white px-2 py-3 text-xs font-medium tracking-wider"
-                        rowSpan="1"
-                        colSpan="2"
-                      >
-                        Champion
-                      </td>
-                    </tr>
-                  </thead>
-                  <thead className="bg-gray-300">
-                    <tr>
-                      <th
-                        colSpan={4}
-                        className="md:px-4 bg-neutral-700 text-white px-2 py-3 text-xs font-medium tracking-wider text-left  "
-                      >
-                        Basic Parameter
-                      </th>
-                    </tr>
-                  </thead>
-
-                  <tbody className="bg-white   ">
-                    <tr>
-                      <td
-                        colSpan={1}
-                        className="md:px-4 px-2 py-4 border border-slate-300 text-xs text-gray-500 whitespace-nowrap"
-                      >
-                        Length×Width×Height (mm)
-                      </td>
-                      <td
-                        colSpan={1}
-                        className="md:px-4 px-2 py-4 border border-slate-300 text-xs text-gray-500 whitespace-nowrap"
-                      ></td>
-                      <td
-                        colSpan={1}
-                        className="md:px-4 px-2 py-4 border border-slate-300 text-xs text-gray-500 whitespace-nowrap"
-                      >
-                        4645*1925*1871
-                      </td>
-                      <td
-                        colSpan={1}
-                        className="md:px-4 px-2 py-4 border border-slate-300 text-xs text-gray-500 whitespace-nowrap"
-                      ></td>
-                    </tr>
-                    <tr>
-                      <td
-                        colSpan={1}
-                        className="md:px-4 px-2 py-4 border bg-neutral-100 border-slate-300 text-xs text-gray-500 whitespace-nowrap"
-                      >
-                        Wheelbase (mm)
-                      </td>
-                      <td
-                        colSpan={1}
-                        className="md:px-4 px-2 py-4 border bg-neutral-100  border-slate-300 text-xs text-gray-500 whitespace-nowrap"
-                      ></td>
-                      <td
-                        colSpan={1}
-                        className="md:px-4 px-2 py-4 bg-neutral-100  border border-slate-300 text-xs text-gray-500 whitespace-nowrap"
-                      >
-                        2745
-                      </td>
-                      <td
-                        colSpan={1}
-                        className="md:px-4 px-2 py-4 bg-neutral-100  border border-slate-300 text-xs text-gray-500 whitespace-nowrap"
-                      ></td>
-                    </tr>
-                    {accordions.map((accordion) => (
-                      <Accordion
-                        key={accordion.id}
-                        id={accordion.id}
-                        isOpen={openAccordions[accordion.id]}
-                        toggleAccordion={toggleAccordion}
-                        title={accordion.title}
-                        flagship={accordion.flagship}
-                        premium={accordion.premium}
-                        champion={accordion.champion}
-                      />
-                    ))}
-                  </tbody>
-                </table>
-                <div className="max-w-5xl font-light text-xs m-auto mb-10 leading-relaxed  ">
+              <div className="overflow-x-auto mt-10">
+                <Accordion
+                  title="Model/Configuration | Luxury"
+                  content={carSpecifications.model}
+                />
+                <Accordion
+                  title="Features"
+                  content={carSpecifications.features}
+                />
+                <div className="max-w-5xl mt-10 font-light text-xs m-auto mb-10 leading-relaxed  ">
                   <p className="md:max-w-2xl ">
-                    Mark: "●" standard, "—" not available, "○" optional All
-                    configurations shall be subject to the actual vehicle sold
-                    by the dealer, and BAIC reserves the right to change the
-                    described vehicle model，and does not have the obligation to
-                    notify in advance for the purpose of marketing or product
-                    promotion at any time.
+                    DISCLAIMER* <br></br>
+                    Specifications, equipment, colors & materials shown here may
+                    differ from every country. Please check with your local
+                    dealer for the latest information
                   </p>
                 </div>
               </div>
@@ -643,67 +557,3 @@ function App() {
 }
 
 export default App;
-const Accordion = ({
-  id,
-  isOpen,
-  toggleAccordion,
-  title,
-  flagship,
-  premium,
-  champion,
-}) => (
-  <>
-    <tr>
-      <td colSpan={4}>
-        <div
-          onClick={() => toggleAccordion(id)}
-          className="flex px-3 items-center bg-neutral-700 py-2"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className={`h-4 w-4 ${isOpen ? "transform rotate-180" : ""}`}
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="white"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="M19 9l-7 7-7-7"
-            />
-          </svg>
-          <span className="text-xs ml-2 font-medium text-white">{title}</span>
-        </div>
-      </td>
-    </tr>
-    {isOpen && (
-      <tr>
-        <td
-          colSpan={1}
-          className="md:px-4 px-2 py-4 border bg-neutral-100  text-xs text-gray-500 whitespace-nowrap"
-        >
-          {title}
-        </td>
-        <td
-          colSpan={1}
-          className="md:px-4 px-2 py-4 border bg-neutral-100  text-xs text-gray-500 whitespace-nowrap"
-        >
-          {premium}
-        </td>
-        <td
-          colSpan={1}
-          className="md:px-4 px-2 py-4 bg-neutral-100 border  text-xs text-gray-500 whitespace-nowrap"
-        >
-          {flagship}
-        </td>
-        <td
-          colSpan={1}
-          className="md:px-4 px-2 py-4 bg-neutral-100 border  text-xs text-gray-500 whitespace-nowrap"
-        >
-          {champion}
-        </td>
-      </tr>
-    )}
-  </>
-);
