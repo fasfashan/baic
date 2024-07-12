@@ -55,7 +55,7 @@ export default function Footer() {
             BOOK A TEST DRIVE
           </a>
           <a
-            href="#"
+            href="/request-price-list/index.html"
             className="text-gray-400 text-sm hover:text-white transition-all"
           >
             REQUEST PRICE LIST

@@ -3,6 +3,7 @@ import blog1 from "../src/assets/blog-1.jpg";
 import blog2 from "../src/assets/blog-2.jpg";
 import blog3 from "../src/assets/blog-3.jpg";
 import blog4 from "../src/assets/blog-4.jpg";
+import blog5 from "../src/assets/blog-5.jpg";
 import Footer from "../src/components/Footer";
 import CTA from "../src/components/cta";
 import { useState } from "react";
@@ -41,17 +42,9 @@ const contentArray = [
       "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque ipsam facilis accusamus quasi dolore repudiandae laudantium nulla odio ducimus, laboriosam corporis vel recusandae quia enim cumque, impedit magnam temporibus eaque.",
   },
   {
-    image: blog4,
+    image: blog5,
     link: "/news/single-post/index.html",
     date: "11 DESEMBER, 2024",
-    title: "Yet Another Award - Example Title 4",
-    description:
-      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque ipsam facilis accusamus quasi dolore repudiandae laudantium nulla odio ducimus, laboriosam corporis vel recusandae quia enim cumque, impedit magnam temporibus eaque.",
-  },
-  {
-    image: blog4,
-    link: "/news/single-post/index.html",
-    date: "12 DESEMBER, 2024",
     title: "Yet Another Award - Example Title 4",
     description:
       "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque ipsam facilis accusamus quasi dolore repudiandae laudantium nulla odio ducimus, laboriosam corporis vel recusandae quia enim cumque, impedit magnam temporibus eaque.",
