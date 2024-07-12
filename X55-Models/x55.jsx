@@ -34,10 +34,12 @@ import interior1 from "../src/assets/interior-1.jpg";
 import interior2 from "../src/assets/interior-2.jpg";
 import interior3 from "../src/assets/interior-3.jpg";
 import interior4 from "../src/assets/interior-4.jpg";
-import exterior1 from "../src/assets/exterior-1.jpg";
-import exterior2 from "../src/assets/exterior-2.jpg";
-import exterior3 from "../src/assets/exterior-3.jpg";
-import exterior4 from "../src/assets/exterior-4.jpg";
+import exterior1 from "../src/assets/exterior-x55-1.png";
+import exterior2 from "../src/assets/exterior-x55-2.png";
+import exterior3 from "../src/assets/exterior-x55-3.png";
+import exterior4 from "../src/assets/exterior-x55-4.png";
+import exterior5 from "../src/assets/exterior-x55-5.png";
+import exterior6 from "../src/assets/exterior-x55-6.png";
 import Accordion from "../src/components/Accordion";
 import CTA from "../src/components/cta";
 const carSpecifications = {
@@ -534,6 +536,18 @@ function App() {
                         src={exterior4}
                         alt="exterior 4"
                         className="w-full  col-span-4   "
+                      />
+                    </div>
+                    <div className=" grid grid-cols-6">
+                      <img
+                        src={exterior5}
+                        alt="exterior 1"
+                        className="w-full col-span-4"
+                      />
+                      <img
+                        src={exterior6}
+                        alt="exterior 2"
+                        className="w-full h-full col-span-2 object-cover  "
                       />
                     </div>
                   </div>
