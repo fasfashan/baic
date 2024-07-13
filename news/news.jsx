@@ -65,7 +65,7 @@ function App() {
               <img
                 src={content.image}
                 alt={`blog${index + 1}`}
-                className="md:col-span-6 h-full object-cover col-span-12"
+                className="md:col-span-6 md:h-full object-cover col-span-12"
               />
               <div className="space-y-4 md:col-span-6 col-span-12">
                 <p className="font-medium text-red-600">{content.date}</p>
