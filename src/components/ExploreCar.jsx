@@ -344,7 +344,7 @@ export default function ExploreCar() {
                 <div className="flex md:flex-nowrap flex-wrap gap-4 mt-10 justify-center">
                   <a
                     className="py-3 w-full text-center hover:bg-gray-100 transition-all border border-gray-400 rounded-xl"
-                    href="/X55-models/index.html"
+                    href="/X55-Models/index.html"
                   >
                     EXPLORE MORE
                   </a>
