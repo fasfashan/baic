@@ -1,19 +1,75 @@
 import { useState } from "react";
 import Header from "../src/components/Header";
 import Footer from "../src/components/Footer";
-import dealerplaceholder from "../src/assets/dealer-placeholder.png";
 import "../src/index.css";
 import dealerBandung from "../src/assets/dealer-baic-bandung.jpg";
+import dealerBatam from "../src/assets/dealer-baic-batam.jpg";
+import dealerDenpasar from "../src/assets/dealer-baic-denpasar.jpg";
+import dealerPIK2 from "../src/assets/dealer-baic-pik-2.jpg";
+import dealerMedan from "../src/assets/dealer-baic-sujono.jpg";
+import dealerSamarinda from "../src/assets/dealer-baic-samarinda.jpg";
+import dealerBanten from "../src/assets/dealer-baic-gading-serpong.jpg";
+
 function App() {
   const [dealerFound, setDealerFound] = useState(false);
+  const [selectedProvince, setSelectedProvince] = useState("");
+  const [selectedCity, setSelectedCity] = useState("");
 
   // Contoh array dealer
   const dealers = [
     {
       id: 1,
+      province: "KEPULAUAN RIAU",
+      city: "BATAM",
+      name: "Dealer Kepulauan Riau, Batam",
+      services: "Sales, Services, Spareparts & Body & Paint",
+      address:
+        "Jl. Gading Serpong Boulevard Blok A No.7 Curug Sangereng, Kec. Klp. Dua, Kabupaten Tangerang, Banten 15810",
+      whatsappLink: "#",
+      mapLink: "#",
+      image: dealerBatam,
+    },
+    {
+      id: 2,
+      province: "BALI",
+      city: "DENPASAR",
+      name: "Dealer Bali, Denpasar",
+      services: "Sales, Services, Spareparts & Body & Paint",
+      address:
+        "Jl. Gading Serpong Boulevard Blok A No.7 Curug Sangereng, Kec. Klp. Dua, Kabupaten Tangerang, Banten 15810",
+      whatsappLink: "#",
+      mapLink: "#",
+      image: dealerDenpasar,
+    },
+    {
+      id: 3,
       province: "BANTEN",
-      city: "TANGERANG",
-      name: "Dealer Tangerang Alam Sutera",
+      city: "TANGERANG SELATAN",
+      name: "Dealer Banten, Tangerang Selatan",
+      services: "Sales, Services, Spareparts & Body & Paint",
+      address:
+        "Jl. Gading Serpong Boulevard Blok A No.7 Curug Sangereng, Kec. Klp. Dua, Kabupaten Tangerang, Banten 15810",
+      whatsappLink: "#",
+      mapLink: "#",
+      image: dealerBanten,
+    },
+    {
+      id: 4,
+      province: "SUMATERA UTARA",
+      city: "MEDAN",
+      name: "Dealer Sumatera Utara, Medan",
+      services: "Sales, Services, Spareparts & Body & Paint",
+      address:
+        "Jl. Gading Serpong Boulevard Blok A No.7 Curug Sangereng, Kec. Klp. Dua, Kabupaten Tangerang, Banten 15810",
+      whatsappLink: "#",
+      mapLink: "#",
+      image: dealerMedan,
+    },
+    {
+      id: 5,
+      province: "JAWA BARAT",
+      city: "BANDUNG",
+      name: "Dealer Jawa Barat, Bandung",
       services: "Sales, Services, Spareparts & Body & Paint",
       address:
         "Jl. Gading Serpong Boulevard Blok A No.7 Curug Sangereng, Kec. Klp. Dua, Kabupaten Tangerang, Banten 15810",
@@ -21,12 +77,64 @@ function App() {
       mapLink: "#",
       image: dealerBandung,
     },
+    {
+      id: 6,
+      province: "DKI JAKARTA",
+      city: "JAKARTA UTARA",
+      name: "Dealer DKI Jakarta, Jakarta Utara",
+      services: "Sales, Services, Spareparts & Body & Paint",
+      address:
+        "Jl. Gading Serpong Boulevard Blok A No.7 Curug Sangereng, Kec. Klp. Dua, Kabupaten Tangerang, Banten 15810",
+      whatsappLink: "#",
+      mapLink: "#",
+      image: dealerPIK2,
+    },
+    {
+      id: 7,
+      province: "KALIMANTAN TIMUR",
+      city: "SAMARINDA",
+      name: "Dealer Kalimantan Timur, Samarinda",
+      services: "Sales, Services, Spareparts & Body & Paint",
+      address:
+        "Jl. Gading Serpong Boulevard Blok A No.7 Curug Sangereng, Kec. Klp. Dua, Kabupaten Tangerang, Banten 15810",
+      whatsappLink: "#",
+      mapLink: "#",
+      image: dealerSamarinda,
+    },
+
     // Tambahkan dealer lain jika perlu
   ];
+
+  const provinces = [...new Set(dealers.map((dealer) => dealer.province))];
+  const cities = selectedProvince
+    ? [
+        ...new Set(
+          dealers
+            .filter((dealer) => dealer.province === selectedProvince)
+            .map((dealer) => dealer.city)
+        ),
+      ]
+    : [];
 
   const handleFindDealer = () => {
     setDealerFound(true);
   };
+
+  const handleProvinceChange = (e) => {
+    setSelectedProvince(e.target.value);
+    setSelectedCity("");
+    setDealerFound(false);
+  };
+
+  const handleCityChange = (e) => {
+    setSelectedCity(e.target.value);
+    setDealerFound(false);
+  };
+
+  const filteredDealers = dealers.filter(
+    (dealer) =>
+      dealer.province === selectedProvince && dealer.city === selectedCity
+  );
 
   return (
     <>
@@ -38,27 +146,40 @@ function App() {
       </div>
       <div className="py-8 bg-neutral-200">
         <h2 className="text-2xl font-bold text-center">FIND OUR DEALER</h2>
-        <div className="flex md:flex-nowrap flex-wrap mt-6 max-w-6xl md:px-8 px-5 m-auto justify-between gap-4 ">
+        <div className="flex md:flex-nowrap flex-wrap mt-6 max-w-6xl md:px-8 px-5 m-auto justify-between gap-4">
           <form className="w-full custom-select">
             <select
-              id="countries"
+              id="provinces"
               className="bg-gray-50 appearance-none shadow-inner border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5"
+              value={selectedProvince}
+              onChange={handleProvinceChange}
             >
-              <option selected disabled>
+              <option value="" disabled>
                 PROVINCE
               </option>
-              <option value="banten">BANTEN</option>
+              {provinces.map((province, index) => (
+                <option key={index} value={province}>
+                  {province}
+                </option>
+              ))}
             </select>
           </form>
           <form className="w-full custom-select">
             <select
-              id="countries"
+              id="cities"
               className="bg-gray-50 appearance-none shadow-inner border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5"
+              value={selectedCity}
+              onChange={handleCityChange}
+              disabled={!selectedProvince}
             >
-              <option selected disabled>
+              <option value="" disabled>
                 CITY
               </option>
-              <option value="tangerang">TANGERANG</option>
+              {cities.map((city, index) => (
+                <option key={index} value={city}>
+                  {city}
+                </option>
+              ))}
             </select>
           </form>
           <button
@@ -68,9 +189,9 @@ function App() {
             FIND DEALER
           </button>
         </div>
-        {dealerFound && (
+        {dealerFound && filteredDealers.length > 0 && (
           <>
-            {dealers.map((dealer) => (
+            {filteredDealers.map((dealer) => (
               <div
                 key={dealer.id}
                 className="mt-10 md:px-8 px-5 max-w-6xl m-auto"
@@ -108,6 +229,11 @@ function App() {
               </div>
             ))}
           </>
+        )}
+        {dealerFound && filteredDealers.length === 0 && (
+          <div className="text-center text-red-600 font-bold mt-8">
+            No dealers found for the selected province and city.
+          </div>
         )}
       </div>
       <Footer />
