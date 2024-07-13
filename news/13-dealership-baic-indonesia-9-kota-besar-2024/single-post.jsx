@@ -41,7 +41,7 @@ function App() {
               src={images[activeIndex].src}
               alt={`BJ40 Plus ${activeIndex + 1}`}
               width={700}
-              className="object-cover h-96"
+              className="object-cover md:h-96"
             />
             <div className="flex gap-4">
               {images.map((image, index) => (

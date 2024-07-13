@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import { useState } from "react";
 import Header from "../../src/components/Header";
 import blog1 from "../../src/assets/blog-1.jpg";
@@ -24,16 +25,16 @@ function App() {
         <div className="max-w-6xl flex gap-4 m-auto md:px-8 px-5 font-medium">
           <a href="/news/index.html ">NEWS & EVENT {">>"}</a>
           <span className="text-neutral-400 truncate w-[calc(50%-80px)]">
-            Investor menyambut dengan positif! 13 Dealership BAIC Indonesia akan
-            hadir di 9 kota besar Indonesia di 2024
+            Resmi mengaspal, BAIC BJ-40 PLUS dan BAIC X-55 dua produk unggulan
+            BAIC kini hadir meramaikan pasar otomotif Indonesia
           </span>
         </div>
       </div>
       <div className="flex max-w-2xl md:px-8 px-5 mb-10 mt-10 m-auto">
         <div className="flex flex-col space-y-4  max-w-5xl m-auto justify-center">
           <h1 className="md:text-3xl text-2xl font-bold">
-            Investor menyambut dengan positif! 13 Dealership BAIC Indonesia akan
-            hadir di 9 kota besar Indonesia di 2024
+            Resmi mengaspal, BAIC BJ-40 PLUS dan BAIC X-55 dua produk unggulan
+            BAIC kini hadir meramaikan pasar otomotif Indonesia
           </h1>
           <p className="font-medium text-red-600">4 Mei, 2024</p>
           <div className="flex flex-col gap-4">
@@ -41,7 +42,7 @@ function App() {
               src={images[activeIndex].src}
               alt={`BJ40 Plus ${activeIndex + 1}`}
               width={700}
-              className="object-cover h-96"
+              className="object-cover md:h-96"
             />
             <div className="flex gap-4">
               {images.map((image, index) => (
@@ -67,7 +68,7 @@ function App() {
               merupakan produsen kendaraan bermotor terbesar ke-lima di Cina.
             </p>
             <p>
-              Hari ini adalah hari yang sangat Istimewa! Pada hari ini, dengan
+              "Hari ini adalah hari yang sangat Istimewa! Pada hari ini, dengan
               bangga kami akan menampilkan dua produk andalan BAIC untuk pertama
               kalinya di Indonesia langsung dihadapan rekan-rekan Media, selain
               itu juga dilakukan penandatanganan beberapa investor yang sepakat

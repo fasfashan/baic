@@ -32,7 +32,7 @@ function App() {
       <div className="flex max-w-2xl md:px-8 px-5 mb-10 mt-10 m-auto">
         <div className="flex flex-col space-y-4  max-w-5xl m-auto justify-center">
           <h1 className="md:text-3xl text-2xl font-bold">
-            IBAIC INTERNATIONAL Menandatangani Kesepakatan Penjualan Merk Mobil
+            BAIC INTERNATIONAL Menandatangani Kesepakatan Penjualan Merk Mobil
             BAIC di Indonesia Melalui PT JIO DISTRIBUSI INDONESIA
           </h1>
           <p className="font-medium text-red-600">28 Maret, 2024</p>
@@ -41,7 +41,7 @@ function App() {
               src={images[activeIndex].src}
               alt={`BJ40 Plus ${activeIndex + 1}`}
               width={700}
-              className="object-cover h-96"
+              className="object-cover md:h-96"
             />
             <div className="flex gap-4">
               {images.map((image, index) => (
