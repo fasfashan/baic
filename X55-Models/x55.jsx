@@ -30,10 +30,12 @@ import Foto1 from "../src/assets/X55-single-produk-1.jpg";
 import Foto2 from "../src/assets/X55-single-produk-2.jpg";
 import Foto3 from "../src/assets/X55-single-produk-3.jpg";
 import Foto4 from "../src/assets/X55-single-produk-4.jpg";
-import interior1 from "../src/assets/interior-1.jpg";
-import interior2 from "../src/assets/interior-2.jpg";
-import interior3 from "../src/assets/interior-3.jpg";
-import interior4 from "../src/assets/interior-4.jpg";
+import interior1 from "../src/assets/interior-x55-1.jpg";
+import interior2 from "../src/assets/interior-x55-2.jpg";
+import interior3 from "../src/assets/interior-x55-3.jpg";
+import interior4 from "../src/assets/interior-x55-4.jpg";
+import interior5 from "../src/assets/interior-5.jpg";
+import interior6 from "../src/assets/interior-6.jpg";
 import exterior1 from "../src/assets/exterior-x55-1.png";
 import exterior2 from "../src/assets/exterior-x55-2.png";
 import exterior3 from "../src/assets/exterior-x55-3.png";
@@ -506,6 +508,18 @@ function App() {
                         src={interior4}
                         alt="interior 1"
                         className="w-full  col-span-4   "
+                      />
+                    </div>
+                    <div className=" grid grid-cols-6">
+                      <img
+                        src={interior5}
+                        alt="interior 1"
+                        className="w-full col-span-4"
+                      />
+                      <img
+                        src={interior6}
+                        alt="interior 1"
+                        className="w-full h-full col-span-2 object-cover  "
                       />
                     </div>
                   </div>

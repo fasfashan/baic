@@ -34,6 +34,8 @@ import interior1 from "../src/assets/interior-1.jpg";
 import interior2 from "../src/assets/interior-2.jpg";
 import interior3 from "../src/assets/interior-3.jpg";
 import interior4 from "../src/assets/interior-4.jpg";
+import interior5 from "../src/assets/interior-5.jpg";
+import interior6 from "../src/assets/interior-6.jpg";
 import exterior1 from "../src/assets/exterior-1.jpg";
 import exterior2 from "../src/assets/exterior-2.jpg";
 import exterior3 from "../src/assets/exterior-3.jpg";
@@ -480,6 +482,18 @@ function App() {
                         src={interior4}
                         alt="interior 1"
                         className="w-full  col-span-4   "
+                      />
+                    </div>
+                    <div className=" grid grid-cols-6">
+                      <img
+                        src={interior5}
+                        alt="interior 1"
+                        className="w-full col-span-4"
+                      />
+                      <img
+                        src={interior6}
+                        alt="interior 1"
+                        className="w-full h-full col-span-2 object-cover  "
                       />
                     </div>
                   </div>

@@ -13,9 +13,10 @@ const contentArray = [
     image: blog1,
     link: "/news/single-post/index.html",
     date: "7 DESEMBER, 2024",
-    title: "Top Gear award - BAIC Beijing X55 win",
+    title:
+      "Resmi mengaspal, BAIC BJ-40 PLUS dan BAIC X-55 dua produk unggulan BAIC kini hadir meramaikan pasar otomotif Indonesia",
     description:
-      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque ipsam facilis accusamus quasi dolore repudiandae laudantium nulla odio ducimus, laboriosam corporis vel recusandae quia enim cumque, impedit magnam temporibus eaque.",
+      "BAIC merupakan salah satu merk andalan dari Beijing Automotive Group Co., Ltd. Produsen ini memiliki beberapa merk lain yang dijual tidak hanya dipasar dalam negeri Cina, tetapi juga di ekspor ke negara-negara besar lain didunia. Perusahaan ini memiliki kerjasama yang erat dengan berbagai produsen Otomotif di seluruh dunia dan diantaranya yang sangat populer dan masih berlangsung hingga saat ini adalah Kerjasama Beijing-Benz dan Beijing-Hyundai.” Pungkas Dhani. Di Indonesia, BAIC memperkenalkan dua model andalannya di segmen SUV medium yang menyasar dua pasar yang berbeda. Keduanya memiliki performa khas kendaraan eropa yang dibekali dengan teknologi modern demi mengikuti kebutuhan pasar yang terus berevolusi namun juga sarat dengan beragam kebutuhan. BAIC BJ-40 PLUS di Indonesia hadir dengan satu pilihan mesin yaitu mesin bensin 4 silinder, 16 valve, 2.000cc DOHC dengan Turbocharger, dipadukan dengan transmisi 8-Percepatan lansiran pabrik transmisi ternama dari Jerman yaitu ZF Friedrichshafen. Sistem penggerak pun sudah menggunakan Electronic Transfer Case dengan Center Differential Lock dari Borg-Wagner, yang sangat mumpuni untuk menerabas medan berat. BAIC BJ-40 PLUS dengan penggerak empat-roda ini, menghasilkan tenaga maksimum 221 Hp dengan torsi maksimal 380 Nm, yang dirasa cukup mumpuni untuk kondisi jalan dan alam di Indonesia. SUV dengan karakter gagah dan macho ini memberikan kesan premium pada setiap sudut tampilannya, baik penampilan maupun performanya dinilai sangat cocok untuk para pecinta offroad atau konsumen yang memiliki jiwa adventurer. Masuk ke Indonesia dengan harga 800 jutaan, SUV ini diyakini akan menjadi pesaing unggul di segmen kendaraan serbaguna khususnya berpenggerak empat roda atau 4x4 di Indonesia. ",
   },
   {
     image: blog2,
@@ -23,7 +24,7 @@ const contentArray = [
     date: "8 DESEMBER, 2024",
     title: "Another Award - Example Title 2",
     description:
-      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque ipsam facilis accusamus quasi dolore repudiandae laudantium nulla odio ducimus, laboriosam corporis vel recusandae quia enim cumque, impedit magnam temporibus eaque.",
+      "BAIC merupakan salah satu merk andalan dari Beijing Automotive Group Co., Ltd. Produsen ini memiliki beberapa merk lain yang dijual tidak hanya dipasar dalam negeri Cina, tetapi juga di ekspor ke negara-negara besar lain didunia. Perusahaan ini memiliki kerjasama yang erat dengan berbagai produsen Otomotif di seluruh dunia dan diantaranya yang sangat populer dan masih berlangsung hingga saat ini adalah Kerjasama Beijing-Benz dan Beijing-Hyundai.” Pungkas Dhani. Di Indonesia, BAIC memperkenalkan dua model andalannya di segmen SUV medium yang menyasar dua pasar yang berbeda. Keduanya memiliki performa khas kendaraan eropa yang dibekali dengan teknologi modern demi mengikuti kebutuhan pasar yang terus berevolusi namun juga sarat dengan beragam kebutuhan. BAIC BJ-40 PLUS di Indonesia hadir dengan satu pilihan mesin yaitu mesin bensin 4 silinder, 16 valve, 2.000cc DOHC dengan Turbocharger, dipadukan dengan transmisi 8-Percepatan lansiran pabrik transmisi ternama dari Jerman yaitu ZF Friedrichshafen. Sistem penggerak pun sudah menggunakan Electronic Transfer Case dengan Center Differential Lock dari Borg-Wagner, yang sangat mumpuni untuk menerabas medan berat. BAIC BJ-40 PLUS dengan penggerak empat-roda ini, menghasilkan tenaga maksimum 221 Hp dengan torsi maksimal 380 Nm, yang dirasa cukup mumpuni untuk kondisi jalan dan alam di Indonesia. SUV dengan karakter gagah dan macho ini memberikan kesan premium pada setiap sudut tampilannya, baik penampilan maupun performanya dinilai sangat cocok untuk para pecinta offroad atau konsumen yang memiliki jiwa adventurer. Masuk ke Indonesia dengan harga 800 jutaan, SUV ini diyakini akan menjadi pesaing unggul di segmen kendaraan serbaguna khususnya berpenggerak empat roda atau 4x4 di Indonesia. ",
   },
   {
     image: blog3,
@@ -51,6 +52,13 @@ const contentArray = [
   },
 ];
 function App() {
+  const truncateText = (text, wordLimit) => {
+    const words = text.split(" ");
+    if (words.length > wordLimit) {
+      return words.slice(0, wordLimit).join(" ") + "...";
+    }
+    return text;
+  };
   const [visiblePosts, setVisiblePosts] = useState(3);
 
   const handleLoadMore = () => {
@@ -79,7 +87,7 @@ function App() {
                   {content.title}
                 </h2>
                 <p className="text-neutral-600 font-normal">
-                  {content.description}
+                  {truncateText(content.description, 50)}
                 </p>
                 <a
                   className="py-3 block px-14 w-fit text-center hover:bg-red-600 transition-all hover:text-white border border-neutral-500 hover:border-none rounded-xl"
