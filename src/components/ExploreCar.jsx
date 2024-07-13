@@ -350,7 +350,7 @@ export default function ExploreCar() {
                   </a>
                   <a
                     className="py-3 w-full text-center hover:bg-gray-100 transition-all border border-gray-400 rounded-xl"
-                    href="/brochure-bj40.pdf"
+                    href="/brochure-x55.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
