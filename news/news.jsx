@@ -6,6 +6,7 @@ import blog4 from "../src/assets/blog-4.jpg";
 import blog5 from "../src/assets/blog-5.jpg";
 import Footer from "../src/components/Footer";
 import CTA from "../src/components/cta";
+import ButtonChat from "../src/components/ButtonChat";
 import { useState } from "react";
 import "../src/index.css";
 const contentArray = [
@@ -16,13 +17,14 @@ const contentArray = [
     title:
       "Resmi mengaspal, BAIC BJ-40 PLUS dan BAIC X-55 dua produk unggulan BAIC kini hadir meramaikan pasar otomotif Indonesia",
     description:
-      "BAIC merupakan salah satu merk andalan dari Beijing Automotive Group Co., Ltd. Produsen ini memiliki beberapa merk lain yang dijual tidak hanya dipasar dalam negeri Cina, tetapi juga di ekspor ke negara-negara besar lain didunia. Perusahaan ini memiliki kerjasama yang erat dengan berbagai produsen Otomotif di seluruh dunia dan diantaranya yang sangat populer dan masih berlangsung hingga saat ini adalah Kerjasama Beijing-Benz dan Beijing-Hyundai.” Pungkas Dhani. Di Indonesia, BAIC memperkenalkan dua model andalannya di segmen SUV medium yang menyasar dua pasar yang berbeda. Keduanya memiliki performa khas kendaraan eropa yang dibekali dengan teknologi modern demi mengikuti kebutuhan pasar yang terus berevolusi namun juga sarat dengan beragam kebutuhan. BAIC BJ-40 PLUS di Indonesia hadir dengan satu pilihan mesin yaitu mesin bensin 4 silinder, 16 valve, 2.000cc DOHC dengan Turbocharger, dipadukan dengan transmisi 8-Percepatan lansiran pabrik transmisi ternama dari Jerman yaitu ZF Friedrichshafen. Sistem penggerak pun sudah menggunakan Electronic Transfer Case dengan Center Differential Lock dari Borg-Wagner, yang sangat mumpuni untuk menerabas medan berat. BAIC BJ-40 PLUS dengan penggerak empat-roda ini, menghasilkan tenaga maksimum 221 Hp dengan torsi maksimal 380 Nm, yang dirasa cukup mumpuni untuk kondisi jalan dan alam di Indonesia. SUV dengan karakter gagah dan macho ini memberikan kesan premium pada setiap sudut tampilannya, baik penampilan maupun performanya dinilai sangat cocok untuk para pecinta offroad atau konsumen yang memiliki jiwa adventurer. Masuk ke Indonesia dengan harga 800 jutaan, SUV ini diyakini akan menjadi pesaing unggul di segmen kendaraan serbaguna khususnya berpenggerak empat roda atau 4x4 di Indonesia. ",
+      "BAIC merupakan salah satu merk andalan dari Beijing Automotive Group Co., Ltd. Produsen ini memiliki beberapa merk lain yang dijual tidak hanya dipasar dalam negeri Cina, tetapi juga di ekspor ke negara-negara besar lain didunia. Perusahaan ini memiliki kerjasama yang erat dengan berbagai produsen Otomotif di seluruh dunia dan diantaranya yang sangat populer dan masih berlangsung hingga saat ini adalah Kerjasama Beijing-Benz dan Beijing-Hyundai.” Pungkas Dhani. Di Indonesia, BAIC memperkenalkan dua model andalannya di segmen SUV medium yang menyasar dua pasar yang berbeda. Keduanya memiliki performa khas kendaraan eropa yang dibekali dengan teknologi modern demi mengikuti kebutuhan pasar yang terus berevolusi namun juga sarat dengan beragam kebutuhan. BAIC BJ-40 PLUS di Indonesia hadir dengan satu pilihan mesin yaitu mesin bensin 4 silinder, 16 valve, 2.000cc DOHC dengan Turbocharger, dipadukan dengan transmisi 8-Percepatan lansiran pabrik transmisi ternama dari Jerman yaitu ZF Friedrichshafen. Sistem penggerak pun sudah menggunakan Electronic Transfer Case dengan Center Differential Lock dari Borg-Wagner, yang sangat mumpuni untuk menerabas medan berat. BAIC BJ-40 PLUS dengan penggerak empat-roda ini, menghasilkan tenaga maksimum 221 Hp dengan torsi maksimal 380 Nm, yang dirasa cukup mumpuni untuk kondisi jalan dan alam di Indonesia. SUV dengan karakter gagah dan macho ini memberikan kesan premium pada setiap sudut tampilannya, baik penampilan maupun performanya dinilai sangat cocok untuk para pecinta offroad atau konsumen yang memiliki jiwa adventurer. Masuk ke Indonesia dengan harga 800 jutaan, SUV ini diyakini akan menjadi pesaing unggul di segmen kendaraan serbaguna khususnya berpenggerak empat roda atau 4x4 di Indonesia.",
   },
   {
     image: blog2,
     link: "/news/single-post/index.html",
     date: "8 DESEMBER, 2024",
-    title: "Another Award - Example Title 2",
+    title:
+      "BAIC INTERNATIONAL Menandatangani Kesepakatan Penjualan Merk Mobil BAIC di Indonesia Melalui PT JIO DISTRIBUSI INDONESIA",
     description:
       "BAIC merupakan salah satu merk andalan dari Beijing Automotive Group Co., Ltd. Produsen ini memiliki beberapa merk lain yang dijual tidak hanya dipasar dalam negeri Cina, tetapi juga di ekspor ke negara-negara besar lain didunia. Perusahaan ini memiliki kerjasama yang erat dengan berbagai produsen Otomotif di seluruh dunia dan diantaranya yang sangat populer dan masih berlangsung hingga saat ini adalah Kerjasama Beijing-Benz dan Beijing-Hyundai.” Pungkas Dhani. Di Indonesia, BAIC memperkenalkan dua model andalannya di segmen SUV medium yang menyasar dua pasar yang berbeda. Keduanya memiliki performa khas kendaraan eropa yang dibekali dengan teknologi modern demi mengikuti kebutuhan pasar yang terus berevolusi namun juga sarat dengan beragam kebutuhan. BAIC BJ-40 PLUS di Indonesia hadir dengan satu pilihan mesin yaitu mesin bensin 4 silinder, 16 valve, 2.000cc DOHC dengan Turbocharger, dipadukan dengan transmisi 8-Percepatan lansiran pabrik transmisi ternama dari Jerman yaitu ZF Friedrichshafen. Sistem penggerak pun sudah menggunakan Electronic Transfer Case dengan Center Differential Lock dari Borg-Wagner, yang sangat mumpuni untuk menerabas medan berat. BAIC BJ-40 PLUS dengan penggerak empat-roda ini, menghasilkan tenaga maksimum 221 Hp dengan torsi maksimal 380 Nm, yang dirasa cukup mumpuni untuk kondisi jalan dan alam di Indonesia. SUV dengan karakter gagah dan macho ini memberikan kesan premium pada setiap sudut tampilannya, baik penampilan maupun performanya dinilai sangat cocok untuk para pecinta offroad atau konsumen yang memiliki jiwa adventurer. Masuk ke Indonesia dengan harga 800 jutaan, SUV ini diyakini akan menjadi pesaing unggul di segmen kendaraan serbaguna khususnya berpenggerak empat roda atau 4x4 di Indonesia. ",
   },
@@ -67,6 +69,7 @@ function App() {
   return (
     <>
       <Header />
+      <ButtonChat />
       <div className="bg-neutral-100   py-4">
         <h3 className="max-w-6xl m-auto md:px-8 px-5 font-medium">
           NEWS & EVENT

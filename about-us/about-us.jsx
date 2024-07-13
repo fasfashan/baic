@@ -5,11 +5,13 @@ import logoJDI from "../src/assets/logo-jdi-black.png";
 import Footer from "../src/components/Footer";
 import CTA from "../src/components/cta";
 import "../src/index.css";
+import ButtonChat from "../src/components/ButtonChat";
 
 function App() {
   return (
     <>
       <Header />
+      <ButtonChat />
       <div className="bg-neutral-100   py-4">
         <div className="max-w-6xl flex gap-4 m-auto md:px-8 px-5 font-medium">
           <p className="font-semibold">ABOUT US</p>

@@ -42,11 +42,11 @@ import exterior3 from "../src/assets/exterior-3.jpg";
 import exterior4 from "../src/assets/exterior-4.jpg";
 import exterior5 from "../src/assets/exterior-5.png";
 import exterior6 from "../src/assets/exterior-6.png";
-
 import snowWhite from "../src/assets/snow white.png";
 import armyGreen from "../src/assets/army green.png";
 import CTA from "../src/components/cta";
 import Accordion from "../src/components/Accordion";
+import ButtonChat from "../src/components/ButtonChat";
 const carSpecifications = {
   engine: [
     { title: "LengthxWidthxHeight (mm)", content: "4465 / 1925 / 1871" },
@@ -205,6 +205,7 @@ function App() {
   return (
     <>
       <Header />
+      <ButtonChat />
       <div className="bg-neutral-400    ">
         <div className=" py-6 z-10  bg-neutral-100  sticky  top-0 items-center ">
           <div className="max-w-6xl gap-4 flex justify-between flex-wrap m-auto md:px-8 px-5">

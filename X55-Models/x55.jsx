@@ -43,6 +43,7 @@ import exterior4 from "../src/assets/exterior-x55-4.png";
 import exterior5 from "../src/assets/exterior-x55-5.png";
 import exterior6 from "../src/assets/exterior-x55-6.png";
 import Accordion from "../src/components/Accordion";
+import ButtonChat from "../src/components/ButtonChat";
 import CTA from "../src/components/cta";
 const carSpecifications = {
   model: [
@@ -210,6 +211,7 @@ function App() {
   return (
     <>
       <Header />
+      <ButtonChat />
       <div className="bg-neutral-400    ">
         <div className=" py-6 z-10  bg-neutral-100  sticky  top-0 items-center ">
           <div className="max-w-6xl gap-4 flex justify-between flex-wrap m-auto md:px-8 px-5">

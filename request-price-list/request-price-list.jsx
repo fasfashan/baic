@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Header from "../src/components/Header";
 import Footer from "../src/components/Footer";
+import ButtonChat from "../src/components/ButtonChat";
 import "../src/index.css";
 
 function App() {
@@ -44,6 +45,7 @@ function App() {
   return (
     <>
       <Header />
+      <ButtonChat />
       <div className="bg-neutral-100 py-4">
         <h3 className="max-w-6xl m-auto md:px-8 px-5 font-bold">
           REQUEST PRICE LIST
