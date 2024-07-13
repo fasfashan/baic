@@ -4,6 +4,7 @@ import blog1 from "../../src/assets/blog-3.jpg";
 import blog2 from "../../src/assets/blog-3.jpg";
 import Footer from "../../src/components/Footer";
 import CTA from "../../src/components/cta";
+import ButtonChat from "../../src/components/ButtonChat";
 
 import "../../src/index.css";
 
@@ -20,6 +21,7 @@ function App() {
   return (
     <>
       <Header />
+      <ButtonChat />
       <div className="bg-neutral-100   py-4">
         <div className="max-w-6xl flex gap-4 m-auto md:px-8 px-5 font-medium">
           <a href="/news/index.html ">NEWS & EVENT {">>"}</a>
@@ -41,7 +43,7 @@ function App() {
               src={images[activeIndex].src}
               alt={`BJ40 Plus ${activeIndex + 1}`}
               width={700}
-              className="object-cover md:h-96"
+              className="object-cover md:h-96 "
             />
             <div className="flex gap-4">
               {images.map((image, index) => (

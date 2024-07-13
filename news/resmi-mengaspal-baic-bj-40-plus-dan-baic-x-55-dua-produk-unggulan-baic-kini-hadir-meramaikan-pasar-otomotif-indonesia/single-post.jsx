@@ -5,7 +5,7 @@ import blog1 from "../../src/assets/blog-1.jpg";
 import blog2 from "../../src/assets/product-launch.jpg";
 import Footer from "../../src/components/Footer";
 import CTA from "../../src/components/cta";
-
+import ButtonChat from "../../src/components/ButtonChat";
 import "../../src/index.css";
 
 function App() {
@@ -21,6 +21,7 @@ function App() {
   return (
     <>
       <Header />
+      <ButtonChat />
       <div className="bg-neutral-100   py-4">
         <div className="max-w-6xl flex gap-4 m-auto md:px-8 px-5 font-medium">
           <a href="/news/index.html ">NEWS & EVENT {">>"}</a>
