@@ -11,12 +11,11 @@ import dealerSamarinda from "../src/assets/dealer-baic-samarinda.jpg";
 import dealerBanten from "../src/assets/dealer-baic-gading-serpong.jpg";
 import MapComponent from "../src/components/Maps";
 import backgroundImage from "../src/assets/slide-2.jpg";
+
 function App() {
   const [dealerFound, setDealerFound] = useState(false);
-  const [selectedProvince, setSelectedProvince] = useState("");
   const [selectedCity, setSelectedCity] = useState("");
 
-  // Contoh array dealer
   const dealers = [
     {
       id: 1,
@@ -130,46 +129,31 @@ function App() {
       lat: -0.5022,
       lng: 117.1536,
     },
-
-    // Tambahkan dealer lain jika perlu
   ];
 
-  const provinces = [...new Set(dealers.map((dealer) => dealer.province))];
-  const cities = selectedProvince
-    ? [
-        ...new Set(
-          dealers
-            .filter((dealer) => dealer.province === selectedProvince)
-            .map((dealer) => dealer.city)
-        ),
-      ]
-    : [];
+  const cities = [...new Set(dealers.map((dealer) => dealer.city))];
 
   const handleFindDealer = () => {
     setDealerFound(true);
   };
 
-  const handleProvinceChange = (e) => {
-    setSelectedProvince(e.target.value);
-    setSelectedCity("");
-    setDealerFound(false);
-  };
-
   const handleCityChange = (e) => {
     setSelectedCity(e.target.value);
-    setDealerFound(false);
+    setDealerFound(true);
   };
 
   const filteredDealers = dealers.filter(
-    (dealer) =>
-      dealer.province === selectedProvince && dealer.city === selectedCity
+    (dealer) => dealer.city === selectedCity
   );
-
+  const handleMarkerClick = (city) => {
+    setSelectedCity(city);
+    setDealerFound(true);
+  };
   return (
     <>
       <Header />
       <div className="bg-neutral-100 py-4">
-        <h3 className="max-w-6xl  m-auto md:px-8 px-5 font-bold">
+        <h3 className="max-w-6xl m-auto md:px-8 px-5 font-bold">
           CONTACT DEALER
         </h3>
       </div>
@@ -177,12 +161,12 @@ function App() {
         className="bg-cover bg-center text-center p-8 w-full min-h-screen flex items-center justify-center"
         style={{ backgroundImage: `url(${backgroundImage})` }}
       >
-        <h1 className="md:text-6xl  text-4xl font-bold text-white">
+        <h1 className="md:text-6xl text-4xl font-bold text-white">
           BAIC Authorized Dealer
         </h1>
       </div>
       <div className="max-w-6xl m-auto my-10 md:px-8 px-5">
-        <MapComponent dealers={dealers} />
+        <MapComponent onMarkerClick={handleMarkerClick} dealers={dealers} />
       </div>
       <div className="py-8 bg-neutral-200">
         <h2 className="text-2xl font-bold text-center">FIND OUR DEALER</h2>
@@ -193,7 +177,6 @@ function App() {
               className="bg-gray-50 appearance-none shadow-inner border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5"
               value={selectedCity}
               onChange={handleCityChange}
-              disabled={!selectedProvince}
             >
               <option value="" disabled>
                 CITY
@@ -232,8 +215,8 @@ function App() {
                         {dealer.services}
                       </h2>
                       <p className="text-sm">{dealer.address}</p>
-                      <p className="text-sm">Telp: 021 1234 5678 </p>
-                      <p className="text-sm">Phone: 0812 3456 789</p>
+                      <p className="text-sm">Telp: {dealer.telp}</p>
+                      <p className="text-sm">Phone: {dealer.phone}</p>
                       <p className="text-sm">Bussiness Hours:</p>
                       <p className="text-sm">Monday - Friday: 08:30 - 17:30</p>
                       <p className="text-sm">
@@ -254,7 +237,7 @@ function App() {
                         MAP
                       </a>
                       <a
-                        className="py-3 md:w-fit w-full block px-14 text-center bg-white  hover:bg-red-50  shadow-sm border border-neutral-300 transition-all text-black rounded-xl"
+                        className="py-3 md:w-fit w-full block px-14 text-center bg-white hover:bg-red-50 shadow-sm border border-neutral-300 transition-all text-black rounded-xl"
                         href=""
                       >
                         Instagram
@@ -268,11 +251,10 @@ function App() {
         )}
         {dealerFound && filteredDealers.length === 0 && (
           <div className="text-center text-red-600 font-bold mt-8">
-            No dealers found for the selected province and city.
+            No dealers found for the selected city.
           </div>
         )}
       </div>
-
       <Footer />
     </>
   );

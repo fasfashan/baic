@@ -1,7 +1,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+.leaflet-popup-content-wrapper {
+  max-width: 200px;
+  background-color: #ef4444 !important;
+  padding: 10px;
+  border-radius: 10px;
+}
+.leaflet-popup-content p {
+  margin: 0px !important;
+}
+.leaflet-popup-close-button span {
+  color: white;
+}
 li {
   list-style: none;
 }

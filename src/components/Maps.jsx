@@ -1,4 +1,3 @@
-// MapComponent.js
 // eslint-disable-next-line no-unused-vars
 import React from "react";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
@@ -21,7 +20,7 @@ const customIcon = new Icon({
 });
 
 // eslint-disable-next-line react/prop-types
-const MapComponent = ({ dealers }) => {
+const MapComponent = ({ dealers, onMarkerClick }) => {
   return (
     <MapContainer
       style={{ height: "500px", width: "100%" }}
@@ -34,16 +33,19 @@ const MapComponent = ({ dealers }) => {
         attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
       />
       {dealers.map((dealer, idx) => (
-        <Marker key={idx} position={[dealer.lat, dealer.lng]} icon={customIcon}>
+        <Marker
+          key={idx}
+          position={[dealer.lat, dealer.lng]}
+          icon={customIcon}
+          eventHandlers={{
+            click: () => {
+              onMarkerClick(dealer.city);
+            },
+          }}
+        >
           <Popup>
-            <div className="flex flex-col">
-              <img
-                className="w-full h-48 object-cover"
-                src={dealer.image}
-                alt=""
-              />
-              <strong>{dealer.name}</strong>
-              {dealer.services}
+            <div className="flex flex-col bg-red-500 p-0">
+              <p className="text-white font-semibold">{dealer.city}</p>
             </div>
           </Popup>
         </Marker>
