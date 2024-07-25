@@ -9,7 +9,8 @@ import dealerPIK2 from "../src/assets/dealer-baic-pik-2.jpg";
 import dealerMedan from "../src/assets/dealer-baic-sujono.jpg";
 import dealerSamarinda from "../src/assets/dealer-baic-samarinda.jpg";
 import dealerBanten from "../src/assets/dealer-baic-gading-serpong.jpg";
-
+import MapComponent from "../src/components/Maps";
+import backgroundImage from "../src/assets/slide-2.jpg";
 function App() {
   const [dealerFound, setDealerFound] = useState(false);
   const [selectedProvince, setSelectedProvince] = useState("");
@@ -19,6 +20,8 @@ function App() {
   const dealers = [
     {
       id: 1,
+      telp: "02112345678",
+      phone: "0882125628",
       province: "KEPULAUAN RIAU",
       city: "BATAM",
       name: "Dealer Kepulauan Riau, Batam",
@@ -28,9 +31,13 @@ function App() {
       whatsappLink: "#",
       mapLink: "#",
       image: dealerBatam,
+      lat: -6.2,
+      lng: 106.816666,
     },
     {
       id: 2,
+      telp: "02112345678",
+      phone: "0882125628",
       province: "BALI",
       city: "DENPASAR",
       name: "Dealer Bali, Denpasar",
@@ -40,9 +47,13 @@ function App() {
       whatsappLink: "#",
       mapLink: "#",
       image: dealerDenpasar,
+      lat: -8.65,
+      lng: 115.216667,
     },
     {
       id: 3,
+      telp: "02112345678",
+      phone: "0882125628",
       province: "BANTEN",
       city: "TANGERANG SELATAN",
       name: "Dealer Banten, Tangerang Selatan",
@@ -52,9 +63,13 @@ function App() {
       whatsappLink: "#",
       mapLink: "#",
       image: dealerBanten,
+      lat: -6.290978,
+      lng: 106.718772,
     },
     {
       id: 4,
+      telp: "02112345678",
+      phone: "0882125628",
       province: "SUMATERA UTARA",
       city: "MEDAN",
       name: "Dealer Sumatera Utara, Medan",
@@ -64,9 +79,13 @@ function App() {
       whatsappLink: "#",
       mapLink: "#",
       image: dealerMedan,
+      lat: 3.595196,
+      lng: 98.672223,
     },
     {
       id: 5,
+      telp: "02112345678",
+      phone: "0882125628",
       province: "JAWA BARAT",
       city: "BANDUNG",
       name: "Dealer Jawa Barat, Bandung",
@@ -76,9 +95,13 @@ function App() {
       whatsappLink: "#",
       mapLink: "#",
       image: dealerBandung,
+      lat: -6.917464,
+      lng: 107.619123,
     },
     {
       id: 6,
+      telp: "02112345678",
+      phone: "0882125628",
       province: "DKI JAKARTA",
       city: "JAKARTA UTARA",
       name: "Dealer DKI Jakarta, Jakarta Utara",
@@ -88,9 +111,13 @@ function App() {
       whatsappLink: "#",
       mapLink: "#",
       image: dealerPIK2,
+      lat: -6.121435,
+      lng: 106.774124,
     },
     {
       id: 7,
+      telp: "02112345678",
+      phone: "0882125628",
       province: "KALIMANTAN TIMUR",
       city: "SAMARINDA",
       name: "Dealer Kalimantan Timur, Samarinda",
@@ -100,6 +127,8 @@ function App() {
       whatsappLink: "#",
       mapLink: "#",
       image: dealerSamarinda,
+      lat: -0.5022,
+      lng: 117.1536,
     },
 
     // Tambahkan dealer lain jika perlu
@@ -143,6 +172,17 @@ function App() {
         <h3 className="max-w-6xl m-auto md:px-8 px-5 font-bold">
           CONTACT DEALER
         </h3>
+      </div>
+      <div
+        className="bg-cover bg-center w-full min-h-screen flex items-center justify-center"
+        style={{ backgroundImage: `url(${backgroundImage})` }}
+      >
+        <h1 className="md:text-6xl text-4xl font-bold text-white">
+          BAIC Authorized Dealer
+        </h1>
+      </div>
+      <div className="max-w-6xl m-auto my-10">
+        <MapComponent dealers={dealers} />
       </div>
       <div className="py-8 bg-neutral-200">
         <h2 className="text-2xl font-bold text-center">FIND OUR DEALER</h2>
@@ -209,6 +249,13 @@ function App() {
                         {dealer.services}
                       </h2>
                       <p className="text-sm">{dealer.address}</p>
+                      <p className="text-sm">Telp: 021 1234 5678 </p>
+                      <p className="text-sm">Phone: 0812 3456 789</p>
+                      <p className="text-sm">Bussiness Hours:</p>
+                      <p className="text-sm">Monday - Friday: 08:30 - 17:30</p>
+                      <p className="text-sm">
+                        Saturday - Monday: 09:40 - 14:00
+                      </p>
                     </div>
                     <div className="flex flex-wrap gap-2">
                       <a
@@ -223,6 +270,12 @@ function App() {
                       >
                         MAP
                       </a>
+                      <a
+                        className="py-3 md:w-fit w-full block px-14 text-center bg-white  hover:bg-red-50  shadow-sm border border-neutral-300 transition-all text-black rounded-xl"
+                        href=""
+                      >
+                        Instagram
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -236,6 +289,7 @@ function App() {
           </div>
         )}
       </div>
+
       <Footer />
     </>
   );
