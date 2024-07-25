@@ -169,41 +169,24 @@ function App() {
     <>
       <Header />
       <div className="bg-neutral-100 py-4">
-        <h3 className="max-w-6xl m-auto md:px-8 px-5 font-bold">
+        <h3 className="max-w-6xl  m-auto md:px-8 px-5 font-bold">
           CONTACT DEALER
         </h3>
       </div>
       <div
-        className="bg-cover bg-center w-full min-h-screen flex items-center justify-center"
+        className="bg-cover bg-center text-center p-8 w-full min-h-screen flex items-center justify-center"
         style={{ backgroundImage: `url(${backgroundImage})` }}
       >
-        <h1 className="md:text-6xl text-4xl font-bold text-white">
+        <h1 className="md:text-6xl  text-4xl font-bold text-white">
           BAIC Authorized Dealer
         </h1>
       </div>
-      <div className="max-w-6xl m-auto my-10">
+      <div className="max-w-6xl m-auto my-10 md:px-8 px-5">
         <MapComponent dealers={dealers} />
       </div>
       <div className="py-8 bg-neutral-200">
         <h2 className="text-2xl font-bold text-center">FIND OUR DEALER</h2>
         <div className="flex md:flex-nowrap flex-wrap mt-6 max-w-6xl md:px-8 px-5 m-auto justify-between gap-4">
-          <form className="w-full custom-select">
-            <select
-              id="provinces"
-              className="bg-gray-50 appearance-none shadow-inner border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5"
-              value={selectedProvince}
-              onChange={handleProvinceChange}
-            >
-              <option value="" disabled>
-                PROVINCE
-              </option>
-              {provinces.map((province, index) => (
-                <option key={index} value={province}>
-                  {province}
-                </option>
-              ))}
-            </select>
-          </form>
           <form className="w-full custom-select">
             <select
               id="cities"

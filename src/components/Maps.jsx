@@ -27,6 +27,7 @@ const MapComponent = ({ dealers }) => {
       style={{ height: "500px", width: "100%" }}
       bounds={indonesiaBounds}
       zoom={13}
+      scrollWheelZoom={false}
     >
       <TileLayer
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
