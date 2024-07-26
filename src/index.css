@@ -7,6 +7,9 @@
   padding: 10px;
   border-radius: 10px;
 }
+.leaflet-popup-tip {
+  background-color: #ef4444 !important;
+}
 .leaflet-popup-content p {
   margin: 0px !important;
 }
