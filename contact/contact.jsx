@@ -11,7 +11,11 @@ import dealerSamarinda from "../src/assets/dealer-baic-samarinda.jpg";
 import dealerBanten from "../src/assets/dealer-baic-gading-serpong.jpg";
 import MapComponent from "../src/components/Maps";
 import backgroundImage from "../src/assets/slide-2.jpg";
-
+import {
+  FaInstagramSquare,
+  FaWhatsappSquare,
+  FaMapMarkerAlt,
+} from "react-icons/fa";
 function App() {
   const [dealerFound, setDealerFound] = useState(false);
   const [selectedCity, setSelectedCity] = useState("");
@@ -32,6 +36,7 @@ function App() {
       image: dealerBatam,
       lat: -6.2,
       lng: 106.816666,
+      ptName: "PT LOREM IPSUM",
     },
     {
       id: 2,
@@ -48,6 +53,7 @@ function App() {
       image: dealerDenpasar,
       lat: -8.65,
       lng: 115.216667,
+      ptName: "PT LOREM IPSUM",
     },
     {
       id: 3,
@@ -64,6 +70,7 @@ function App() {
       image: dealerBanten,
       lat: -6.290978,
       lng: 106.718772,
+      ptName: "PT LOREM IPSUM",
     },
     {
       id: 4,
@@ -80,6 +87,8 @@ function App() {
       image: dealerMedan,
       lat: 3.595196,
       lng: 98.672223,
+
+      ptName: "PT LOREM IPSUM",
     },
     {
       id: 5,
@@ -96,6 +105,7 @@ function App() {
       image: dealerBandung,
       lat: -6.917464,
       lng: 107.619123,
+      ptName: "PT LOREM IPSUM",
     },
     {
       id: 6,
@@ -112,6 +122,7 @@ function App() {
       image: dealerPIK2,
       lat: -6.121435,
       lng: 106.774124,
+      ptName: "PT LOREM IPSUM",
     },
     {
       id: 7,
@@ -128,6 +139,8 @@ function App() {
       image: dealerSamarinda,
       lat: -0.5022,
       lng: 117.1536,
+
+      ptName: "PT LOREM IPSUM",
     },
   ];
 
@@ -196,25 +209,23 @@ function App() {
           </button>
         </div>
         {dealerFound && filteredDealers.length > 0 && (
-          <>
+          <div className="grid md:grid-cols-12 max-w-6xl md:px-8 px-5 m-auto">
             {filteredDealers.map((dealer) => (
-              <div
-                key={dealer.id}
-                className="mt-10 md:px-8 px-5 max-w-6xl m-auto"
-              >
-                <div className="grid rounded-lg shadow-lg bg-white p-8 grid-cols-12 gap-6 mb-8">
-                  <img
-                    src={dealer.image}
-                    alt={`blog`}
-                    className="md:col-span-4 col-span-12"
-                  />
-                  <div className="space-y-2 flex flex-col justify-between md:col-span-8 col-span-12">
+              <div key={dealer.id} className="mt-10 col-span-4">
+                <div className=" rounded-lg shadow-lg bg-white p-8  space-y-4 mb-8">
+                  <img src={dealer.image} alt={`blog`} />
+                  <div className="space-y-4 flex flex-col justify-between md:col-span-8 col-span-12">
+                    <h2 className="font-medium text-2xl">{dealer.name}</h2>
                     <div className="space-y-1">
-                      <h2 className="font-medium text-2xl">{dealer.name}</h2>
+                      <h2 className=" font-medium">{dealer.ptName}</h2>
                       <h2 className="capitalize italic text-red-600 font-medium">
                         {dealer.services}
                       </h2>
+                    </div>
+                    <div className="space-y-1">
                       <p className="text-sm">{dealer.address}</p>
+                    </div>
+                    <div className="space-y-1">
                       <p className="text-sm">Telp: {dealer.telp}</p>
                       <p className="text-sm">Phone: {dealer.phone}</p>
                       <p className="text-sm">Bussiness Hours:</p>
@@ -224,30 +235,21 @@ function App() {
                       </p>
                     </div>
                     <div className="flex flex-wrap gap-2">
-                      <a
-                        className="py-3 md:w-fit w-full block px-14 text-white text-center bg-green-600 transition-all hover:text-white rounded-xl"
-                        href={dealer.whatsappLink}
-                      >
-                        WHATSAPP
+                      <a className="text-4xl" href={dealer.whatsappLink}>
+                        <FaWhatsappSquare className="text-red-500" />
                       </a>
-                      <a
-                        className="py-3 md:w-fit w-full block px-14 text-center bg-red-600 transition-all text-white rounded-xl"
-                        href={dealer.mapLink}
-                      >
-                        MAP
+                      <a className="text-4xl" href={dealer.whatsappLink}>
+                        <FaMapMarkerAlt className="text-red-500" />
                       </a>
-                      <a
-                        className="py-3 md:w-fit w-full block px-14 text-center bg-white hover:bg-red-50 shadow-sm border border-neutral-300 transition-all text-black rounded-xl"
-                        href=""
-                      >
-                        Instagram
+                      <a className="text-4xl" href={dealer.whatsappLink}>
+                        <FaInstagramSquare className="text-red-500" />
                       </a>
                     </div>
                   </div>
                 </div>
               </div>
             ))}
-          </>
+          </div>
         )}
         {dealerFound && filteredDealers.length === 0 && (
           <div className="text-center text-red-600 font-bold mt-8">
