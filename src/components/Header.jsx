@@ -33,6 +33,10 @@ export default function Header() {
         if (currentScrollY > lastScrollY && currentScrollY > 100) {
           // Scrolling down & past 100px
           setIsVisible(false);
+          setIsBigMenuOpen(false); // Close big menu when scrolling down
+          setIsAboutUsOpen(false);
+          setIsServicesOpen(false);
+          setIsDealerOpen(false);
         } else {
           // Scrolling up
           setIsVisible(true);
@@ -274,7 +278,7 @@ export default function Header() {
           </div>
         </div>
       </nav>
-      {isBigMenuOpen && <BigMenu />}
+      {isBigMenuOpen && isVisible && <BigMenu />}
       {isMobileMenuOpen && <MobileMenu />}
     </>
   );

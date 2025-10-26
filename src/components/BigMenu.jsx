@@ -11,7 +11,7 @@ const BigMenu = () => {
 
   return (
     <div
-      className="border-b pt-10 absolute z-50 
+      className="border-b pt-10 fixed top-[72px] left-0 right-0 z-40 
      border-gray-400 w-full bg-white shadow-lg"
     >
       <div className="max-w-6xl grid md:px-8 px-5 grid-cols-12 justify-between m-auto min-h-96 ">
