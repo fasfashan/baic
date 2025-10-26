@@ -9,12 +9,25 @@ export default function Car360Viewer({
   const [currentFrame, setCurrentFrame] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
   const [isDragging, setIsDragging] = useState(false);
+  const [isTouchDevice, setIsTouchDevice] = useState(false);
 
   const containerRef = useRef(null);
   const dragStartX = useRef(0);
   const dragStartFrame = useRef(0);
   const imageCache = useRef({});
   const isMounted = useRef(true);
+
+  // Detect touch device
+  useEffect(() => {
+    const checkTouchDevice = () => {
+      setIsTouchDevice(
+        "ontouchstart" in window ||
+          navigator.maxTouchPoints > 0 ||
+          navigator.msMaxTouchPoints > 0
+      );
+    };
+    checkTouchDevice();
+  }, []);
 
   // Build image path
   const getImagePath = useCallback(
@@ -89,7 +102,11 @@ export default function Car360Viewer({
 
     const currentX = e.clientX || e.touches?.[0]?.clientX;
     const deltaX = currentX - dragStartX.current;
-    const sensitivity = 6;
+    
+    // Use different sensitivity for touch devices vs mouse
+    // Lower number = more sensitive (moves faster)
+    // Touch devices need lower sensitivity for smoother movement
+    const sensitivity = isTouchDevice ? 2 : 6;
     const frameDelta = Math.floor(deltaX / sensitivity);
 
     let newFrame = (dragStartFrame.current + frameDelta) % totalFrames;
