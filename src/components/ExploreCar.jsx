@@ -67,7 +67,7 @@ export default function ExploreCar() {
 
   return (
     <div className="App">
-      <div className="mt-10 md:px-8 px-5">
+      <div className="mt-10 md:px-8">
         <h2 className=" text-3xl font-bold text-center ">EXPLORE YOUR BAIC</h2>
         <div className="mt-6">
           <div className="flex gap-2 justify-center max-w-6xl m-auto">
@@ -104,7 +104,7 @@ export default function ExploreCar() {
           </div>
           <div className="p-4 flex justify-center">
             {activeTab === "BJ40 Plus" && (
-              <div className="mt-10 md:px-8 px-5">
+              <div className="mt-10 md:px-8 ">
                 <div className="flex space-x-3 justify-center">
                   {colors.map((color) => (
                     <div
@@ -189,7 +189,7 @@ export default function ExploreCar() {
               </div>
             )}
             {activeTab === "X55 II" && (
-              <div className="mt-10 md:px-8 px-5">
+              <div className="mt-10 md:px-8 ">
                 <div className="flex space-x-3 justify-center">
                   {colorsX55.map((color) => (
                     <div

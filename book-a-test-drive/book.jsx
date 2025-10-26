@@ -262,7 +262,7 @@ Mohon informasi lebih lanjut. Terima kasih!`;
         <div className="absolute inset-0 bg-black bg-opacity-40"></div>
 
         {/* Form Card */}
-        <div className="relative z-10 bg-white rounded-2xl shadow-2xl p-8 max-w-md w-full">
+        <div className="relative mt-20 z-10 bg-white rounded-2xl shadow-2xl p-8 max-w-md w-full">
           <h2 className="text-2xl font-bold mb-2 text-gray-800">
             Book a Test Drive
           </h2>
