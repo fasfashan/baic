@@ -102,7 +102,7 @@ export default function Car360Viewer({
 
     const currentX = e.clientX || e.touches?.[0]?.clientX;
     const deltaX = currentX - dragStartX.current;
-    
+
     // Use different sensitivity for touch devices vs mouse
     // Lower number = more sensitive (moves faster)
     // Touch devices need lower sensitivity for smoother movement
