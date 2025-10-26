@@ -12,59 +12,135 @@ export default function Footer() {
       <div className="max-w-6xl  md:px-8 px-5 m-auto">
         <hr className="border border-red-800" />
       </div>
-      <div className="grid  md:px-8 px-5 mt-8 gap-y-4 grid-cols-12 max-w-6xl m-auto">
-        <div className="md:col-span-3 col-span-6 row flex flex-col space-y-2">
-          <h3 className="text-white text-lg font-medium">VECHICLE</h3>
+      <div className="grid md:px-8 px-5 mt-8 gap-y-6 md:gap-y-4 grid-cols-2 md:grid-cols-5 max-w-6xl m-auto">
+        {/* Vehicle Column */}
+        <div className="flex flex-col space-y-2">
+          <h3 className="text-white text-base font-semibold mb-2">Vehicle</h3>
           <a
-            href="#"
+            href="/BJ40/index.html"
+            className="text-gray-400 text-sm hover:text-white transition-all"
+          >
+            BJ30
+          </a>
+          <a
+            href="/BJ40/index.html"
             className="text-gray-400 text-sm hover:text-white transition-all"
           >
             BJ40 PLUS
           </a>
           <a
-            href="#"
+            href="/X55-Models/index.html"
             className="text-gray-400 text-sm hover:text-white transition-all"
           >
-            X55II
+            X55 II - Lite
+          </a>
+          <a
+            href="/X55-Models/index.html"
+            className="text-gray-400 text-sm hover:text-white transition-all"
+          >
+            X55 II - Prime
           </a>
         </div>
-        <div className="md:col-span-3 col-span-6 row flex flex-col space-y-2">
-          <h3 className="text-white text-lg font-medium">COMPANY</h3>
+
+        {/* Company Column */}
+        <div className="flex flex-col space-y-2">
+          <h3 className="text-white text-base font-semibold mb-2">Company</h3>
           <a
             href="/about-us/index.html"
             className="text-gray-400 text-sm hover:text-white transition-all"
           >
-            ABOUT US
+            About Us
           </a>
-        </div>
-        <div className="md:col-span-3 col-span-6 row flex flex-col space-y-2">
-          <h3 className="text-white text-lg font-medium">NEWS & EVENT</h3>
           <a
             href="/news/index.html"
             className="text-gray-400 text-sm hover:text-white transition-all"
           >
-            UPDATE NEWS & EVENT
+            Update & News Event
+          </a>
+          <a
+            href="/career"
+            className="text-gray-400 text-sm hover:text-white transition-all"
+          >
+            Career
           </a>
         </div>
-        <div className="md:col-span-3 col-span-6 row flex flex-col space-y-2">
-          <h3 className="text-white text-lg font-medium">CONTACT DEALER</h3>
+
+        {/* Services Column */}
+        <div className="flex flex-col space-y-2">
+          <h3 className="text-white text-base font-semibold mb-2">Services</h3>
           <a
-            href="/book-a-test-drive/index.html"
+            href="/aftersales"
             className="text-gray-400 text-sm hover:text-white transition-all"
           >
-            BOOK A TEST DRIVE
+            Aftersales Program
           </a>
           <a
-            href="/request-price-list/index.html"
+            href="/emergency-road"
             className="text-gray-400 text-sm hover:text-white transition-all"
           >
-            REQUEST PRICE LIST
+            Emergency Road Assistance
           </a>
           <a
-            href="/contact/index.html"
+            href="/booking-service"
             className="text-gray-400 text-sm hover:text-white transition-all"
           >
-            FIND DEALER
+            Booking Dealer Services
+          </a>
+        </div>
+
+        {/* Dealer Column */}
+        <div className="flex flex-col space-y-2">
+          <h3 className="text-white text-base font-semibold mb-2">Dealer</h3>
+          <a
+            href="/find-dealer"
+            className="text-gray-400 text-sm hover:text-white transition-all"
+          >
+            Find Dealer
+          </a>
+          <a
+            href="/partnership"
+            className="text-gray-400 text-sm hover:text-white transition-all"
+          >
+            Partnership
+          </a>
+        </div>
+
+        {/* Social Media Column */}
+        <div className="flex flex-col space-y-2">
+          <h3 className="text-white text-base font-semibold mb-2">
+            Social Media
+          </h3>
+          <a
+            href="https://www.instagram.com/baic.id/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-400 text-sm hover:text-white transition-all"
+          >
+            Instagram
+          </a>
+          <a
+            href="https://www.tiktok.com/@baic.id"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-400 text-sm hover:text-white transition-all"
+          >
+            TikTok
+          </a>
+          <a
+            href="https://www.facebook.com/baic.id"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-400 text-sm hover:text-white transition-all"
+          >
+            Facebook
+          </a>
+          <a
+            href="https://www.youtube.com/@baic.id"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-400 text-sm hover:text-white transition-all"
+          >
+            YouTube
           </a>
         </div>
       </div>

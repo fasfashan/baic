@@ -1,6 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+* {
+  font-family: "Figtree", sans-serif;
+}
 .leaflet-popup-content-wrapper {
   max-width: 200px;
   background-color: #ef4444 !important;
