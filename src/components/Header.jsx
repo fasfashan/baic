@@ -6,18 +6,20 @@ import { ChevronDown, ChevronUp } from "lucide-react";
 
 export default function Header() {
   const [isBigMenuOpen, setIsBigMenuOpen] = useState(false);
-  const [isAboutUsOpen, setIsAboutUsOpen] = useState(false);
+  const [isAccessoriesOpen, setIsAccessoriesOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const [isDealerOpen, setIsDealerOpen] = useState(false);
+  const [isAboutUsOpen, setIsAboutUsOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
 
   const handleVehicleClick = () => {
     setIsBigMenuOpen(!isBigMenuOpen);
-    setIsAboutUsOpen(false);
+    setIsAccessoriesOpen(false);
     setIsServicesOpen(false);
     setIsDealerOpen(false);
+    setIsAboutUsOpen(false);
   };
 
   const handleMobileMenuClick = () => {
@@ -34,9 +36,10 @@ export default function Header() {
           // Scrolling down & past 100px
           setIsVisible(false);
           setIsBigMenuOpen(false); // Close big menu when scrolling down
-          setIsAboutUsOpen(false);
+          setIsAccessoriesOpen(false);
           setIsServicesOpen(false);
           setIsDealerOpen(false);
+          setIsAboutUsOpen(false);
         } else {
           // Scrolling up
           setIsVisible(true);
@@ -62,13 +65,14 @@ export default function Header() {
           isVisible ? "translate-y-0" : "-translate-y-full"
         }`}
       >
-        <div className="md:max-w-6xl md:px-8 px-5 m-auto flex justify-between items-center">
+        <div className="max-w-6xl md:px-6 px-5 m-auto flex justify-between items-center">
           {/* Logo & Desktop Menu */}
-          <div className="hidden md:flex text-white items-center gap-8">
+          <div className="hidden md:flex text-white items-center gap-5">
             <a href="/">
               <img className="h-6" src={logo} alt="Logo" />
             </a>
-            <ul className="flex gap-6 tracking-wide items-center">
+            <ul className="flex gap-4 tracking-wide items-center text-sm">
+              {/* Vehicle Menu */}
               {/* Vehicle Menu */}
               <li className="relative">
                 <button
@@ -84,40 +88,34 @@ export default function Header() {
                 </button>
               </li>
 
-              {/* About Us Menu */}
+              {/* Accessories */}
               <li
                 className="relative group"
-                onMouseEnter={() => setIsAboutUsOpen(true)}
-                onMouseLeave={() => setIsAboutUsOpen(false)}
+                onMouseEnter={() => setIsAccessoriesOpen(true)}
+                onMouseLeave={() => setIsAccessoriesOpen(false)}
               >
                 <button className="flex items-center gap-1 hover:text-gray-300 transition-colors py-2">
-                  About Us
-                  {isAboutUsOpen ? (
+                  Accessories
+                  {isAccessoriesOpen ? (
                     <ChevronUp className="w-4 h-4" />
                   ) : (
                     <ChevronDown className="w-4 h-4" />
                   )}
                 </button>
-                {isAboutUsOpen && (
+                {isAccessoriesOpen && (
                   <div className="absolute top-full left-0 pt-2 z-50">
                     <div className="w-56 bg-white text-black rounded-lg shadow-lg py-2">
                       <a
-                        href="/about-us/index.html"
+                        href="/accessories/bj40-sunshades"
                         className="block px-4 py-2 hover:bg-gray-100 transition-colors"
                       >
-                        About us
+                        BJ40 Accessories
                       </a>
                       <a
-                        href="/news/index.html"
+                        href="/accessories/x55-sunshades"
                         className="block px-4 py-2 hover:bg-gray-100 transition-colors"
                       >
-                        Update News & Events
-                      </a>
-                      <a
-                        href="/career"
-                        className="block px-4 py-2 hover:bg-gray-100 transition-colors"
-                      >
-                        Career
+                        X55 Accessories
                       </a>
                     </div>
                   </div>
@@ -198,14 +196,48 @@ export default function Header() {
                 )}
               </li>
 
-              {/* Credit Simulation */}
+              {/* News & Event */}
               <li>
                 <a
-                  href="/credit-simulation"
+                  href="/news/index.html"
                   className="hover:text-gray-300 transition-colors"
                 >
-                  Credit Simulation
+                  News & Event
                 </a>
+              </li>
+
+              {/* About Us Menu */}
+              <li
+                className="relative group"
+                onMouseEnter={() => setIsAboutUsOpen(true)}
+                onMouseLeave={() => setIsAboutUsOpen(false)}
+              >
+                <button className="flex items-center gap-1 hover:text-gray-300 transition-colors py-2">
+                  About Us
+                  {isAboutUsOpen ? (
+                    <ChevronUp className="w-4 h-4" />
+                  ) : (
+                    <ChevronDown className="w-4 h-4" />
+                  )}
+                </button>
+                {isAboutUsOpen && (
+                  <div className="absolute top-full left-0 pt-2 z-50">
+                    <div className="w-56 bg-white text-black rounded-lg shadow-lg py-2">
+                      <a
+                        href="/about-us/index.html"
+                        className="block px-4 py-2 hover:bg-gray-100 transition-colors"
+                      >
+                        About us
+                      </a>
+                      <a
+                        href="/career"
+                        className="block px-4 py-2 hover:bg-gray-100 transition-colors"
+                      >
+                        Career
+                      </a>
+                    </div>
+                  </div>
+                )}
               </li>
             </ul>
           </div>
@@ -218,15 +250,15 @@ export default function Header() {
           </div>
 
           {/* CTA Buttons & Language Selector */}
-          <div className="hidden md:flex gap-4 items-center">
+          <div className="hidden md:flex gap-3 items-center">
             <a
-              className="py-3 px-4 font-medium text-sm text-white text-center bg-red-600 transition-all hover:bg-red-700 rounded-xl"
+              className="py-2.5 px-4 font-medium text-sm text-white text-center bg-red-600 transition-all hover:bg-red-700 rounded-xl whitespace-nowrap"
               href="/book-a-test-drive/index.html"
             >
               Book a Test Drive
             </a>
             <a
-              className="py-3 px-4 font-medium text-sm text-center bg-white transition-all hover:bg-neutral-100 rounded-xl"
+              className="py-2.5 px-4 font-medium text-sm text-center bg-white transition-all hover:bg-neutral-100 rounded-xl whitespace-nowrap"
               href="/request-price-list/index.html"
             >
               Request Price List
