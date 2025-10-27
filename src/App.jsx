@@ -6,7 +6,7 @@ import PopupBanner from "./components/PopupBanner";
 import AfterSalesSection from "./components/AfterSalesSection";
 import NewsSection from "./components/NewsSection";
 import AccessoriesSection from "./components/AccessoriesSection";
-import OtherProductsSection from "./components/OtherProductsSection";
+import CtaSection from "./components/CtaSection";
 import Footer from "./components/Footer";
 import "./App.css";
 
@@ -20,7 +20,7 @@ function App() {
       <AccessoriesSection />
       <AfterSalesSection />
       <NewsSection />
-      <OtherProductsSection />
+      <CtaSection />
       <Footer />
     </>
   );
