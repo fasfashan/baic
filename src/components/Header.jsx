@@ -152,7 +152,7 @@ export default function Header() {
                         Emergency Road Assistance
                       </a>
                       <a
-                        href="/booking-service"
+                        href="/booking-dealer-service/index.html"
                         className="block px-4 py-2 hover:bg-gray-100 transition-colors"
                       >
                         Booking Dealer Service

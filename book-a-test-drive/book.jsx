@@ -259,7 +259,7 @@ Mohon informasi lebih lanjut. Terima kasih!`;
         style={{ backgroundImage: "url('/bg-book-a-test-drive.jpg')" }}
       >
         {/* Dark Overlay */}
-        <div className="absolute inset-0 bg-black bg-opacity-40"></div>
+        <div className="absolute inset-0 "></div>
 
         {/* Form Card */}
         <div className="relative mt-20 z-10 bg-white rounded-2xl shadow-2xl p-8 max-w-md w-full">

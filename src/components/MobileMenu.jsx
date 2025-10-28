@@ -199,7 +199,7 @@ export default function MobileMenu() {
                 Emergency Road Assistance
               </a>
               <a
-                href="/booking-service"
+                href="/booking-dealer-service/index.html"
                 className="block text-sm text-gray-700 hover:text-red-600"
               >
                 Booking Dealer Service
