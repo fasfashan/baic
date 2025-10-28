@@ -230,7 +230,7 @@ export default function Header() {
                         About us
                       </a>
                       <a
-                        href="/career"
+                        href="/career/index.html"
                         className="block px-4 py-2 hover:bg-gray-100 transition-colors"
                       >
                         Career

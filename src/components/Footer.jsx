@@ -58,7 +58,7 @@ export default function Footer() {
             Update & News Event
           </a>
           <a
-            href="/career"
+            href="/career/index.html"
             className="text-gray-400 text-sm hover:text-white transition-all"
           >
             Career

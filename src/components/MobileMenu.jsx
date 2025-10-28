@@ -269,7 +269,7 @@ export default function MobileMenu() {
                 About us
               </a>
               <a
-                href="/career"
+                href="/career/index.html"
                 className="block text-sm text-gray-700 hover:text-red-600"
               >
                 Career
