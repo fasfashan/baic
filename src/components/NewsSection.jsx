@@ -2,66 +2,68 @@ export default function NewsSection() {
   const newsArticles = [
     {
       id: 1,
-      date: "24 September, 2025",
-      title: "Presenting in Semarang BAIC BJ30 Hybrid Offered at Special Price",
-      image: "/image-blog.jpg",
-      link: "/news/bj30-hybrid-semarang",
+      date: "01 October, 2025",
+      title:
+        "THE NEWEST HYBRID SUV BAIC BJ30 COMES TO BANDUNG AT A SPECIAL PRICE DURING GIIAS 2025 - BANDUNG",
+      image: "/placeholder-news.jpg",
+      link: "/news/single-news.html",
     },
     {
       id: 2,
-      date: "23 September, 2025",
-      title:
-        "BAIC Indonesia expands to North Jakarta! BAIC Kelapa Gading is now officially operational!",
-      image: "/image-blog-1.jpg",
-      link: "/news/kelapa-gading-opening",
+      date: "01 October, 2025",
+      title: "PRESENT IN SEMARANG BAIC BJ30 HYBRID OFFERED AT A SPECIAL PRICE!",
+      image: "/placeholder-news.jpg",
+      link: "/news/single-news.html",
     },
     {
       id: 3,
-      date: "22 September, 2025",
+      date: "01 October, 2025",
       title:
-        "World Premiere! BAIC BJ30 Hybrid Right-Hand Drive First Launched in Indonesia",
-      image: "/image-blog-2.jpg",
-      link: "/news/bj30-hybrid-world-premiere",
+        "PRESENT AROUND THE HEART OF SOUTH SULAWESI BAIC is Now Available in Makassar - Makassar!",
+      image: "/placeholder-news.jpg",
+      link: "/news/single-news.html",
     },
   ];
 
   return (
     <section className="py-16 bg-gray-50">
-      <div className="max-w-6xl mx-auto px-4 md:px-8">
+      <div className="max-w-7xl mx-auto px-4 md:px-8">
         {/* Section Title */}
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
           News & Event
         </h2>
 
         {/* News Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {newsArticles.map((article) => (
-            <div
+            <a
               key={article.id}
-              className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300"
+              href={article.link}
+              className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow block"
             >
               {/* Featured Image */}
-              <a href={article.link} className="block">
+              <div className="relative h-56 overflow-hidden">
                 <img
                   src={article.image}
                   alt={article.title}
-                  className="w-full h-48 object-cover hover:scale-105 transition-transform duration-300"
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                 />
-              </a>
+                {/* Date Badge */}
+                <div className="absolute top-4 left-4 bg-white px-3 py-1 rounded">
+                  <p className="text-red-600 text-xs font-semibold">
+                    {article.date}
+                  </p>
+                </div>
+              </div>
 
               {/* Content */}
-              <div className="p-6">
-                {/* Date */}
-                <p className="text-sm text-gray-500 mb-2">{article.date}</p>
-
+              <div className="p-5">
                 {/* Title */}
-                <a href={article.link} className="block group">
-                  <h3 className="text-lg font-semibold text-gray-800 mb-4 line-clamp-3 group-hover:text-red-600 transition-colors">
-                    {article.title}
-                  </h3>
-                </a>
+                <h3 className="text-lg font-bold text-gray-800 mb-3 line-clamp-2 hover:text-red-600 transition-colors">
+                  {article.title}
+                </h3>
               </div>
-            </div>
+            </a>
           ))}
         </div>
 

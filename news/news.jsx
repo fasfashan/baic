@@ -1,100 +1,190 @@
 import Header from "../src/components/Header";
-import blog1 from "../src/assets/blog-1.jpg";
-import blog2 from "../src/assets/blog-2.jpg";
-import blog3 from "../src/assets/blog-3.jpg";
 import Footer from "../src/components/Footer";
-import CTA from "../src/components/cta";
+import CtaSection from "../src/components/CtaSection";
 import ButtonChat from "../src/components/ButtonChat";
 import { useState } from "react";
 import "../src/index.css";
-const contentArray = [
+
+// Dummy news data - 10 articles
+const newsData = [
   {
-    image: blog1,
-    link: "/news/resmi-mengaspal-baic-bj-40-plus-dan-baic-x-55-dua-produk-unggulan-baic-kini-hadir-meramaikan-pasar-otomotif-indonesia/index.html",
-    date: "14 MEI, 2024",
+    image: "/placeholder-news.jpg",
+    date: "01 October, 2025",
     title:
-      "Resmi mengaspal, BAIC BJ-40 PLUS dan BAIC X-55 dua produk unggulan BAIC kini hadir meramaikan pasar otomotif Indonesia",
+      "THE NEWEST HYBRID SUV BAIC BJ30 COMES TO BANDUNG AT A SPECIAL PRICE DURING GIIAS 2025 - BANDUNG",
     description:
-      "BAIC merupakan salah satu merk andalan dari Beijing Automotive Group Co., Ltd. Produsen ini memiliki beberapa merk lain yang dijual tidak hanya dipasar dalam negeri Cina, tetapi juga di ekspor ke negara-negara besar lain didunia. Perusahaan ini memiliki kerjasama yang erat dengan berbagai produsen Otomotif di seluruh dunia dan diantaranya yang sangat populer dan masih berlangsung hingga saat ini adalah Kerjasama Beijing-Benz dan Beijing-Hyundai.” Pungkas Dhani. Di Indonesia, BAIC memperkenalkan dua model andalannya di segmen SUV medium yang menyasar dua pasar yang berbeda. Keduanya memiliki performa khas kendaraan eropa yang dibekali dengan teknologi modern demi mengikuti kebutuhan pasar yang terus berevolusi namun juga sarat dengan beragam kebutuhan. BAIC BJ-40 PLUS di Indonesia hadir dengan satu pilihan mesin yaitu mesin bensin 4 silinder, 16 valve, 2.000cc DOHC dengan Turbocharger, dipadukan dengan transmisi 8-Percepatan lansiran pabrik transmisi ternama dari Jerman yaitu ZF Friedrichshafen. Sistem penggerak pun sudah menggunakan Electronic Transfer Case dengan Center Differential Lock dari Borg-Wagner, yang sangat mumpuni untuk menerabas medan berat. BAIC BJ-40 PLUS dengan penggerak empat-roda ini, menghasilkan tenaga maksimum 221 Hp dengan torsi maksimal 380 Nm, yang dirasa cukup mumpuni untuk kondisi jalan dan alam di Indonesia. SUV dengan karakter gagah dan macho ini memberikan kesan premium pada setiap sudut tampilannya, baik penampilan maupun performanya dinilai sangat cocok untuk para pecinta offroad atau konsumen yang memiliki jiwa adventurer. Masuk ke Indonesia dengan harga 800 jutaan, SUV ini diyakini akan menjadi pesaing unggul di segmen kendaraan serbaguna khususnya berpenggerak empat roda atau 4x4 di Indonesia.",
+      "Bandung, October 1, 2025 – PT JIO Distribusi Indonesia, BAIC's authorized agent (APM) in Indonesia, officially participated in GIIAS Bandung 2025 – Autoshow Series, which took place from OC...",
+    link: "/news/single-news.html",
   },
   {
-    image: blog3,
-    link: "/news/13-dealership-baic-indonesia-9-kota-besar-2024/index.html",
-    date: "14 MEI, 2024",
-    title:
-      " Investor menyambut dengan positif! 13 Dealership BAIC Indonesia akan hadir di 9 kota besar Indonesia di 2024",
+    image: "/placeholder-news.jpg",
+    date: "01 October, 2025",
+    title: "PRESENT IN SEMARANG BAIC BJ30 HYBRID OFFERED AT A SPECIAL PRICE!",
     description:
-      "Kehadiran kendaraan bermotor merk BAIC yang turut meramaikan pasar Otomotif di Indonesia sejak bulan April 2024 kemarin, mendapatkan tanggapan yang positif dari sekaligus 7 investor di Indonesia. Para investor ini datang bukan hanya dari investor lama yang bermain dipasar Otomotif tapi juga dari datang dari pemain diindustri yang berbeda. ",
+      "Indonesia, October 2025 - PT JIO Distribusi Indonesia, BAIC Brand Holder Agent (APM) in Indonesia, officially participated in auto expo Semarang 2025 - Autoshow Series with...",
+    link: "/news/single-news.html",
   },
   {
-    image: blog2,
-    link: "/news/baic-international-menandatangani-kesepakatan-penjualan-merk-mobil-baic-di-indonesia-melalui-pt-jio-distribusi-indonesia/index.html",
-    date: "28 Maret, 2024",
+    image: "/placeholder-news.jpg",
+    date: "01 October, 2025",
     title:
-      "BAIC INTERNATIONAL Menandatangani Kesepakatan Penjualan Merk Mobil BAIC di Indonesia Melalui PT JIO DISTRIBUSI INDONESIA",
+      "PRESENT AROUND THE HEART OF SOUTH SULAWESI BAIC is Now Available in Makassar - Makassar!",
     description:
-      "Melalui kesepakatan yang dilanjutkan dengan pengesahan PT JIO Distribusi Indonesia (disingkat : PT. JDI) oleh pihak Beijing Automotive Group Co., Ltd. Melalui BAIC INTERNATIONAL, maka secara resmi penjualan kendaraan bermotor roda empat dengan merk BAIC akan segera dilakukan di Indonesia.",
+      "Bandung, October 1, 2025 – PT JIO Distribusi Indonesia, BAIC's authorized agent (APM) in Indonesia, officially participated in GIIAS Bandung 2025 – Autoshow Series, which took place from OC...",
+    link: "/news/single-news.html",
+  },
+  {
+    image: "/placeholder-news.jpg",
+    date: "01 October, 2025",
+    title:
+      "THE NEWEST HYBRID SUV BAIC BJ30 COMES TO BANDUNG AT A SPECIAL PRICE DURING GIIAS 2025 - BANDUNG",
+    description:
+      "Bandung, October 1, 2025 – PT JIO Distribusi Indonesia, BAIC's authorized agent (APM) in Indonesia, officially participated in GIIAS Bandung 2025 – Autoshow Series, which took place from OC...",
+    link: "/news/single-news.html",
+  },
+  {
+    image: "/placeholder-news.jpg",
+    date: "01 October, 2025",
+    title:
+      "THE NEWEST HYBRID SUV BAIC BJ30 COMES TO BANDUNG AT A SPECIAL PRICE DURING GIIAS 2025 - BANDUNG",
+    description:
+      "Bandung, October 1, 2025 – PT JIO Distribusi Indonesia, BAIC's authorized agent (APM) in Indonesia, officially participated in GIIAS Bandung 2025 – Autoshow Series, which took place from OC...",
+    link: "/news/single-news.html",
+  },
+  {
+    image: "/placeholder-news.jpg",
+    date: "01 October, 2025",
+    title:
+      "THE NEWEST HYBRID SUV BAIC BJ30 COMES TO BANDUNG AT A SPECIAL PRICE DURING GIIAS 2025 - BANDUNG",
+    description:
+      "Bandung, October 1, 2025 – PT JIO Distribusi Indonesia, BAIC's authorized agent (APM) in Indonesia, officially participated in GIIAS Bandung 2025 – Autoshow Series, which took place from OC...",
+    link: "/news/single-news.html",
+  },
+  {
+    image: "/placeholder-news.jpg",
+    date: "01 October, 2025",
+    title:
+      "THE NEWEST HYBRID SUV BAIC BJ30 COMES TO BANDUNG AT A SPECIAL PRICE DURING GIIAS 2025 - BANDUNG",
+    description:
+      "Bandung, October 1, 2025 – PT JIO Distribusi Indonesia, BAIC's authorized agent (APM) in Indonesia, officially participated in GIIAS Bandung 2025 – Autoshow Series, which took place from OC...",
+    link: "/news/single-news.html",
+  },
+  {
+    image: "/placeholder-news.jpg",
+    date: "01 October, 2025",
+    title:
+      "THE NEWEST HYBRID SUV BAIC BJ30 COMES TO BANDUNG AT A SPECIAL PRICE DURING GIIAS 2025 - BANDUNG",
+    description:
+      "Bandung, October 1, 2025 – PT JIO Distribusi Indonesia, BAIC's authorized agent (APM) in Indonesia, officially participated in GIIAS Bandung 2025 – Autoshow Series, which took place from OC...",
+    link: "/news/single-news.html",
+  },
+  {
+    image: "/placeholder-news.jpg",
+    date: "01 October, 2025",
+    title:
+      "THE NEWEST HYBRID SUV BAIC BJ30 COMES TO BANDUNG AT A SPECIAL PRICE DURING GIIAS 2025 - BANDUNG",
+    description:
+      "Bandung, October 1, 2025 – PT JIO Distribusi Indonesia, BAIC's authorized agent (APM) in Indonesia, officially participated in GIIAS Bandung 2025 – Autoshow Series, which took place from OC...",
+    link: "/news/single-news.html",
+  },
+  {
+    image: "/placeholder-news.jpg",
+    date: "01 October, 2025",
+    title:
+      "THE NEWEST HYBRID SUV BAIC BJ30 COMES TO BANDUNG AT A SPECIAL PRICE DURING GIIAS 2025 - BANDUNG",
+    description:
+      "Bandung, October 1, 2025 – PT JIO Distribusi Indonesia, BAIC's authorized agent (APM) in Indonesia, officially participated in GIIAS Bandung 2025 – Autoshow Series, which took place from OC...",
+    link: "/news/single-news.html",
   },
 ];
+
 function App() {
-  const truncateText = (text, wordLimit) => {
-    const words = text.split(" ");
-    if (words.length > wordLimit) {
-      return words.slice(0, wordLimit).join(" ") + "...";
-    }
-    return text;
-  };
-  const [visiblePosts, setVisiblePosts] = useState(3);
+  const [visiblePosts, setVisiblePosts] = useState(6);
+  const maxPosts = newsData.length;
+  const allPostsLoaded = visiblePosts >= maxPosts;
 
   const handleLoadMore = () => {
-    setVisiblePosts((prevVisiblePosts) => prevVisiblePosts + 3);
+    setVisiblePosts((prev) => Math.min(prev + 6, maxPosts));
   };
+
   return (
     <>
       <Header />
       <ButtonChat />
-      <div className="bg-neutral-100   py-4">
-        <h3 className="max-w-6xl m-auto md:px-8 px-5 font-medium">
-          NEWS & EVENT
-        </h3>
+
+      {/* Hero Section */}
+      <div
+        className="relative h-80 bg-cover bg-center flex items-center justify-center"
+        style={{
+          backgroundImage: "url('/bg-news.jpg')",
+        }}
+      >
+        <div className="absolute inset-0 bg-black/50"></div>
+        <h1 className="relative text-white text-5xl md:text-6xl font-bold">
+          News & Event
+        </h1>
       </div>
-      <div className="bg-neutral-200 py-8">
-        <div className="max-w-6xl m-auto md:px-8 px-5 ">
-          {contentArray.slice(0, visiblePosts).map((content, index) => (
-            <div className="grid grid-cols-12 gap-6 mb-8" key={index}>
-              <img
-                src={content.image}
-                alt={`blog${index + 1}`}
-                className="md:col-span-6 md:h-80 h-60 w-full object-cover col-span-12"
-              />
-              <div className="space-y-4 md:col-span-6 col-span-12">
-                <p className="font-medium text-red-600">{content.date}</p>
-                <h2 className="capitalize text-2xl font-bold">
-                  {content.title}
-                </h2>
-                <p className="text-neutral-600 font-normal">
-                  {truncateText(content.description, 50)}
+
+      {/* News Grid Section */}
+      <div className="bg-gray-100 py-16 px-4">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {newsData.slice(0, visiblePosts).map((news, index) => (
+              <a
+                key={index}
+                href={news.link}
+                className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow block"
+              >
+                {/* News Image */}
+                <div className="relative h-56 overflow-hidden">
+                  <img
+                    src={news.image}
+                    alt={news.title}
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                  />
+                  {/* Date Badge */}
+                  <div className="absolute top-4 left-4 bg-white px-3 py-1 rounded">
+                    <p className="text-red-600 text-xs font-semibold">
+                      {news.date}
+                    </p>
+                  </div>
+                </div>
+
+                {/* News Content */}
+                <div className="p-5">
+                  <h3 className="text-lg font-bold text-gray-800 mb-3 line-clamp-2 hover:text-red-600 transition-colors">
+                    {news.title}
+                  </h3>
+                  <p className="text-gray-600 text-sm line-clamp-3">
+                    {news.description}
+                  </p>
+                </div>
+              </a>
+            ))}
+          </div>
+
+          {/* Load More / All Loaded State */}
+          <div className="mt-12 text-center">
+            {!allPostsLoaded ? (
+              <button
+                onClick={handleLoadMore}
+                className="px-8 py-3 bg-white text-gray-800 border border-gray-300 rounded-lg hover:bg-red-600 hover:text-white hover:border-red-600 transition-all font-semibold"
+              >
+                Load more
+              </button>
+            ) : (
+              <div className="text-gray-500 font-medium">
+                <p className="text-lg">All news loaded</p>
+                <p className="text-sm mt-2">
+                  You've reached the end of our news articles
                 </p>
-                <a
-                  className="py-3 block px-14 w-fit text-center hover:bg-red-600 transition-all hover:text-white border border-neutral-500 hover:border-none rounded-xl"
-                  href={content.link}
-                >
-                  READ MORE
-                </a>
               </div>
-            </div>
-          ))}
+            )}
+          </div>
         </div>
-        {visiblePosts < contentArray.length && (
-          <button
-            className="py-3 m-auto block px-14 w-fit text-center hover:bg-red-600 transition-all hover:text-white border border-neutral-500 hover:border-none rounded-xl"
-            onClick={handleLoadMore}
-          >
-            LOAD MORE
-          </button>
-        )}
       </div>
-      <CTA />
+
+      <CtaSection />
       <Footer />
     </>
   );
