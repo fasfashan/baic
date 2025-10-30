@@ -8,7 +8,9 @@ export default defineConfig({
     rollupOptions: {
       input: {
         index: "index.html",
-        news: "news/index.html",
+        newsRoot: "news.html",
+        newsPage: "news/index.html",
+        singleNews: "news/single-news.html",
         contact: "contact/index.html",
         book: "book-a-test-drive/index.html",
         BJ40: "BJ40/index.html",
